@@ -1,9 +1,12 @@
 package api.resourses;
 
 import java.io.IOException;
+//import java.util.List;
+//import java.util.Map;
 
 import api.pojo.UserAdminLoginPojo;
 import api.utils.ExcelReader;
+//import utilities.PropertyFileReader;
 
 public class UserAdminLogindata {
 	
@@ -18,6 +21,7 @@ public class UserAdminLogindata {
 	
 	return dl;
 }
+	
  
  
 	
