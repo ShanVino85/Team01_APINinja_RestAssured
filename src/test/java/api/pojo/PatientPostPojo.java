@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
-
 public class PatientPostPojo {
 	@JsonProperty("FirstName")
     private String FirstName;
@@ -23,7 +22,7 @@ public class PatientPostPojo {
 	@JsonProperty("DateOfBirth")
     private String DateOfBirth;
 	
-	
+	//added for JSON order
 	@JsonPropertyOrder({
 		"FirstName",
 	    "LastName",
@@ -35,9 +34,7 @@ public class PatientPostPojo {
 	    "DateOfBirth"
 	})
 
-    
-
-    public void setFirstName(String firstName) {
+     public void setFirstName(String firstName) {
         this.FirstName = firstName;
     }
 
@@ -49,28 +46,18 @@ public class PatientPostPojo {
     public void setContactNumber(String contactNumber) {
         this.ContactNumber = contactNumber;
     }
-
-
     public void setEmail(String email) {
         this.Email = email;
     }
-
     public void setAllergy(String allergy) {
         this.Allergy = allergy;
     }
-
-
     public void setFoodPreference(String foodPreference) {
         this.FoodPreference = foodPreference;
     }
-
-
     public void setCuisineCategory(String cuisineCategory) {
         this.CuisineCategory = cuisineCategory;
     }
-
-
-
     public void setDateOfBirth(String dateOfBirth) {
         this.DateOfBirth = dateOfBirth;
     }
