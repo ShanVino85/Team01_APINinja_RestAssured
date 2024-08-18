@@ -37,7 +37,7 @@ public class DietitianPost extends RestUtils {
 	
 	static ExcelReader er = new ExcelReader();
 
-//Positive_01
+	//-----------------------Positive_01 (creation of Dietitian)-----------------------------------//
 	@Given("Admin creates POST request with valid data {string}, {int}")
 	public void admin_creates_post_request_with_valid_data(String sheetname, int rownum) throws FileNotFoundException, IOException {
     
@@ -45,20 +45,34 @@ public class DietitianPost extends RestUtils {
 				.header("Authorization","Bearer "+ IdHolder.token);
 	}
 
-//Positive_02
+	//-----------------------Positive_02 (Generating Dietitian Token)--------------------------//
+	
 	@Given("Admin creates POST request and get the token")
 	public void admin_creates_post_request_and_get_the_token() throws FileNotFoundException, IOException {
 		requestToken=given().spec(requestSpecification()).body( DietitianTokendata.dataTokenBuild());
 	}
 
-//Negative_01
+
+	@Then("Admin  receives dietician token")
+	public void admin_receives_dietician_token() {
+		
+		//Response body of Dietitian Token
+		resbodyToken=responseDietitianToken.then().log().all().extract().response();
+		
+		IdHolder.dietitianToken=  UserKeyJson(resbodyToken,"token");
+		System.out.println("DietitianToken ="  +IdHolder.dietitianToken);
+		
+	}
+	
+	//---------------------------Negative_01(Invalid data)-------------------------//
 	
 	@Given("Admin creates POST request with invalid additional details {string}, {int}")
 	public void admin_creates_post_request_with_invalid_additional_details(String sheetname, int rownum) throws FileNotFoundException, IOException {
 	reqNegative=given().spec(requestSpecification()).body( DietitianPostdata.createdietitiandata(sheetname, rownum))
 				.header("Authorization","Bearer "+ IdHolder.token);
 	}
-//Negative_04
+	//--------------------------Negative_04(Invalid Content type)-----------------------------//
+	
 	@Given("Admin creates POST request with valid data and invalid content type {string}, {int}")
 	public void admin_creates_post_request_with_valid_data_and_invalid_content_type(String sheetname, int rownum) throws FileNotFoundException, IOException {
 	  
@@ -66,6 +80,8 @@ public class DietitianPost extends RestUtils {
 				.header("Authorization","Bearer "+ IdHolder.token);
 	}
 	
+	
+	//---------------Sending different endpoints for POST operations----------------//
 	
 	@When("Admin send POST {string} request with endpoint")
 	public void admin_send_post_request_with_endpoint(String endpoint) {
@@ -76,6 +92,7 @@ public class DietitianPost extends RestUtils {
 				if(request!=null) {
 				response = request.when().post(routes.getString("Post_CreateDietitian"));
 				}
+				//---------------Negative_04----------------//
 				else if(reqNegative1!=null) {
 					response = reqNegative1.when().post(routes.getString("Post_CreateDietitian"));
 					
@@ -91,6 +108,9 @@ public class DietitianPost extends RestUtils {
 			responseNegative = reqNegative.when().post(routes.getString("Post_CreateDietitianInvalidData"));
 					
 			}
+		
+		//----------------------------Negative_03(Invalid endpoint)----------------------------------//
+		
 		else if(endpoint.equalsIgnoreCase("Post_CreateDietitianInvalidEndpoint")) {
 			
 			response = request.when().post(routes.getString("Post_CreateDietitianInvalidEndpoint"));
@@ -99,12 +119,14 @@ public class DietitianPost extends RestUtils {
 		
 	}
 
+		//----------------------------Negative_02(Invalid Request type PUT)----------------------------------//
+	
 	@When("Admin send PUT {string} request with endpoint")
 	public void admin_send_put_request_with_endpoint(String string) {
 	response = request.when().put(routes.getString("Post_CreateDietitian"));
 	}
 	
-	// Response body validation based on status code
+	  //-----------------------------Response body validation based on status code--------------------------//
 	
 	@Then("Admin recieves {int} created and with response body")
 	public void admin_recieves_created_and_with_response_body(Integer statusCode) throws IOException {
@@ -200,20 +222,6 @@ public class DietitianPost extends RestUtils {
 		}
 	
 		
-
-
-	
-	@Then("Admin  receives dietician token")
-	public void admin_receives_dietician_token() {
-		
-		//Response body of Dietitian Token
-		resbodyToken=responseDietitianToken.then().log().all().extract().response();
-		
-		IdHolder.dietitianToken=  UserKeyJson(resbodyToken,"token");
-		System.out.println("DietitianToken ="  +IdHolder.dietitianToken);
-		
-	}
-
 
 
 }
