@@ -6,16 +6,34 @@ import java.util.Map;
 
 import api.pojo.DietitianPostPojo;
 import api.utils.ExcelReader;
+import api.utils.ExcelReaderDietitian;
 
 
 public class DietitianPostdata {
 
 	static ExcelReader er = new ExcelReader();
-
-	 public static  DietitianPostPojo createdietitiandata() throws IOException {
+	
+	
+	 public static  DietitianPostPojo createdietitiandata(String sheetname, int rownum) throws IOException {
 		
 		 DietitianPostPojo creatDietitian = new DietitianPostPojo();
-		
+		 
+		 Map<String, String> dataMap;
+		 dataMap = ExcelReaderDietitian.getTestData(sheetname,rownum);
+			
+		 creatDietitian.setContact_Number(dataMap.get("ContactNumber"));
+		 creatDietitian.setDate_Of_Birth(dataMap.get("DateOfBirth"));
+		 creatDietitian.setEducation(dataMap.get("Education"));
+		 creatDietitian.setEmail(dataMap.get("Email"));
+		 creatDietitian.setFirst_name(dataMap.get("Firstname"));
+		 creatDietitian.setHospital_City(dataMap.get("HospitalCity"));
+		 creatDietitian.setHospital_Name(dataMap.get("HospitalName"));
+		 creatDietitian.setHospital_Pincode(dataMap.get("HospitalPincode"));
+		 creatDietitian.setHospital_Street(dataMap.get("HospitalStreet"));
+		 creatDietitian.setLast_name(dataMap.get("Lastname"));
+											
+		 
+		 /*
 		 creatDietitian.setContact_Number(er.getCellData("DietitianPost", 1, 0));
 		 creatDietitian.setDate_Of_Birth(er.getCellData("DietitianPost", 1, 1));
 		 creatDietitian.setEducation(er.getCellData("DietitianPost", 1, 2));
@@ -26,25 +44,37 @@ public class DietitianPostdata {
 		 creatDietitian.setHospital_Pincode(er.getCellData("DietitianPost", 1, 7));
 		 creatDietitian.setHospital_Street(er.getCellData("DietitianPost", 1, 8));
 		 creatDietitian.setLast_name(er.getCellData("DietitianPost", 1, 9));
+		 */
+		
+		return creatDietitian;
+		
+	}
+	 
+	/* public static  DietitianPostPojo createdietitianInvaliddata() throws IOException {
+			
+		 DietitianPostPojo creatDietitian = new DietitianPostPojo();
+		
+		 for(int i=2; i<=3; i++)
+		 {
+			 for(int j=0; j<=10; j++)
+			 {
+				 creatDietitian.setContact_Number(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setDate_Of_Birth(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setEducation(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setEmail(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setFirst_name(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setHospital_City(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setHospital_Name(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setHospital_Pincode(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setHospital_Street(er.getCellData("DietitianPost", i, j));
+				 creatDietitian.setLast_name(er.getCellData("DietitianPost", i, j));
+				  
+			 }
+		 }
 		 
 		
 		return creatDietitian;
-		/*
-		 
-		 HashMap d= new HashMap();
-		 
-		 d.put(er.getCellData("DietitianPost", 0, 0),er.getCellData("DietitianPost", 1, 0));
-		 d.put(er.getCellData("DietitianPost", 0, 1),er.getCellData("DietitianPost", 1, 1));
-		 d.put(er.getCellData("DietitianPost", 0, 2),er.getCellData("DietitianPost", 1, 2));
-		 d.put(er.getCellData("DietitianPost", 0, 3),er.getCellData("DietitianPost", 1, 3));
-		 d.put(er.getCellData("DietitianPost", 0, 4),er.getCellData("DietitianPost", 1, 4));
-		 d.put(er.getCellData("DietitianPost", 0, 5),er.getCellData("DietitianPost", 1, 5));
-		 d.put(er.getCellData("DietitianPost", 0, 6),er.getCellData("DietitianPost", 1, 6));
-		 d.put(er.getCellData("DietitianPost", 0, 7),er.getCellData("DietitianPost", 1, 7));
-		 d.put(er.getCellData("DietitianPost", 0, 8),er.getCellData("DietitianPost", 1, 8));
-		 d.put(er.getCellData("DietitianPost", 0, 9),er.getCellData("DietitianPost", 1, 9));
-		 return d;
-		 */
-	}
+		
+	}*/
 	 	
 }

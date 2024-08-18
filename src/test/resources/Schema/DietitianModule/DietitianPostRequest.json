@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "ContactNumber": {
+      "type": "string"
+    },
+    "DateOfBirth": {
+      "type": "string"
+    },
+    "Education": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Firstname": {
+      "type": "string"
+    },
+    "HospitalCity": {
+      "type": "string"
+    },
+    "HospitalName": {
+      "type": "string"
+    },
+    "HospitalPincode": {
+      "type": "string"
+    },
+    "HospitalStreet": {
+      "type": "string"
+    },
+    "Lastname": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "loginPassword": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "ContactNumber",
+    "DateOfBirth",
+    "Education",
+    "Email",
+    "Firstname",
+    "HospitalCity",
+    "HospitalName",
+    "HospitalPincode",
+    "HospitalStreet",
+    "Lastname",
+    "id",
+    "loginPassword"
+  ]
+}
