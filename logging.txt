@@ -16,8 +16,8 @@ Body:
 }
 HTTP/1.1 200 
 Server: Cowboy
-Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723842748&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=Ht4aZYW2hCCYMLa8RuQHqwMlrWc7JGMCJ%2F6lr7U4bpM%3D"}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723842748&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=Ht4aZYW2hCCYMLa8RuQHqwMlrWc7JGMCJ%2F6lr7U4bpM%3D
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723938230&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=dm7JSZU4yIxIRyw9172yQOKNVCEHwkO5KwgvxY6CZpo%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723938230&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=dm7JSZU4yIxIRyw9172yQOKNVCEHwkO5KwgvxY6CZpo%3D
 Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
 Connection: keep-alive
 Vary: Origin
@@ -32,11 +32,11 @@ Strict-Transport-Security: max-age=31536000 ; includeSubDomains
 X-Frame-Options: DENY
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Fri, 16 Aug 2024 21:12:28 GMT
+Date: Sat, 17 Aug 2024 23:43:50 GMT
 Via: 1.1 vegur
 
 {
-    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtMS5hZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MjM4NDI3NDgsImV4cCI6MTcyMzg3MTU0OH0.-Xt7tLDkZrVpTPnPkCStTmPAeRaxQgcYRLTDwv-iXLnET_536ep7mn8Inbjrl8hDxlHxD3FB2TSxl85uNfpoMA",
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtMS5hZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MjM5MzgyMzAsImV4cCI6MTcyMzk2NzAzMH0.-zUknNMbOdGaW6QHUTw6m8ITzykh5azt1fxzXahNqEQLktxsY076gq11LdyHxotCHu9TR7s9b4kqkoUKc8fXvQ",
     "type": "Bearer ",
     "userId": 9,
     "loginUserEmail": "Team1.admin@gmail.com",
@@ -52,7 +52,7 @@ Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNDRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzgzMDk2MiwiZXhwIjoxNzIzODU5NzYyfQ.LW2qzYC5x4OHeFkk4Cy0u7t-7xU5ca7aCsxvQjFRnMl1EQSk6yIjs3V9H2gI6kRlG-WQUfiHavEl7KnoZ4k-uQ
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NTRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzkzMTQ0NCwiZXhwIjoxNzIzOTYwMjQ0fQ.querxqippaY1MT5KlfMHDwjFaoHrAc9x_RNb1Vvhhocl7l9I58zKhbo3zJgkUSK5AmSeZNIFcZLtzoOvbshu7A
 				Content-Type=multipart/form-data
 Cookies:		<none>
 Multiparts:		------------
@@ -62,23 +62,23 @@ Multiparts:		------------
 				{
     "FirstName": "Sam",
     "LastName": "Kay",
-    "ContactNumber": "3248649206",
-    "Email": "KAy126@gmail.com",
+    "ContactNumber": "3248649250",
+    "Email": "KAy1350@gmail.com",
     "Allergy": "SOY",
     "FoodPreference": "Vegan",
     "CuisineCategory": "Indian",
-    "DateOfBirth": "2021-12-20"
+    "DateOfBirth": "1987-11-29"
 }
 				------------
-				Content-Disposition: form-data; name = file; filename = HypoThyroid-Report.pdf
+				Content-Disposition: form-data; name = file; filename = HyperThyroid_Report.pdf
 				Content-Type: application/pdf
 
-				C:\Users\shanj\vino-workspace\Team01_API_Ninja\src\test\resources\HypoThyroid-Report.pdf
+				C:\Users\shanj\vino-workspace\Team01_API_Ninja\src\test\resources\Samplefile\HyperThyroid_Report.pdf
 Body:			<none>
 HTTP/1.1 201 
 Server: Cowboy
-Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723842749&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=LurKaM4WvHiRV7C%2FF8N11RnCXzmwvTEYhkriF2QvDlI%3D"}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723842749&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=LurKaM4WvHiRV7C%2FF8N11RnCXzmwvTEYhkriF2QvDlI%3D
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723938231&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vBIvtQj21XeemtAozNZLem5Ea63XF2Ktx6JNUABwhlo%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723938231&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vBIvtQj21XeemtAozNZLem5Ea63XF2Ktx6JNUABwhlo%3D
 Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
 Connection: keep-alive
 Vary: Origin
@@ -93,31 +93,32 @@ Strict-Transport-Security: max-age=31536000 ; includeSubDomains
 X-Frame-Options: DENY
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Fri, 16 Aug 2024 21:12:29 GMT
+Date: Sat, 17 Aug 2024 23:43:51 GMT
 Via: 1.1 vegur
 
 {
-    "patientId": 114,
+    "patientId": 179,
     "FirstName": "Sam",
     "LastName": "Kay",
-    "ContactNumber": "3248649206",
-    "Email": "KAy126@gmail.com",
+    "ContactNumber": "3248649250",
+    "Email": "KAy1350@gmail.com",
     "Allergy": "SOY",
     "FoodPreference": "Vegan",
     "CuisineCategory": "Indian",
     "FileMorbidity": {
-        "66bfc0bda956ef1c566738f5": {
-            "T4": "1.22 µg/dl",
-            "TSH": "100.0 mIU/L"
+        "66c135b7e30dde112fb8ff45": {
+            "T3": "6.3 ng/mL",
+            "T4": "15.7 µg/dL",
+            "TSH": "0.016 µIU/mL"
         }
     },
     "FileMorbidityCondition": {
-        "66bfc0bda956ef1c566738f5": "Thyroid: Hypothyroidism \nBlood Pressure: Hypotension \n"
+        "66c135b7e30dde112fb8ff45": "Thyroid: Hyperthyroidism \nBlood Pressure: Hypotension \n"
     },
-    "DateOfBirth": "2021-12-20",
-    "DieticianId": 280,
+    "DateOfBirth": "1987-11-29",
+    "DieticianId": 528,
     "Vitals": {
-        "66bfc0bda956ef1c566738f5": {
+        "66c135b7e30dde112fb8ff45": {
             "Weight": 0.0,
             "Height": 0.0,
             "Temperature": 0.0,
@@ -125,8 +126,56 @@ Via: 1.1 vegur
             "DP": 0
         }
     },
-    "LastVisitDate": "2024-08-16T21:12:29.429+00:00"
+    "LastVisitDate": "2024-08-17T23:43:51.747+00:00"
 }
+Request method:	POST
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NTRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzkzMTQ0NCwiZXhwIjoxNzIzOTYwMjQ0fQ.querxqippaY1MT5KlfMHDwjFaoHrAc9x_RNb1Vvhhocl7l9I58zKhbo3zJgkUSK5AmSeZNIFcZLtzoOvbshu7A
+				Content-Type=multipart/form-data
+Cookies:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = patientInfo; filename = file
+				Content-Type: application/json
+
+				{
+    "FirstName": "Maria",
+    "LastName": "Teamone",
+    "ContactNumber": "8608306851",
+    "Email": "Mario1051@gmail.com",
+    "Allergy": "WALNUT",
+    "FoodPreference": "EGGETARIAN",
+    "CuisineCategory": "Rajasthani",
+    "DateOfBirth": "1987-0329"
+}
+Body:			<none>
+HTTP/1.1 400 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723938232&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=giXO85i8ar%2FzRGZ8tMTFI6jk37bwGcQ8MsJavy1m6%2Fs%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723938232&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=giXO85i8ar%2FzRGZ8tMTFI6jk37bwGcQ8MsJavy1m6%2Fs%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Content-Length: 35
+Date: Sat, 17 Aug 2024 23:43:51 GMT
+Via: 1.1 vegur
+
+Date Should be in format yyyy-MM-dd
 Request method:	POST
 Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/login
 Proxy:			<none>
@@ -135,19 +184,19 @@ Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNDRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzgzMDk2MiwiZXhwIjoxNzIzODU5NzYyfQ.LW2qzYC5x4OHeFkk4Cy0u7t-7xU5ca7aCsxvQjFRnMl1EQSk6yIjs3V9H2gI6kRlG-WQUfiHavEl7KnoZ4k-uQ
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NTRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzkzMTQ0NCwiZXhwIjoxNzIzOTYwMjQ0fQ.querxqippaY1MT5KlfMHDwjFaoHrAc9x_RNb1Vvhhocl7l9I58zKhbo3zJgkUSK5AmSeZNIFcZLtzoOvbshu7A
 				Content-Type=application/json
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
     "password": "test",
-    "userLoginEmail": "KAy126@gmail.com"
+    "userLoginEmail": "KAy1350@gmail.com"
 }
 HTTP/1.1 200 
 Server: Cowboy
-Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723842749&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=LurKaM4WvHiRV7C%2FF8N11RnCXzmwvTEYhkriF2QvDlI%3D"}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723842749&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=LurKaM4WvHiRV7C%2FF8N11RnCXzmwvTEYhkriF2QvDlI%3D
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723938232&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=giXO85i8ar%2FzRGZ8tMTFI6jk37bwGcQ8MsJavy1m6%2Fs%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723938232&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=giXO85i8ar%2FzRGZ8tMTFI6jk37bwGcQ8MsJavy1m6%2Fs%3D
 Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
 Connection: keep-alive
 Vary: Origin
@@ -162,35 +211,53 @@ Strict-Transport-Security: max-age=31536000 ; includeSubDomains
 X-Frame-Options: DENY
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Fri, 16 Aug 2024 21:12:29 GMT
+Date: Sat, 17 Aug 2024 23:43:51 GMT
 Via: 1.1 vegur
 
 {
-    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLQXkxMjZAZ21haWwuY29tIiwiaWF0IjoxNzIzODQyNzQ5LCJleHAiOjE3MjM4NzE1NDl9.usFEjOSkORQkMDP4zQywSHexkiicl4EPrn0ds5-bvIGrVB1lrfxSVq6Na7ckQ6U1hCKZfsUJ_ZB1cLu15YBGvA",
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLQXkxMzUwQGdtYWlsLmNvbSIsImlhdCI6MTcyMzkzODIzMiwiZXhwIjoxNzIzOTY3MDMyfQ.26ZQEhdlqchICrRgjEtgvYvsBqCcdWLRBwwOWj2CFvVFMU6MIS6XxWD3GfrRVP1RcOiRLjo55I1S9P1oaoVhXQ",
     "type": "Bearer ",
-    "userId": 451,
-    "loginUserEmail": "KAy126@gmail.com",
+    "userId": 756,
+    "loginUserEmail": "KAy1350@gmail.com",
     "roles": [
         "ROLE_PATIENT"
     ]
 }
-Request method:	GET
-Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient/testReports/114
+Request method:	PUT
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient/179
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	patientId=114
+Path params:	patientId1=179
 Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNDRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzgzMDk2MiwiZXhwIjoxNzIzODU5NzYyfQ.LW2qzYC5x4OHeFkk4Cy0u7t-7xU5ca7aCsxvQjFRnMl1EQSk6yIjs3V9H2gI6kRlG-WQUfiHavEl7KnoZ4k-uQ
-				Content-Type=application/json
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NTRAZG9tYWluLmNvbSIsImlhdCI6MTcyMzkzMTQ0NCwiZXhwIjoxNzIzOTYwMjQ0fQ.querxqippaY1MT5KlfMHDwjFaoHrAc9x_RNb1Vvhhocl7l9I58zKhbo3zJgkUSK5AmSeZNIFcZLtzoOvbshu7A
+				Content-Type=multipart/form-data
 Cookies:		<none>
-Multiparts:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = patientInfo; filename = file
+				Content-Type: application/json
+
+				{
+    "FirstName": "Sam",
+    "LastName": "Teamoneput",
+    "ContactNumber": "3248649253",
+    "Email": "KAy131@gmail.com",
+    "Allergy": "SOY",
+    "FoodPreference": "Vegan",
+    "CuisineCategory": "Indian",
+    "DateOfBirth": "1992-12-29"
+}
+				------------
+				Content-Disposition: form-data; name = file; filename = HyperThyroid_Report.pdf
+				Content-Type: application/pdf
+
+				C:\Users\shanj\vino-workspace\Team01_API_Ninja\src\test\resources\Samplefile\HyperThyroid_Report.pdf
 Body:			<none>
 HTTP/1.1 200 
 Server: Cowboy
-Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723842750&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=MLffWFHR7juKYLk6W4yV%2BbPFvs%2FNjYwO%2Fl5O6uAXrLU%3D"}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723842750&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=MLffWFHR7juKYLk6W4yV%2BbPFvs%2FNjYwO%2Fl5O6uAXrLU%3D
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723938232&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=giXO85i8ar%2FzRGZ8tMTFI6jk37bwGcQ8MsJavy1m6%2Fs%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1723938232&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=giXO85i8ar%2FzRGZ8tMTFI6jk37bwGcQ8MsJavy1m6%2Fs%3D
 Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
 Connection: keep-alive
 Vary: Origin
@@ -205,25 +272,44 @@ Strict-Transport-Security: max-age=31536000 ; includeSubDomains
 X-Frame-Options: DENY
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Fri, 16 Aug 2024 21:12:29 GMT
+Date: Sat, 17 Aug 2024 23:43:53 GMT
 Via: 1.1 vegur
 
-[
-    {
-        "fileId": "66bfc0bda956ef1c566738f5",
-        "fileName": "HypoThyroid-Report.pdf",
-        "uploadDate": "2024-08-16T21:12:29.424+00:00",
-        "morbidConditions": {
-            "T4": "1.22 µg/dl",
-            "TSH": "100.0 mIU/L"
+{
+    "patientId": 179,
+    "FirstName": "Sam",
+    "LastName": "Teamoneput",
+    "ContactNumber": "3248649253",
+    "Email": "KAy131@gmail.com",
+    "Allergy": "SOY",
+    "FoodPreference": "Vegan",
+    "CuisineCategory": "Indian",
+    "FileMorbidity": {
+        "66c135b7e30dde112fb8ff45": {
+            "T3": "6.3 ng/mL",
+            "T4": "15.7 µg/dL",
+            "TSH": "0.016 µIU/mL"
         },
-        "vitals": {
+        "66c135b9e30dde112fb8ff49": {
+            "T3": "6.3 ng/mL",
+            "T4": "15.7 µg/dL",
+            "TSH": "0.016 µIU/mL"
+        }
+    },
+    "FileMorbidityCondition": {
+        "66c135b7e30dde112fb8ff45": "Thyroid: Hyperthyroidism \nBlood Pressure: Hypotension \n",
+        "66c135b9e30dde112fb8ff49": "Thyroid: Hyperthyroidism \n"
+    },
+    "DateOfBirth": "1992-12-29",
+    "DieticianId": 528,
+    "Vitals": {
+        "66c135b7e30dde112fb8ff45": {
             "Weight": 0.0,
             "Height": 0.0,
             "Temperature": 0.0,
             "SP": 0,
             "DP": 0
-        },
-        "morbidConditionStr": "Thyroid: Hypothyroidism \nBlood Pressure: Hypotension \n"
-    }
-]
+        }
+    },
+    "LastVisitDate": "2024-08-17T23:43:51.747+00:00"
+}
