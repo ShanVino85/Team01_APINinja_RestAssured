@@ -39,7 +39,7 @@ public class UserAdminLogin extends RestUtils {
 			
 			IdHolder.token =  UserKeyJson(response,"token");
 			  System.out.println("Token ="  +IdHolder.token);
-	   
+		  
 	}
 
 	@Then("User recieves {int} created with response body")

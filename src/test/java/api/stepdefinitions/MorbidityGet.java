@@ -6,58 +6,75 @@ import static org.junit.Assert.assertEquals;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import api.utils.IdHolder;
-
-
+import java.util.List;
+import java.util.Map;
 import api.utils.RestUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
-public class Morbidity extends RestUtils {
+public class MorbidityGet extends RestUtils {
 	RequestSpecification request;
 	ResponseSpecification responseSpec;
 	Response response;
 	
-	//with admin token positive tc
+	
 	@Given("admin create GET request with admin token")
-	public void admin_create_get_request_with_admin_token() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.token);
+	public void admin_create_get_request_with_admin_token() throws FileNotFoundException, IOException {	    
+	    request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.token);
+        response = request.when().get(routes.getString("Get_GetallMorbidities")).then().log().all().extract().response();
+       List<Map<String, Object>> morbidities = response.jsonPath().getList("");
+	    if (morbidities != null && !morbidities.isEmpty()) {
+       IdHolder.testName = (String) morbidities.get(1).get("morbidityTestName");
+	         } else
+	         {
+	        throw new RuntimeException("No morbidities found in the response.");
+	    }
 	}
 
 	@When("admin send GET http request with endpoint")
 	public void admin_send_get_http_request_with_endpoint() {
-		 response = request.when().get(routes.getString("Get_GetallMorbidities")).then().log().all().extract().response();
-    
+	    response = request.when().get(routes.getString("Get_GetallMorbidities")).then().log().all() .extract().response();
+	    response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/MorbidityModule/Morbidityallschema.json"));
 	}
-
-	@Then("admin recieves {int} ok with details of the patient id")
+    @Then("admin recieves {int} ok with details of the patient id")
 	public void admin_recieves_ok_with_details_of_the_patient_id(Integer int1) {
-		assertEquals(response.getStatusCode(),200);
+	    assertEquals(response.getStatusCode(),200);
 	}
-	
 	@Given("admin create GET request with morbidity condition by test name with admin token")
 	public void admin_create_get_request_with_morbidity_condition_by_test_name_with_admin_token() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.token);
-	   
+	    request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.token);
 	}
 
 	@When("admin send GET http request with morbidity condition by test name endpoint")
 	public void admin_send_get_http_request_with_morbidity_condition_by_test_name_endpoint() {
-		 response = request.when().get(routes.getString("Get_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
-		    
+	    String endpoint = routes.getString("Get_RetrieveMorbidityconditionbyTestname").replace("{testName}", IdHolder.testName);
+        response = request.when().get(endpoint).then().log().all().extract().response();
 	}
 
 	@Then("admin recieves {int} ok with morbidity condition by test name endpoint details of the patient id")
 	public void admin_recieves_ok_with_morbidity_condition_by_test_name_endpoint_details_of_the_patient_id(Integer int1) {
-		assertEquals(response.getStatusCode(),200);
+	    assertEquals(response.getStatusCode(),200);
+	    response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/MorbidityModule/Morbidityschema.json"));
 	}
-//positivetc with DIETICIAN TOKEN(need to add dietician token)
+//positivetc with DIETICIAN TOKEN
 	@Given("Dietician create GET request with dietician token")
 	public void dietician_create_get_request_with_dietician_token() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.DieticianToken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.Dieticiantoken);
+	    response = request.when().get(routes.getString("Get_GetallMorbidities")).then().log().all().extract().response();
+	    
+	    List<Map<String, Object>> morbidities = response.jsonPath().getList("");
+	    
+	    if (morbidities != null && !morbidities.isEmpty()) {
+	        IdHolder.testName = (String) morbidities.get(0).get("morbidityTestName"); 
+	    } else {
+	        throw new RuntimeException("No morbidities found in the response.");
+	    }
 	}
 
 	@When("Dietician send GET http request with endpoint")
@@ -65,17 +82,25 @@ public class Morbidity extends RestUtils {
 		response = request.when().get(routes.getString("Get_GetallMorbidities")).then().log().all().extract().response();
 	    
 	}
+	
+	@Given("Dietician create GET request with dietician token for test name")
+	public void dietician_create_get_request_with_dietician_token_for_test_name() throws FileNotFoundException, IOException {
+		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.Dieticiantoken);
+		response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/MorbidityModule/Morbidityallschema.json"));
+	}
+	
 
 	@When("Dietician send GET http request with morbidity condition by test name endpoint endpoint")
 	public void dietician_send_get_http_request_with_morbidity_condition_by_test_name_endpoint_endpoint() {
-		response = request.when().get(routes.getString("Get_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
-	    
+		String endpoint = routes.getString("Get_RetrieveMorbidityconditionbyTestname").replace("{testName}", IdHolder.testName);
+        response = request.when().get(endpoint).then().log().all().extract().response();
 	    
 	}
 
 	@Then("Dietician recieves {int} ok with morbidity condition by test name endpoint details of the patient id")
 	public void dietician_recieves_ok_with_morbidity_condition_by_test_name_endpoint_details_of_the_patient_id(Integer int1) {
 		assertEquals(response.getStatusCode(),200);
+		response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/MorbidityModule/Morbidityschema.json"));
 	}
 
 //Negative TC
@@ -90,10 +115,9 @@ public class Morbidity extends RestUtils {
 		assertEquals(response.getStatusCode(),401);
 	    
 	}
-//need to add patient token
 	@Given("Patient create GET request with patient token")
 	public void patient_create_get_request_with_patient_token() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.token);
+		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.Patienttoken);
 	    
 	}
 
@@ -140,7 +164,7 @@ public class Morbidity extends RestUtils {
 	}
 	@Given("Dietician create POST request")
 	public void dietician_create_post_request() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.DieticianToken);
+		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.Dieticiantoken);
 	}
 
 	@When("Dietician send POST http request with endpoint")
@@ -156,7 +180,7 @@ public class Morbidity extends RestUtils {
 
 	@Given("Dietician create GET request")
 	public void dietician_create_get_request() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.DieticianToken);
+		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.Dieticiantoken);
 	}
 
 	@When("Dietician send GET http request with invalid endpoint")
@@ -170,28 +194,21 @@ public class Morbidity extends RestUtils {
 		assertEquals(response.getStatusCode(),404);
 	    
 	}
-	@When("Dietician send GET http request with morbidity condition by test name  endpoint")
-	public void dietician_send_get_http_request_with_morbidity_condition_by_test_name_endpoint() {
-		response = request.when().get(routes.getString("Get_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
-	    
-	    
-	}
 
-//have to add patient token
 	@Given("Patient create GET request")
 	public void patient_create_get_request() throws FileNotFoundException, IOException {
-		request = given().spec(requestSpecification());
+		request = given().spec(requestSpecification()) .header("Authorization", "Bearer " + IdHolder.Patienttoken);
 	    
 	}
 
 	@When("Patient send GET http request with morbidity condition by test name  endpoint")
 	public void patient_send_get_http_request_with_morbidity_condition_by_test_name_endpoint() {
-		response = request.when().get(routes.getString("Get_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
-	        
+		String endpoint = routes.getString("Get_RetrieveMorbidityconditionbyTestname").replace("{testName}", IdHolder.testName);
+        response = request.when().get(endpoint).then().log().all().extract().response();
 	}
 	@When("admin send POST http request morbidity condition by test name endpoint")
 	public void admin_send_post_http_request_morbidity_condition_by_test_name_endpoint() {
-		response = request.when().post(routes.getString("Post_RetrieveMorbidityconditionbyTestname ")).then().log().all().extract().response();
+		response = request.when().post(routes.getString("Invalid_Post_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
 	}
 
 	@When("admin send GET http request with invalid test name endpoint")
@@ -208,7 +225,7 @@ public class Morbidity extends RestUtils {
 
 	@When("Dietician send POST http request morbidity condition by test name  with invalid method endpoint")
 	public void dietician_send_post_http_request_morbidity_condition_by_test_name_with_invalid_method_endpoint() {
-		response = request.when().post(routes.getString("Post_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
+		response = request.when().post(routes.getString("Invalid_Post_RetrieveMorbidityconditionbyTestname")).then().log().all().extract().response();
 	}
 	
 	@When("Dietician send GET http request with morbidity condition by invalid test name  endpoint")

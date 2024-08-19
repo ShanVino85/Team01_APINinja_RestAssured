@@ -7,12 +7,12 @@ Feature:Get Operation Get all Morbidities with Negative scenario
     Then Dietician recieves 401 unauthorized
     
    
-  #Scenario: Check pateint is able to retrieve all morbidities details
-    #Given Patient create GET request with patient token
-    #When Patient send GET http request with endpoint
-    #Then Patient recieves 403 Forbidden
-    #
-     #
+  Scenario: Check pateint is able to retrieve all morbidities details
+    Given Patient create GET request with patient token
+    When Patient send GET http request with endpoint
+    Then Patient recieves 403 Forbidden
+    
+     
   Scenario: Check admin able to retrieve all morbidities details with invalid method
     Given admin create POST request  
     When admin send POST http request with endpoint
@@ -39,15 +39,15 @@ Feature:Get Operation Get all Morbidities with Negative scenario
     
   Scenario: Check dietician able to morbidity condition by test name 
     Given Dietician create GET request with no auth   
-    When Dietician send GET http request with morbidity condition by test name  endpoint
+    When Dietician send GET http request with morbidity condition by test name endpoint endpoint
     Then Dietician recieves 401 unauthorized
     
      
-  #Scenario: Check pateint is able to retrieve morbidity condition by test name 
-    #Given Patient create GET request   
-    #When Patient send GET http request with morbidity condition by test name  endpoint
-    #Then Patient recieves 403 Forbidden
-    #
+  Scenario: Check pateint is able to retrieve morbidity condition by test name 
+    Given Patient create GET request   
+    When Patient send GET http request with morbidity condition by test name  endpoint
+    Then Patient recieves 403 Forbidden
+    
     
   Scenario: Check admin able to retrieve morbidity condition by test name  with invalid method
     Given admin create POST request       

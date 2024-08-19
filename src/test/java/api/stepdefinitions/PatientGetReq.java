@@ -11,6 +11,7 @@ import api.utils.RestUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -32,29 +33,18 @@ public class PatientGetReq extends RestUtils {
        String endpoint = routes.getString("Get_GetPatientsMorbidityDetails");
         response = request.when().get(endpoint).then().log().all().extract().response();
         List<PatientGetResponse> patients = response.jsonPath().getList("", PatientGetResponse.class);
-        if (patients != null && !patients.isEmpty()) {
-            // Extract fileId from the first patient response
-            String fileId = patients.get(0).getFileId();
-            if (fileId != null) {
-                IdHolder.FileID = fileId;
-                System.out.println("File ID: " + fileId);
-            } else {
-                throw new RuntimeException("File ID is null in the response.");
-            }
-        } else {
-            throw new RuntimeException("No patients found in the response.");
-        }
-    }
+          
+        String fileId = patients.get(0).getFileId();
+            IdHolder.FileID = fileId;        
+  }
     @Then("Dietician recieves {int} ok with details morbidity details by endpoint as patient")
     public void dietician_recieves_ok_with_details_morbidity_details_by_endpoint_as_patient(Integer int1) {
     	 assertEquals("Status code should be 200", (int)200, response.getStatusCode());
+    	 response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/MorbidityModule/PatientGetMorbidity.json"));
  
     }
-
-
 	@Given("Dietician create GET request by field Id with Dietician Token")
 	public void dietician_create_get_request_by_field_id_with_dietician_token() throws FileNotFoundException, IOException {
-        //String dieticianToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNY2xlYW4xMDNAZ21haWwuY29tIiwiaWF0IjoxNzIzOTQ4MjgxLCJleHAiOjE3MjM5NzcwODF9.atnS5PUNg6NHuOGLrsZQolAeNXANRkWd4OkiEoHqoFmPak7qQaSgI9ySvKpMB7cqJe4_bmb96jT5fmR-DoFYJQ"; // Replace with your actual token
 	    request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.Dieticiantoken);
 	}
 
@@ -71,7 +61,6 @@ response = request.when().get(routes.getString("Get_RetrievePatientfilebyFileId"
 	//Postive Tc with Patient Token
 	@Given("Patient create GET request retrieve patients morbidity details by patient Endpoint with Patient Token")
 	public void patient_create_get_request_retrieve_patients_morbidity_details_by_patient_endpoint_with_patient_token() throws FileNotFoundException, IOException {
-        //String Patienttoken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZGFtNzlAZ21haWwuY29tIiwiaWF0IjoxNzIzOTQ4NDM0LCJleHAiOjE3MjM5NzcyMzR9._muVcJ4eZKp4vAVfy_6Z0yTnnjQpxCcQqV18UK0neYbRqStJ40xZaGeN0QKyvZkPNJXp7C4UrNb5rdUeXLfidQ";
         request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.Patienttoken);
         
 	}
@@ -97,11 +86,12 @@ response = request.when().get(routes.getString("Get_RetrievePatientfilebyFileId"
 	@Then("Patient recieves {int} ok with retrieve patients morbidity details by patient Endpoint with Patient Token")
 	public void patient_recieves_ok_with_retrieve_patients_morbidity_details_by_patient_endpoint_with_patient_token(Integer int1) {
 		assertEquals(response.getStatusCode(), 200);
+   	 response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/MorbidityModule/PatientGetMorbidity.json"));
+
 	}
 	
 	@Given("Check patient is able to retrieve patients morbidity details by File ID with Patient Token")
 	public void check_patient_is_able_to_retrieve_patients_morbidity_details_by_file_id_with_patient_token() throws FileNotFoundException, IOException {
-		String Patienttoken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZGFtNzlAZ21haWwuY29tIiwiaWF0IjoxNzIzOTQ4NDM0LCJleHAiOjE3MjM5NzcyMzR9._muVcJ4eZKp4vAVfy_6Z0yTnnjQpxCcQqV18UK0neYbRqStJ40xZaGeN0QKyvZkPNJXp7C4UrNb5rdUeXLfidQ";
         request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.Patienttoken);
         }  
 	@When("Patient create GET request patients morbidity details by endpoint as patient")
