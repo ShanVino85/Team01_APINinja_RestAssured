@@ -7,9 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="/Users/parikshit/git/Team 1 Rest assured/Team01_APINinja_RestAssured/src/test/resources/features1",glue= {"api.stepdefinitions"},
+@CucumberOptions(features="src/test/resources/features",glue= {"api.stepdefinitions"}, tags = " @tag12",
 plugin = {"pretty"
 		})
 public class TestRunner {
 
 }
+
