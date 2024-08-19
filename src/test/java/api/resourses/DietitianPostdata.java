@@ -6,7 +6,7 @@ import java.util.Map;
 
 import api.pojo.DietitianPostPojo;
 import api.utils.ExcelReader;
-import api.utils.ExcelReaderDietitian;
+
 
 
 public class DietitianPostdata {
@@ -19,7 +19,7 @@ public class DietitianPostdata {
 		 DietitianPostPojo creatDietitian = new DietitianPostPojo();
 		 
 		 Map<String, String> dataMap;
-		 dataMap = ExcelReaderDietitian.getTestData(sheetname,rownum);
+		 dataMap = ExcelReader.getTestData(sheetname,rownum);
 			
 		 creatDietitian.setContact_Number(dataMap.get("ContactNumber"));
 		 creatDietitian.setDate_Of_Birth(dataMap.get("DateOfBirth"));

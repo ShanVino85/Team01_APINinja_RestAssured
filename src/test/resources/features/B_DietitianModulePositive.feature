@@ -1,21 +1,31 @@
-
 @Positive
 Feature: Dietitian Positive Flow
 
-  @Positive_01
-  Scenario Outline: Check admin able to create dietician with valid data 
+  @Positive_01_Post
+  Scenario Outline: Check admin able to create dietician with valid data
     Given Admin creates POST request with valid data "<sheetname>", <rownum>
     When Admin send POST "Post_CreateDietitian" request with endpoint
     Then Admin recieves 201 created and with response body
 
- Examples:
-						|sheetname|rownum|
-						|DietitianPost|1|
+    Examples: 
+      | sheetname     | rownum |
+      | DietitianPost |      1 |
+      | DietitianPost |      2 |
 
-						
-@Positive_02
- Scenario: Check admin able to create dietician with valid data and token
-     Given Admin creates POST request and get the token
-     When Admin send POST "Post_UserDieticianLoginurl" request with endpoint
-  	Then Admin  receives dietician token
+  @Positive_02_Post
+  Scenario: Check admin able to create dietician with valid data and token
+    Given Admin creates POST request and get the token
+    When Admin send POST "Post_UserDieticianLoginurl" request with endpoint
+    Then Admin  receives dietician token
 
+  @Positive_03_Get
+  Scenario: Check admin able to retrieve all dietician
+    Given Admin create GET request
+    When Admin send GET "Get_AllDietitian" request with endpoint
+    Then Admin recieves 200 afterGet and with response body
+
+  @Positive_04_Get
+  Scenario: Check admin able to retrieve dietician by ID
+    Given Admin create GET request
+    When Admin send GET "Get_AllDietitianByID" request with endpoint
+    Then Admin recieves 200 afterGet and with response body
