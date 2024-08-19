@@ -48,5 +48,49 @@ public  PatientPostPojo ExcelonlyMandatorydata() throws IOException  {
 		return "{\n  \"password\": \"test\",\n  \"userLoginEmail\": \""+PT+"\"\n}";
 	
 		}
+	
+public  PatientPostPojo OnlyValiddataNeg() throws IOException  {
+		
+		PatientPostPojo Createpatientpost = new PatientPostPojo();
+		Createpatientpost.setAllergy(er.getCellData("PatientPost",1,4));
+		Createpatientpost.setFoodPreference(er.getCellData("PatientPost",1,5));
+		Createpatientpost.setCuisineCategory(er.getCellData("PatientPost",1,6));
+		return Createpatientpost;
+	}
+
+public  PatientPostPojo onlyinvalidMandatorydataNeg() throws IOException  {
+	
+	PatientPostPojo Createpatientpost = new PatientPostPojo();
+	
+	Createpatientpost.setFirstName(er.getCellData("PatientPost",5,0));
+	Createpatientpost.setLastName(er.getCellData("PatientPost",5,1));
+	Createpatientpost.setContactNumber(er.getCellData("PatientPost",5,2));
+	Createpatientpost.setEmail(er.getCellData("PatientPost",5,3));
+	Createpatientpost.setAllergy(er.getCellData("PatientPost",5,4));
+	Createpatientpost.setFoodPreference(er.getCellData("PatientPost",5,5));
+	Createpatientpost.setCuisineCategory(er.getCellData("PatientPost",5,6));
+	Createpatientpost.setDateOfBirth(er.getCellData("PatientPost",5,7));
+	
+	
+	return Createpatientpost;
+}
+	
+public  PatientPostPojo validManinvalidAddNeg() throws IOException  {
+	
+	PatientPostPojo Createpatientpost = new PatientPostPojo();
+	
+	Createpatientpost.setFirstName(er.getCellData("PatientPost",6,0));
+	Createpatientpost.setLastName(er.getCellData("PatientPost",6,1));
+	Createpatientpost.setContactNumber(er.getCellData("PatientPost",6,2));
+	Createpatientpost.setEmail(er.getCellData("PatientPost",6,3));
+	Createpatientpost.setAllergy(er.getCellData("PatientPost",6,4));
+	Createpatientpost.setFoodPreference(er.getCellData("PatientPost",6,5));
+	Createpatientpost.setCuisineCategory(er.getCellData("PatientPost",6,6));
+	Createpatientpost.setDateOfBirth(er.getCellData("PatientPost",6,7));
+	
+	
+	return Createpatientpost;
+}
+	
 
 }

@@ -22,6 +22,15 @@ public class UserAdminLogindata {
 	return dl;
 }
 	
+ public static  UserAdminLoginPojo invaliddataBuild() throws IOException {
+		
+	 UserAdminLoginPojo d2 = new UserAdminLoginPojo();
+	
+	d2.setPassword(er.getCellData("AdminLogin", 2, 0));
+	d2.setUserLoginEmail(er.getCellData("AdminLogin", 2, 1));
+	
+	return d2;
+}
  
  
 	

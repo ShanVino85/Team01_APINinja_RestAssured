@@ -60,4 +60,32 @@ public static  PatientPostPojo ValiddataAddPdfPUT() throws IOException  {
 		return Createpatientput1;
 	}
 
+public static  PatientPostPojo onlyaddfieldPUTNeg() throws IOException  {
+	
+	PatientPostPojo CreateputNeg = new PatientPostPojo();
+	
+	CreateputNeg.setAllergy(er.getCellData("PatientPut",3,4));
+	CreateputNeg.setFoodPreference(er.getCellData("PatientPut",3,5));
+	CreateputNeg.setCuisineCategory(er.getCellData("PatientPut",3,6));
+	
+	return CreateputNeg;
+}
+
+public static  PatientPostPojo onlyinvalidaddfieldPUTNeg() throws IOException  {
+	
+	PatientPostPojo CreateputNeg = new PatientPostPojo();
+	
+	CreateputNeg.setFirstName(er.getCellData("PatientPut",4,0));
+	CreateputNeg.setLastName(er.getCellData("PatientPut",4,1));
+	CreateputNeg.setContactNumber(er.getCellData("PatientPut",4,2));
+	CreateputNeg.setEmail(er.getCellData("PatientPut",4,3));
+	CreateputNeg.setAllergy(er.getCellData("PatientPut",4,4));
+	CreateputNeg.setFoodPreference(er.getCellData("PatientPut",4,5));
+	CreateputNeg.setCuisineCategory(er.getCellData("PatientPut",4,6));
+	CreateputNeg.setDateOfBirth(er.getCellData("PatientPut",4,7));
+	
+	return CreateputNeg;
+}
+
+
 }
