@@ -30,12 +30,16 @@ public class DietitianPost extends RestUtils {
 	RequestSpecification reqNegative;
 	RequestSpecification reqNegative1;
 	RequestSpecification resGet1;
+	RequestSpecification requestPut;
+	RequestSpecification reqDelete;
 	
 	public static Response response;
 	public static Response responseDietitianToken;
 	public static Response responseNegative;
 	public static Response responseGet;
-
+	public static Response responsePut;
+	public static Response responseDelete;
+	
 	static Response resbody;
 	static Response resbodyToken;
 	static Response resbodyNegative;
@@ -184,8 +188,12 @@ public class DietitianPost extends RestUtils {
 				
 				dietitian.put(FirstName, userId);
 				
-				if(FirstName.equalsIgnoreCase("Jhon")) {
+				if(FirstName.equalsIgnoreCase("Jojo")) {
 					IdHolder.dietitianID=userId;
+				}
+				else if(FirstName.equalsIgnoreCase("Jhon"))
+				{
+					IdHolder.dietitianID1=userId;
 				}
 				
 				System.out.println("Email ="  +IdHolder.dietitianEmail);
@@ -349,7 +357,7 @@ public class DietitianPost extends RestUtils {
 	 if(statusCode==200) 
 		{
 			assertEquals(responseGet.getStatusCode(),200);
-			System.out.println(UserKeyJson(response,"error"));
+			
 		}
 	 else if(statusCode==404) {
 		 assertEquals(responseGet.getStatusCode(),404);
@@ -372,5 +380,55 @@ public class DietitianPost extends RestUtils {
 		}
 	}
 
+//----------------------------------PUT--------------------------------------------//
+	
+	@Given("Admin creates PUT request with valid data {string}, {int}")
+	public void admin_creates_put_request_with_valid_data(String sheetname, int rownum) throws FileNotFoundException, IOException {
+	    
+		requestPut=given().spec(requestSpecification()).body( DietitianPostdata.createdietitiandata(sheetname, rownum))
+				.header("Authorization","Bearer "+ IdHolder.token);
+	}
+	
+	@When("Admin send valid PUT {string} request with endpoint")
+	public void admin_send_valid_put_request_with_endpoint(String endpoint) {
+	   
+		if(endpoint.equalsIgnoreCase("Put_Dietitian")) {
+			
+			responsePut= requestPut.when().put(routes.getString("Put_Dietitian")+"/"+ IdHolder.dietitianID1);
+					
+			}
+	}
+	
+	@Then("Admin recieves {int} afterPost and with response body")
+	public void admin_recieves_after_post_and_with_response_body(Integer statusCode) {
+		 if(statusCode==200) 
+			{
+				assertEquals(responsePut.getStatusCode(),200);
+				
+			}
+	}
+	
+	//----------------------------------Delete--------------------------------------------//
+	
+	
+	@Given("Admin create Delete request")
+	public void admin_create_delete_request() throws FileNotFoundException {
+		reqDelete=given().log().all().spec(requestSpecification()).header("Authorization","Bearer "+ IdHolder.token);
+		
+	}
+	
+	@When("Admin send Delete {string} request with endpoint")
+	public void admin_send_delete_request_with_endpoint(String string) {
+		responseDelete=reqDelete.when().delete(routes.getString("Delete_Dietitian")+"/"+ IdHolder.dietitianID1);
 
+	}
+	
+	@Then("Admin recieves {int} afterDelete and with response body")
+	public void admin_recieves_after_delete_and_with_response_body(Integer statusCode) {
+		 if(statusCode==200) 
+			{
+				assertEquals(responseDelete.getStatusCode(),200);
+				
+			}
+	}
 }

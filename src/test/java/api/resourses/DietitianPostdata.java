@@ -50,31 +50,6 @@ public class DietitianPostdata {
 		
 	}
 	 
-	/* public static  DietitianPostPojo createdietitianInvaliddata() throws IOException {
-			
-		 DietitianPostPojo creatDietitian = new DietitianPostPojo();
-		
-		 for(int i=2; i<=3; i++)
-		 {
-			 for(int j=0; j<=10; j++)
-			 {
-				 creatDietitian.setContact_Number(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setDate_Of_Birth(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setEducation(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setEmail(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setFirst_name(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setHospital_City(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setHospital_Name(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setHospital_Pincode(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setHospital_Street(er.getCellData("DietitianPost", i, j));
-				 creatDietitian.setLast_name(er.getCellData("DietitianPost", i, j));
-				  
-			 }
-		 }
-		 
-		
-		return creatDietitian;
-		
-	}*/
+	
 	 	
 }

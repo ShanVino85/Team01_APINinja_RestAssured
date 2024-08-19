@@ -8,6 +8,6 @@ public class IdHolder {
 	public static String dietitianpass;
 	public static String dietitianToken;
 	public static String dietitianID;
-         
+	public static String dietitianID1;     
      
 }
