@@ -40,7 +40,8 @@ public class RestUtils {
 				 .addFilter(RequestLoggingFilter.logRequestTo(log))
 				 .addFilter(ResponseLoggingFilter.logResponseTo(log))
 				.setContentType(ContentType.JSON)
-				.setAccept(ContentType.JSON).build();
+				.setAccept(ContentType.JSON)
+				.build();
 		 return req;
 		}
 		return req;
