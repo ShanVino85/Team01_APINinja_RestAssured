@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import api.pojo.UserAdminLoginPojo;
 import api.utils.ExcelReader;
-//import utilities.PropertyFileReader;
+
 
 public class UserAdminLogindata {
 	

@@ -44,4 +44,9 @@ Feature: Patient Module Positive
     When Dietician send PUT http request with endpoint only valid mandatory details
     Then Dietician recieves 200 ok and with updated response body
 
+@Test07
+Scenario: Check dietician able to add new reports with vitals for existing patient with valid data	
+Given Dietician creates PUT request by entering valid data( Mandatory and additional details) into the form-data key and value fields and valid patient ID	
+When Dietician send PUT http request with endpoint by add new reports with vitals for existing patient with valid data		
+Then Dietician recieves 200 ok and with updated response body
   

@@ -38,7 +38,7 @@ public  PatientPostPojo ExcelonlyMandatorydata() throws IOException  {
 		Createpatientpost.setFoodPreference(er.getCellData("PatientPost",2,5));
 		Createpatientpost.setCuisineCategory(er.getCellData("PatientPost",2,6));
 		Createpatientpost.setDateOfBirth(er.getCellData("PatientPost",2,7));
-		//Createpatientpost.setDateOfBirth("1992-02-14");
+		
 		
 		return Createpatientpost;
 	}

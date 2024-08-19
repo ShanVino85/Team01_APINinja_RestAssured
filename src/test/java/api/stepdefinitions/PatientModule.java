@@ -177,6 +177,26 @@ public class PatientModule extends RestUtils {
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
 		asString = response.then().log().all().extract().asString();
 	}
+	
+	//=============================================Put with Vitals====================================================================================
+	
+	@Given("Dietician creates PUT request by entering valid data\\( Mandatory and additional details) into the form-data key and value fields and valid patient ID")
+	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+	    
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+	}
+
+	@When("Dietician send PUT http request with endpoint by add new reports with vitals for existing patient with valid data")
+	public void dietician_send_put_http_request_with_endpoint_by_add_new_reports_with_vitals_for_existing_patient_with_valid_data() throws IOException {
+		
+		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata() ,"application/json")
+				  .multiPart("file", file2 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT() ,"application/json")
+				  .when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+		
+		asString = response.then().log().all().extract().asString();
+	}
+
+	
 
 	
 	

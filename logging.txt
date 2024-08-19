@@ -1,20 +1,61 @@
-Request method:	DELETE
-Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient/148
+Request method:	POST
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient/380
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	patientId=148
+Path params:	patientId=380
 Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NDVAZG9tYWluLmNvbSIsImlhdCI6MTcyNDAzNDcyNiwiZXhwIjoxNzI0MDYzNTI2fQ.71YfHFiuvCZWIy_8-I1oaeCzebPzILFpmlvuVi-IwJWCTyXhNhRO5fX-9WqZ3tFJdi-T79VjLT0rIFAjldk9Mg
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTNAZG9tYWluLmNvbSIsImlhdCI6MTcyNDA5NDc1MSwiZXhwIjoxNzI0MTIzNTUxfQ.pq0GEtaGMllF1lSdcnC3VxhC7IbpLKeEVvcTHzL3BSpsslXbCZDBD8GVf1OsZL14cFQzAP4Nt1DsdXjIe5p0SQ
 				Content-Type=application/json
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-HTTP/1.1 200 
+HTTP/1.1 405 
 Server: Cowboy
-Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724039029&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=tlxFUsffUdxjWlH7DhXgYiI7I%2FrGSmFCRCa6NfgHyig%3D"}]}
-Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724039029&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=tlxFUsffUdxjWlH7DhXgYiI7I%2FrGSmFCRCa6NfgHyig%3D
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102549&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=TDxtezN%2FKznFo1fOUI6S9BJXHl71AwQBQnakYhJpLzY%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102549&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=TDxtezN%2FKznFo1fOUI6S9BJXHl71AwQBQnakYhJpLzY%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Allow: PUT, DELETE
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:29 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:29.588+00:00",
+    "status": 405,
+    "error": "Method Not Allowed",
+    "path": "/dietician/patient/380"
+}
+Request method:	GET
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient/380
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	patientId=380
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer DT05
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102549&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=TDxtezN%2FKznFo1fOUI6S9BJXHl71AwQBQnakYhJpLzY%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102549&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=TDxtezN%2FKznFo1fOUI6S9BJXHl71AwQBQnakYhJpLzY%3D
 Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
 Connection: keep-alive
 Vary: Origin
@@ -28,8 +69,334 @@ Expires: 0
 Strict-Transport-Security: max-age=31536000 ; includeSubDomains
 X-Frame-Options: DENY
 Content-Type: application/json
-Content-Length: 41
-Date: Mon, 19 Aug 2024 03:43:49 GMT
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:29 GMT
 Via: 1.1 vegur
 
-Patient with Id 148 deleted Successfully!
+{
+    "timestamp": "2024-08-19T21:22:29.988+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/patient/380"
+}
+Request method:	GET
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patie%23/380
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	patientId=380
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTNAZG9tYWluLmNvbSIsImlhdCI6MTcyNDA5NDc1MSwiZXhwIjoxNzI0MTIzNTUxfQ.pq0GEtaGMllF1lSdcnC3VxhC7IbpLKeEVvcTHzL3BSpsslXbCZDBD8GVf1OsZL14cFQzAP4Nt1DsdXjIe5p0SQ
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:29 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:30.229+00:00",
+    "status": 404,
+    "error": "Not Found",
+    "path": "/dietician/patie%23/380"
+}
+Request method:	DELETE
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/patient/380
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	patientId=380
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer 
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:29 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:30.393+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/patient/380"
+}
+Request method:	POST
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/logoutdietician
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer null
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:29 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:30.552+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/logoutdietician"
+}
+Request method:	GET
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/logoutdietician
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer 
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:30 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:30.715+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/logoutdietician"
+}
+Request method:	POST
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/logoutdietician
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NTNAZG9tYWluLmNvbSIsImlhdCI6MTcyNDA5NDc1MSwiZXhwIjoxNzI0MTIzNTUxfQ.pq0GEtaGMllF1lSdcnC3VxhC7IbpLKeEVvcTHzL3BSpsslXbCZDBD8GVf1OsZL14cFQzAP4Nt1DsdXjIe5p0SQ
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 405 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102550&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=R6sbRRIPHnKqm9i2pKAH2hToWqrVQ3a1Hfif%2F37UVrA%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Allow: GET
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:30 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:30.868+00:00",
+    "status": 405,
+    "error": "Method Not Allowed",
+    "path": "/dietician/logoutdietician"
+}
+Request method:	GET
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/logoutdietician
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer 
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102551&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=fqketLSRwIvRrETHZrrbsijmNAQH%2F6axjHL23k3SrFU%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102551&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=fqketLSRwIvRrETHZrrbsijmNAQH%2F6axjHL23k3SrFU%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:30 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:31.041+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/logoutdietician"
+}
+Request method:	POST
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/logoutdietician
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtMS5hZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MjQwNzE0NDksImV4cCI6MTcyNDEwMDI0OX0.uqxtXdll53VIZl1MzsAWcvxYhOsLaVBX0EhX8lZn7vMsY7OKZKp3FElgsmZzv7Hemg1zRyTGNPZD2jiGUj7oHg
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102551&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=fqketLSRwIvRrETHZrrbsijmNAQH%2F6axjHL23k3SrFU%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102551&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=fqketLSRwIvRrETHZrrbsijmNAQH%2F6axjHL23k3SrFU%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:30 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:31.186+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/logoutdietician"
+}
+Request method:	GET
+Request URI:	https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/logoutdietician
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Authorization=Bearer 
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1724102551&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=fqketLSRwIvRrETHZrrbsijmNAQH%2F6axjHL23k3SrFU%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1724102551&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=fqketLSRwIvRrETHZrrbsijmNAQH%2F6axjHL23k3SrFU%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 19 Aug 2024 21:22:30 GMT
+Via: 1.1 vegur
+
+{
+    "timestamp": "2024-08-19T21:22:31.339+00:00",
+    "status": 401,
+    "error": "Unauthorized",
+    "path": "/dietician/logoutdietician"
+}
