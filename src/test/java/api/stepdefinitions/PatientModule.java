@@ -13,13 +13,17 @@ import static org.junit.Assert.assertEquals;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import api.resourses.*;
 import api.utils.IdHolder;
 import api.utils.RestUtils;
-//import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class PatientModule extends RestUtils {
-	
+	Logger logger = LogManager.getLogger("PatientModule.java");
 	PatientPostdata PatientPostdata= new PatientPostdata(); 
 	RequestSpecification request;
 	ResponseSpecification responseSpec;
@@ -50,6 +54,8 @@ public class PatientModule extends RestUtils {
 	public void dietician_send_post_http_request_with_endpoint() throws IOException {
 	
 		//asString = response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/PatientModule/PostreqPatient.json")).log().all().extract().asString();
+		
+		logger.info("===========POST Patient creation  with endpoint=====================  ");
 		
 		response = request.contentType("multipart/form-data").multiPart("patientInfo", PatientPostdata.ExcelValiddata(),"application/json")
 		  .multiPart("file", file2 ,"application/pdf").when().post(routes.getString("Post_Createpatient"));
@@ -87,6 +93,7 @@ public class PatientModule extends RestUtils {
 				
 				IdHolder.patientId2 =  UserKeyJson(response,"patientId");
 				  System.out.println("patientId ="  +IdHolder.patientId2);
+				  logger.info("===========POST Patient request with valid mandatory details=====================  ");
 	}
 	
 	
@@ -101,7 +108,7 @@ public class PatientModule extends RestUtils {
 
 	@When("User send Patient POST HTTP request with endpoint")
 	public void user_send_patient_post_http_request_with_endpoint() {
-	   
+		logger.info("===========POST Patient Token creation=====================  ");
 		 response = request
 				 .when().post(routes.getString("Post_UserPatientLoginurl")).then()
 				// .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/UserModule/PostPatient.json"))
@@ -134,7 +141,7 @@ public class PatientModule extends RestUtils {
 					
 					asString = response.then().log().all().extract().asString();
 			
-		    
+					logger.info("===========Put Patient with valid mandatory details=====================  ");
 		}
 	
 	//-----------------------------------Patient PUT request with valid data(Add pdf file)--------------------------------------//
@@ -151,6 +158,7 @@ public class PatientModule extends RestUtils {
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.ValiddataAddPdfPUT() ,"application/json")
 				  .multiPart("file", file1 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
 		asString = response.then().log().all().extract().asString();
+		logger.info("===========Put Patient by entering valid data=====================  ");
 	}
 
 	@Then("Dietician recieves {int} ok and with updated response body")
@@ -176,6 +184,8 @@ public class PatientModule extends RestUtils {
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.ExistingpdffilePUT() ,"application/json")
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
 		asString = response.then().log().all().extract().asString();
+		
+		logger.info("===========Put Patient with existing file by not attaching new file=====================  ");
 	}
 	
 	//=============================================Put with Vitals====================================================================================
@@ -194,6 +204,8 @@ public class PatientModule extends RestUtils {
 				  .when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
 		
 		asString = response.then().log().all().extract().asString();
+		
+		logger.info("===========Put Patient with Vitals=====================  ");
 	}
 
 	
@@ -237,6 +249,8 @@ public class PatientModule extends RestUtils {
 				  .when().post(routes.getString("Post_Createpatient"));
 				
 				asString = response.then().log().all().extract().asString();
+				
+				logger.info("===========Post Patient by valid additional details Negative =====================  ");
 	}
 
 	@Then("Dietician recieves {int} Bad request")
@@ -258,6 +272,7 @@ public class PatientModule extends RestUtils {
 				
 				String errorMessage =  UserKeyJson(response,"errorMessage");
 				  System.out.println("errorMessage ="  + errorMessage);
+				  logger.info("===========Post Patient by invalid mandatory details Negative =====================  ");
 	}
 
 	@Given("Dietician creates POST request only by invalid additional details into the form-data key and value fields.")
@@ -274,6 +289,7 @@ public class PatientModule extends RestUtils {
 				
 				String errorMessage =  UserKeyJson(response,"errorMessage");
 				  System.out.println("errorMessage ="  + errorMessage);
+				  logger.info("===========Post Patient by invalid additional details Negative =====================  ");
 	}
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields.")
@@ -289,6 +305,8 @@ public class PatientModule extends RestUtils {
 				asString = response.then().log().all().extract().asString();
 				String error =  UserKeyJson(response,"errorMessage");
 				  System.out.println("errorMessage ="  + error);
+				  
+				  logger.info("===========Post Patient by invalid Method Negative =====================  ");
 	}
 
 	@Then("Dietician recieves {int} method not allowed")
@@ -309,6 +327,8 @@ public class PatientModule extends RestUtils {
 				asString = response.then().log().all().extract().asString();
 				String error =  UserKeyJson(response,"errorMessage");
 				  System.out.println("errorMessage ="  + error);
+				  
+				  logger.info("===========Post Patient by invalid Enpoint Negative =====================  ");
 	}
 
 	@Then("Dietician recieves {int} not found")
@@ -329,6 +349,8 @@ public class PatientModule extends RestUtils {
 				asString = response.then().log().all().extract().asString();
 				String error =  UserKeyJson(response,"errorMessage");
 				  System.out.println("errorMessage ="  + error);
+				  
+				  logger.info("===========Post Patient by invalid content type Negative =====================  ");
 	}
 
 	@Then("Dietician recieves {int} unsupported media type")
@@ -344,6 +366,7 @@ public class PatientModule extends RestUtils {
 	@Given("Dietician creates POST request by entering valid data into the form-data key and value fields and sets no auth")
 	public void dietician_creates_post_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_sets_no_auth() throws FileNotFoundException {
 		request = given().spec(requestSpecification()).header("Authorization", "Bearer ");
+		 logger.info("===========Post Patient with no auth Negative =====================  ");
 	}
 
 	@Then("Dietician recieves {int} unauthorized")
@@ -362,6 +385,7 @@ public class PatientModule extends RestUtils {
 				  .multiPart("file", file2 ,"application/pdf").when().post(routes.getString("Post_Createpatient"));
 				
 				asString = response.then().log().all().extract().asString();
+				logger.info("===========Post Patient with Admin Token Negative =====================  ");
 	}
 
 	@Then("Admin recieves {int} forbidden")
@@ -380,6 +404,8 @@ public class PatientModule extends RestUtils {
 				  .multiPart("file", file2 ,"application/pdf").when().post(routes.getString("Post_Createpatient"));
 				
 				asString = response.then().log().all().extract().asString();
+				
+				logger.info("===========Post Patient with Patient Token Negative =====================  ");
 	}
 
 	@Then("Patient recieves {int} forbidden")
@@ -401,6 +427,8 @@ public class PatientModule extends RestUtils {
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.onlyaddfieldPUTNeg() ,"application/json")
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
 		asString = response.then().log().all().extract().asString();
+		
+		logger.info("===========Put Patient by mandatory fields empty and only valid additional details Negative =====================  ");
 	}
 
 	@Given("Dietician creates PUT request by entering only invalid additional details into the form-data key and value fields.")
@@ -417,6 +445,8 @@ public class PatientModule extends RestUtils {
 		
 		String error =  UserKeyJson(response,"errorMessage");
 		  System.out.println("errorMessage ="  + error);
+		  
+		  logger.info("===========Put Patient only invalid additional details Negative =====================  ");
 	}
 
 	@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields with invalid patient id")
@@ -432,6 +462,7 @@ public class PatientModule extends RestUtils {
 		
 		String error =  UserKeyJson(response,"errorMessage");
 		  System.out.println("errorMessage ="  + error);
+		  logger.info("===========Put Patient by valid data and invalid patient id Negative =====================  ");
 	}
 	
 	@Given("Dietician create PUT request by entering valid data into the form-data key and value fields")
@@ -447,6 +478,8 @@ public class PatientModule extends RestUtils {
 		
 		String error =  UserKeyJson(response,"error");
 		  System.out.println("errorMessage ="  + error);
+		  
+		  logger.info("===========Put Patient by entering valid data invalid method Negative =====================  ");
 	}
 
 
@@ -457,7 +490,7 @@ public class PatientModule extends RestUtils {
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_invalidUpdatePatient"));
 		asString = response.then().log().all().extract().asString();
 		
-		
+		 logger.info("===========Put Patient with invalid endpoint Negative =====================  ");
 	}
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields and invalid content type")
@@ -474,6 +507,7 @@ public class PatientModule extends RestUtils {
 		
 		String error =  UserKeyJson(response,"error");
 		  System.out.println("errorMessage ="  + error);
+		  logger.info("===========Put Patient with invalid content type Negative =====================  ");
 	}
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields and sets no auth")
@@ -486,6 +520,8 @@ public class PatientModule extends RestUtils {
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.onlyinvalidaddfieldPUTNeg() ,"application/json")
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
 		asString = response.then().log().all().extract().asString();
+		
+		 logger.info("===========Put Patient sets no auth Negative =====================  ");
 	}
 
 	@Given("Admin creates PUT request by entering valid data into the form-data key and value fields.")
@@ -498,6 +534,8 @@ public class PatientModule extends RestUtils {
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.onlyinvalidaddfieldPUTNeg() ,"application/json")
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_invalidUpdatePatient"));
 		asString = response.then().log().all().extract().asString();
+		
+		 logger.info("===========Put Patient sets Admintoken Negative =====================  ");
 	}
 
 	@Given("Patient creates PUT request by entering valid data into the form-data key and value fields.")
@@ -510,6 +548,8 @@ public class PatientModule extends RestUtils {
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.onlyinvalidaddfieldPUTNeg() ,"application/json")
 				  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_invalidUpdatePatient"));
 		asString = response.then().log().all().extract().asString();
+		
+		logger.info("===========Put Patient sets Patienttoken Negative =====================  ");
 	}
 
 //=========================================================Patient Token creation Negative==============================================================
@@ -526,6 +566,8 @@ public class PatientModule extends RestUtils {
 				 .log().all().extract().response();
 		String error =  UserKeyJson(response,"errorCode");
 		  System.out.println("errorMessage ="  + error);
+		  
+		  logger.info("===========Patient token creation with invalid credential Negative =====================  ");
 	}
 
 	@Then("Patient recieves {int} unauthorized")
@@ -544,6 +586,7 @@ public class PatientModule extends RestUtils {
 		response = request
 				 .when().get(routes.getString("Post_UserPatientLoginurl")).then()
 				 .log().all().extract().response();
+		 logger.info("===========Patient token creation with invalid Method Negative =====================  ");
 	}
 
 	@Then("Patient recieves {int} method not allowed")
@@ -555,6 +598,8 @@ public class PatientModule extends RestUtils {
 	public void patient_creates_post_request_with_request_body() throws FileNotFoundException {
 		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.patientEmail) );
+		
+		 logger.info("===========Patient token creation with invalid Enpoint Negative =====================  ");
 	}
 
 	@When("Patient send POST HTTP request with invalid endpoint")
@@ -573,6 +618,8 @@ public class PatientModule extends RestUtils {
 	public void patient_creates_post_request_with_request_body_and_invalid_content_type() throws FileNotFoundException {
 		request=given().spec(requestSpecification()).contentType(ContentType.HTML).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.patientEmail) );
+		
+		 logger.info("===========Patient token creation with invalid content type Negative =====================  ");
 	}
 
 	@When("Patient send POST HTTP request with invalid content type endpoint")
