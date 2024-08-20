@@ -47,6 +47,21 @@ public class RestUtils {
 		return req;
 	}
 	
+public RequestSpecification requestSpecificationInvaliddata() throws FileNotFoundException {
+		
+		if(req==null)
+		{
+		PrintStream log=new PrintStream (new FileOutputStream("logging.txt"));
+		 req=new RequestSpecBuilder().setBaseUri(routes.getString("base_url"))
+				 .addFilter(RequestLoggingFilter.logRequestTo(log))
+				 .addFilter(ResponseLoggingFilter.logResponseTo(log))
+				.addHeader("Content-Type", "abc")
+				.build();
+		 return req;
+		}
+		return req;
+	}
+	
 	public ResponseSpecification resSpecBuilder() {
 		 resSpec = new ResponseSpecBuilder()
 				.expectContentType(ContentType.JSON)
