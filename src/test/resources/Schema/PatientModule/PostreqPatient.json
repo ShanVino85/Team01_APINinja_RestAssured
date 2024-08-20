@@ -29,7 +29,7 @@
     "FileMorbidity": {
       "type": "object",
       "properties": {
-        "66bfa472a956ef1c566738e3": {
+        "^[0-9]{10}$": {
           "type": "object",
           "properties": {
             "T4": {
@@ -46,18 +46,18 @@
         }
       },
       "required": [
-        "66bfa472a956ef1c566738e3"
+        "^[0-9]{10}$"
       ]
     },
     "FileMorbidityCondition": {
       "type": "object",
       "properties": {
-        "66bfa472a956ef1c566738e3": {
+        "^[0-9]{10}$": {
           "type": "string"
         }
       },
       "required": [
-        "66bfa472a956ef1c566738e3"
+        "^[0-9]{10}$"
       ]
     },
     "DateOfBirth": {
@@ -69,7 +69,7 @@
     "Vitals": {
       "type": "object",
       "properties": {
-        "66bfa472a956ef1c566738e3": {
+       "^[0-9]{10}$": {
           "type": "object",
           "properties": {
             "Weight": {
@@ -98,7 +98,7 @@
         }
       },
       "required": [
-        "66bfa472a956ef1c566738e3"
+        "^[0-9]{10}$"
       ]
     },
     "LastVisitDate": {
