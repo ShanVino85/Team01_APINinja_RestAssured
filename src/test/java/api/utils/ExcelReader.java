@@ -1,11 +1,15 @@
 package api.utils;
 
-
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import org.apache.poi.ss.usermodel.CellType;
+
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -48,11 +52,9 @@ public class ExcelReader {
 		fi.close();
 		return data;
 	}
-	
-	
-	
-	
-public static Map<String, String> getTestData(String sheetname, int rownum) {
+
+
+	public static Map<String, String> getTestData(String sheetname, int rownum) {
 		
 		Map<String, String> ioMap1 = new HashMap<>();
 		ioMap1.clear();
@@ -84,9 +86,5 @@ public static Map<String, String> getTestData(String sheetname, int rownum) {
 		}
 		return ioMap1;
 	}
-	
-	
-	
-
 	
 }
