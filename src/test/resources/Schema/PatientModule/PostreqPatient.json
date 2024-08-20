@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "patientId": {
+      "type": "integer"
+    },
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "ContactNumber": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Allergy": {
+      "type": "string"
+    },
+    "FoodPreference": {
+      "type": "string"
+    },
+    "CuisineCategory": {
+      "type": "string"
+    },
+    "FileMorbidity": {
+      "type": "object",
+      "properties": {
+        "66bfa472a956ef1c566738e3": {
+          "type": "object",
+          "properties": {
+            "T4": {
+              "type": "string"
+            },
+            "TSH": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "T4",
+            "TSH"
+          ]
+        }
+      },
+      "required": [
+        "66bfa472a956ef1c566738e3"
+      ]
+    },
+    "FileMorbidityCondition": {
+      "type": "object",
+      "properties": {
+        "66bfa472a956ef1c566738e3": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "66bfa472a956ef1c566738e3"
+      ]
+    },
+    "DateOfBirth": {
+      "type": "string"
+    },
+    "DieticianId": {
+      "type": "integer"
+    },
+    "Vitals": {
+      "type": "object",
+      "properties": {
+        "66bfa472a956ef1c566738e3": {
+          "type": "object",
+          "properties": {
+            "Weight": {
+              "type": "number"
+            },
+            "Height": {
+              "type": "number"
+            },
+            "Temperature": {
+              "type": "number"
+            },
+            "SP": {
+              "type": "integer"
+            },
+            "DP": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "Weight",
+            "Height",
+            "Temperature",
+            "SP",
+            "DP"
+          ]
+        }
+      },
+      "required": [
+        "66bfa472a956ef1c566738e3"
+      ]
+    },
+    "LastVisitDate": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patientId",
+    "FirstName",
+    "LastName",
+    "ContactNumber",
+    "Email",
+    "Allergy",
+    "FoodPreference",
+    "CuisineCategory",
+    "FileMorbidity",
+    "FileMorbidityCondition",
+    "DateOfBirth",
+    "DieticianId",
+    "Vitals",
+    "LastVisitDate"
+  ]
+}
