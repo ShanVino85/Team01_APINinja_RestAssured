@@ -389,16 +389,36 @@ public class DietitianPost extends RestUtils {
 				.header("Authorization","Bearer "+ IdHolder.token);
 	}
 	
+	
 	@When("Admin send valid PUT {string} request with endpoint")
 	public void admin_send_valid_put_request_with_endpoint(String endpoint) {
 	   
-		if(endpoint.equalsIgnoreCase("Put_Dietitian")) {
-			
-			responsePut= requestPut.when().put(routes.getString("Put_Dietitian")+"/"+ IdHolder.dietitianID1);
+		responsePut= requestPut.when().put(routes.getString("Put_Dietitian")+"/"+ IdHolder.dietitianID1);
 					
-			}
+		}
+	
+	//-----------------------------Negative-----------------------------//
+	@When("Admin send valid PUT {string} request with {string}")
+	public void admin_send_valid_put_request_with(String Put_Dietitian, String ID) {
+		responsePut= requestPut.when().put(routes.getString("Put_Dietitian")+"/"+ ID);
+		
 	}
 	
+	@When("Admin send valid POST {string} request with")
+	public void admin_send_valid_post_request_with(String string) {
+		responsePut= requestPut.when().post(routes.getString("Put_Dietitian")+"/"+ IdHolder.dietitianID1);
+		
+	}
+	@When("Admin send valid PUT {string} request with")
+	public void admin_send_valid_put_request_with(String string) {
+	    
+		responsePut= requestPut.when().put(routes.getString("Put_DietitianInvalidEndpoint")+"/"+ IdHolder.dietitianID1);
+		
+	}
+
+
+	 //-----------------------------Response body validation based on status code_PUT Request--------------------------//
+
 	@Then("Admin recieves {int} afterPost and with response body")
 	public void admin_recieves_after_post_and_with_response_body(Integer statusCode) {
 		 if(statusCode==200) 
@@ -406,7 +426,28 @@ public class DietitianPost extends RestUtils {
 				assertEquals(responsePut.getStatusCode(),200);
 				
 			}
-	}
+		 else if(statusCode==404) {
+			 assertEquals(responsePut.getStatusCode(),404);
+			 System.out.println(UserKeyJson(responsePut,"error"));
+		 }
+		 else if(statusCode==415)
+			{
+				assertEquals(responsePut.getStatusCode(),415);
+				System.out.println(UserKeyJson(responsePut,"error"));
+			}
+		 else if(statusCode==405)
+			{
+				assertEquals(responsePut.getStatusCode(),405);
+				System.out.println(UserKeyJson(responsePut,"error"));
+			}
+		 else if(statusCode==401)
+			{
+				assertEquals(responsePut.getStatusCode(),401);
+				System.out.println(UserKeyJson(responsePut,"error"));
+			}
+		}
+
+	
 	
 	//----------------------------------Delete--------------------------------------------//
 	
@@ -417,18 +458,66 @@ public class DietitianPost extends RestUtils {
 		
 	}
 	
+	
 	@When("Admin send Delete {string} request with endpoint")
 	public void admin_send_delete_request_with_endpoint(String string) {
 		responseDelete=reqDelete.when().delete(routes.getString("Delete_Dietitian")+"/"+ IdHolder.dietitianID1);
 
 	}
 	
+	//-----------------------------Negative-----------------------------//
+
+	@Given("Admin create Delete request with no auth")
+	public void admin_create_delete_request_with_no_auth() throws FileNotFoundException {
+		reqDelete=given().log().all().spec(requestSpecification());
+	}
+	
+	@When("Admin send POST {string} request with endpoint with DeleteRequest endpoint")
+	public void admin_send_post_request_with_endpoint_with_delete_request_endpoint(String string) {
+		responseDelete=reqDelete.when().post(routes.getString("Delete_Dietitian")+"/"+ IdHolder.dietitianID1);
+
+	}
+	
+	@When("Admin send Delete {string} request with {string}")
+	public void admin_send_delete_request_with(String string, String Id) {
+		responseDelete=reqDelete.when().delete(routes.getString("Delete_Dietitian")+"/"+ Id);
+
+	}
+	
+	@When("Admin send POST {string} request with Invalidendpoint")
+	public void admin_send_post_request_with_invalidendpoint(String string) {
+		responseDelete=reqDelete.when().delete(routes.getString("Delete_DietitianInvalidEndpoint")+"/"+ IdHolder.dietitianID1);
+	}
+	
+	
+	 //-----------------------------Response body validation based on status code_Delete Request--------------------------//
+
 	@Then("Admin recieves {int} afterDelete and with response body")
 	public void admin_recieves_after_delete_and_with_response_body(Integer statusCode) {
 		 if(statusCode==200) 
 			{
 				assertEquals(responseDelete.getStatusCode(),200);
 				
+			}
+		 
+		 else if(statusCode==404) {
+			 assertEquals(responseDelete.getStatusCode(),404);
+			 System.out.println(UserKeyJson(responseDelete,"error"));
+		 }
+		 else if(statusCode==415)
+			{
+				assertEquals(responseDelete.getStatusCode(),415);
+				System.out.println(UserKeyJson(responseDelete,"error"));
+			}
+		 else if(statusCode==405)
+			{
+				assertEquals(responseDelete.getStatusCode(),405);
+				System.out.println(UserKeyJson(responseDelete,"error"));
+			}
+		 else if(statusCode==401)
+			{
+				assertEquals(responseDelete.getStatusCode(),401);
+				System.out.println(UserKeyJson(responseDelete,"error"));
 			}
 	}
 }

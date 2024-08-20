@@ -48,7 +48,7 @@ Feature: Dietitian Negative Flow
   #Examples:
   #						|sheetname|rownum|
   #						|DietitianPost|11|
- 
+ #
   @Negative_05_Post
   Scenario Outline: Check admin able to create dietician with valid data
   Given Check admin able to create dietician with valid data with no auth "<sheetname>", <rownum>
@@ -120,3 +120,76 @@ Feature: Dietitian Negative Flow
     When Admin send GET "Get_AllDietitianByID" request with endpoint
     Then Admin recieves 401 afterGet and with response body
     
+
+@Negative_14_PUT
+  Scenario Outline: Check admin able to update dietician with invalid data and dietician id
+    Given Admin creates PUT request with valid data "<sheetname>", <rownum>
+    When Admin send valid PUT "Put_Dietitian" request with endpoint
+    Then Admin recieves 400 afterPost and with response body
+
+    Examples: 
+      | sheetname     | rownum |
+      | DietitianPut |      2 |  
+    
+ @Negative_15_PUT
+  Scenario Outline: Check admin able to update dietician with valid data and invalid dietician id
+    Given Admin creates PUT request with valid data "<sheetname>", <rownum>
+    When Admin send valid PUT "Put_Dietitian" request with "<invalidID>"
+    Then Admin recieves 400 afterPost and with response body
+
+    Examples: 
+      | sheetname     | rownum | invalidID|
+      | DietitianPut |      3 |     bhsgh4 |
+    
+  @Negative_16_PUT
+  Scenario Outline: Check admin able to update dietician with valid data, dietician id and invalid method
+    Given Admin creates PUT request with valid data "<sheetname>", <rownum>
+    When Admin send valid POST "Put_Dietitian" request with 
+    Then Admin recieves 405 afterPost and with response body
+
+    Examples: 
+      | sheetname     | rownum |
+      | DietitianPut |      4 |
+      
+ @Negative_17_PUT
+  Scenario Outline: Check admin able to update dietician with valid data, dietician id and invalid method
+    Given Admin creates PUT request with valid data "<sheetname>", <rownum>
+    When Admin send valid PUT "Put_DietitianInvalidEndpoint" request with 
+    Then Admin recieves 404 afterPost and with response body
+
+    Examples: 
+      | sheetname     | rownum |
+      | DietitianPut |      5 |    
+      
+   @Negative_18_Delete
+   Scenario: Check admin able to delete dietician by ID
+    Given Admin create Delete request with no auth
+    When Admin send Delete "Delete_Dietitian" request with endpoint
+    Then Admin recieves 401 afterDelete and with response body  
+    
+   @Negative_19_Delete
+   Scenario: Check admin able to delete dietician by id with invalid method
+    Given Admin create Delete request
+    When Admin send POST "Delete_Dietitian" request with endpoint with DeleteRequest endpoint
+    Then Admin recieves 405 afterDelete and with response body
+    
+    @Negative_20_Delete
+   Scenario Outline: Check admin able to delete dietician by invalid id
+    Given Admin create Delete request
+    When Admin send Delete "Delete_Dietitian" request with "<invalidID>"
+    Then Admin recieves 404 afterDelete and with response body
+    
+    Examples: 
+      | invalidID| 
+      | bjbj8 |  
+      
+   @Negative_21_Delete
+   Scenario: Check admin able to delete dietician by id with invalid endpoint
+    Given Admin create Delete request
+    When Admin send POST "Delete_DietitianInvalidEndpoint" request with Invalidendpoint 
+    Then Admin recieves 404 afterDelete and with response body
+   
+   
+   
+   
+      

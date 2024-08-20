@@ -17,20 +17,20 @@ Feature: Dietitian Positive Flow
     Given Admin creates POST request and get the token
     When Admin send POST "Post_UserDieticianLoginurl" request with endpoint
     Then Admin  receives dietician token
-#
-  #@Positive_03_Get
-  #Scenario: Check admin able to retrieve all dietician
-    #Given Admin create GET request
-    #When Admin send GET "Get_AllDietitian" request with endpoint
-    #Then Admin recieves 200 afterGet and with response body
-#
-  #@Positive_04_Get
-  #Scenario: Check admin able to retrieve dietician by ID
-    #Given Admin create GET request
-    #When Admin send GET "Get_AllDietitianByID" request with endpoint
-    #Then Admin recieves 200 afterGet and with response body
-    #
-    #
+
+  @Positive_03_Get
+  Scenario: Check admin able to retrieve all dietician
+    Given Admin create GET request
+    When Admin send GET "Get_AllDietitian" request with endpoint
+    Then Admin recieves 200 afterGet and with response body
+
+  @Positive_04_Get
+  Scenario: Check admin able to retrieve dietician by ID
+    Given Admin create GET request
+    When Admin send GET "Get_AllDietitianByID" request with endpoint
+    Then Admin recieves 200 afterGet and with response body
+    
+    
   @Positive_05_Put
   Scenario Outline: Check admin able to update dietician with valid data , dietician id and token
     Given Admin creates PUT request with valid data "<sheetname>", <rownum>
@@ -48,6 +48,4 @@ Feature: Dietitian Positive Flow
     When Admin send Delete "Delete_Dietitian" request with endpoint
     Then Admin recieves 200 afterDelete and with response body
     
-    
-    
-    
+ 
