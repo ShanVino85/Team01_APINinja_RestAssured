@@ -1,9 +1,12 @@
 package api.resourses;
 
 import java.io.IOException;
+//import java.util.List;
+//import java.util.Map;
 
 import api.pojo.UserAdminLoginPojo;
 import api.utils.ExcelReader;
+
 
 public class UserAdminLogindata {
 	
@@ -17,6 +20,16 @@ public class UserAdminLogindata {
 	dl.setUserLoginEmail(er.getCellData("AdminLogin", 1, 1));
 	
 	return dl;
+}
+	
+ public static  UserAdminLoginPojo invaliddataBuild() throws IOException {
+		
+	 UserAdminLoginPojo d2 = new UserAdminLoginPojo();
+	
+	d2.setPassword(er.getCellData("AdminLogin", 2, 0));
+	d2.setUserLoginEmail(er.getCellData("AdminLogin", 2, 1));
+	
+	return d2;
 }
  
  

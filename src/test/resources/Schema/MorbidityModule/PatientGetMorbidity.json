@@ -1,0 +1,59 @@
+
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "fileId": {
+        "type": "string"
+      },
+      "fileName": {
+        "type": "string"
+      },
+      "uploadDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "morbidConditions": {
+        "type": "object",
+        "properties": {
+          "T3": {
+            "type": "string"
+          },
+          "T4": {
+            "type": "string"
+          },
+          "TSH": {
+            "type": "string"
+          }
+        },
+        "required": ["T3", "T4", "TSH"]
+      },
+      "vitals": {
+        "type": "object",
+        "properties": {
+          "Weight": {
+            "type": "number"
+          },
+          "Height": {
+            "type": "number"
+          },
+          "Temperature": {
+            "type": "number"
+          },
+          "SP": {
+            "type": "integer"
+          },
+          "DP": {
+            "type": "integer"
+          }
+        },
+        "required": ["Weight", "Height", "Temperature", "SP", "DP"]
+      },
+      "morbidConditionStr": {
+        "type": "string"
+      }
+    },
+    "required": ["fileId", "fileName", "uploadDate", "morbidConditions", "vitals", "morbidConditionStr"]
+  }
+}
