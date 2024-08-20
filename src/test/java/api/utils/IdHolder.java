@@ -2,6 +2,7 @@ package api.utils;
 
 public class IdHolder {
 
+
 	public static String Admintoken;
 	public static String DieticianId;
 	public static String Dieticiantoken;
@@ -9,6 +10,13 @@ public class IdHolder {
 	public static String patientId2;
 	public static String patientEmail;
 	public static String Patienttoken;
+   public static String testName; 
+	 public static String FileID;
+	 
+	
+	 
+	 
+
 	
 
 	
