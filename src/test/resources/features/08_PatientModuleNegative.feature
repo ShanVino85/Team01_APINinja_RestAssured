@@ -150,8 +150,8 @@ Feature: Patient Module Negative
     Given Patient creates Post request with request body and invalid content type.
     When Patient send POST HTTP request with invalid content type endpoint
     Then Patient recieves 415 unsupported media type
-    
-    #Patient Module Putrequest Negative
+
+  #Patient Module Putrequest Negative
   # Scenario 1: No Authorization
   @Test13
   Scenario: Check dietician unable to add new reports with no authorization
@@ -245,6 +245,7 @@ Feature: Patient Module Negative
     When Dietician sends GET HTTP request to the invalid endpoint
     Then Dietician receives 404 Not Found
 
+
     # Negative Scenario of Get request with Morbidity details
 @Test01
   Scenario: Check dietician able to retrieve patients morbidity details by patient ID
@@ -311,3 +312,4 @@ Feature: Patient Module Negative
     
     
     
+

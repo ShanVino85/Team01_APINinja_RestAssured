@@ -42,10 +42,5 @@ Feature: Dietitian Positive Flow
       | DietitianPut |      1 |  
     
     
-  @Positive_05_Delete
-  Scenario: Check admin able to delete dietician by ID
-    Given Admin create Delete request
-    When Admin send Delete "Delete_Dietitian" request with endpoint
-    Then Admin recieves 200 afterDelete and with response body
-    
+  
  

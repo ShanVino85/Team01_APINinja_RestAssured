@@ -31,7 +31,7 @@ public class DeleteandLogoutModules extends RestUtils {
 	//========================================================Patient Logout==================================================================
 		@Given("patient creates GET request")
 		public void patient_creates_get_request() throws FileNotFoundException {
-			request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+			request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 		}
 
 		@When("patient send GET HTTP request with endpoint")
@@ -51,7 +51,7 @@ public class DeleteandLogoutModules extends RestUtils {
 	@Given("Dietician create DELETE request")
 	public void dietician_create_delete_request() throws FileNotFoundException {
 		
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send DELETE http request with endpoint")
@@ -106,7 +106,7 @@ public class DeleteandLogoutModules extends RestUtils {
 	
 	@Given("Dietician create POST request")
 	public void dietician_create_post_request() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send POST http to delete patient by id request with endpoint")
@@ -189,7 +189,7 @@ public class DeleteandLogoutModules extends RestUtils {
 
 	@Given("dietician creates POST request")
 	public void dietician_creates_post_request() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 		
 		
 	}

@@ -55,7 +55,7 @@ public class DietitianPost extends RestUtils {
 	public void admin_creates_post_request_with_valid_data(String sheetname, int rownum) throws FileNotFoundException, IOException {
     
 		request=given().spec(requestSpecification()).body( DietitianPostdata.createdietitiandata(sheetname, rownum))
-				.header("Authorization","Bearer "+ IdHolder.token);
+				.header("Authorization","Bearer "+ IdHolder.Admintoken);
 	}
 
 	//-----------------------Positive_02_Post (Generating Dietitian Token)--------------------------//
@@ -81,7 +81,7 @@ public class DietitianPost extends RestUtils {
 	@Given("Admin creates POST request with invalid additional details {string}, {int}")
 	public void admin_creates_post_request_with_invalid_additional_details(String sheetname, int rownum) throws FileNotFoundException, IOException {
 	reqNegative=given().spec(requestSpecification()).body( DietitianPostdata.createdietitiandata(sheetname, rownum))
-				.header("Authorization","Bearer "+ IdHolder.token);
+				.header("Authorization","Bearer "+ IdHolder.Admintoken);
 	}
 	//--------------------------Negative_04_Post(Invalid Content type)-----------------------------//
 	
@@ -89,7 +89,7 @@ public class DietitianPost extends RestUtils {
 	public void admin_creates_post_request_with_valid_data_and_invalid_content_type(String sheetname, int rownum) throws FileNotFoundException, IOException {
 	  
 		reqNegative1=given().spec(requestSpecificationInvaliddata()).body( DietitianPostdata.createdietitiandata(sheetname, rownum))
-				.header("Authorization","Bearer "+ IdHolder.token);
+				.header("Authorization","Bearer "+ IdHolder.Admintoken);
 	}
 	
 	//--------------------------Negative_05_Post(Create POST request without token)-----------------------------//
@@ -296,7 +296,7 @@ public class DietitianPost extends RestUtils {
 	//----------------------------Positive_03_Get(Get dietitian)----------------------------------//
 	@Given("Admin create GET request")
 	public void admin_create_get_request() throws FileNotFoundException {
-		resGet1=given().log().all().spec(requestSpecification()).header("Authorization","Bearer "+ IdHolder.token);
+		resGet1=given().log().all().spec(requestSpecification()).header("Authorization","Bearer "+ IdHolder.Admintoken);
 		
 	}
 	
@@ -386,7 +386,7 @@ public class DietitianPost extends RestUtils {
 	public void admin_creates_put_request_with_valid_data(String sheetname, int rownum) throws FileNotFoundException, IOException {
 	    
 		requestPut=given().spec(requestSpecification()).body( DietitianPostdata.createdietitiandata(sheetname, rownum))
-				.header("Authorization","Bearer "+ IdHolder.token);
+				.header("Authorization","Bearer "+ IdHolder.Admintoken);
 	}
 	
 	
@@ -454,7 +454,7 @@ public class DietitianPost extends RestUtils {
 	
 	@Given("Admin create Delete request")
 	public void admin_create_delete_request() throws FileNotFoundException {
-		reqDelete=given().log().all().spec(requestSpecification()).header("Authorization","Bearer "+ IdHolder.token);
+		reqDelete=given().log().all().spec(requestSpecification()).header("Authorization","Bearer "+ IdHolder.Admintoken);
 		
 	}
 	

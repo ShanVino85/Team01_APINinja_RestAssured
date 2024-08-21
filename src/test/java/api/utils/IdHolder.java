@@ -4,7 +4,7 @@ public class IdHolder {
 
 public static String Admintoken;
 	public static String DieticianId;
-	public static String Dieticiantoken;
+
 	public static String patientId1;
 	public static String patientId2;
 	public static String patientEmail;

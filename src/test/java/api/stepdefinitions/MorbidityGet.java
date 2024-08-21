@@ -30,6 +30,7 @@ public class MorbidityGet extends RestUtils {
 	public void  admin_create_get_request_with_all_morbidities_details_admin_token() throws FileNotFoundException, IOException {	    
 	    request = given().spec(requestSpecification()).header("Authorization", "Bearer " + IdHolder.Admintoken);
 	}
+	
 
 	@When("admin send GET http request with all morbidities details endpoint")
 	public void  admin_send_get_http_request_with_all_morbidities_details_endpoint() {
