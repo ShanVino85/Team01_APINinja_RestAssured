@@ -6,6 +6,9 @@ import static org.junit.Assert.assertEquals;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import api.utils.IdHolder;
 import api.utils.RestUtils;
 import io.cucumber.java.en.Given;
@@ -21,6 +24,7 @@ import api.resourses.*;
 
 public class UserAdminLogin extends RestUtils {
 	
+	Logger logger = LogManager.getLogger("UserAdminLogin.java");
 	UserAdminLogindata UserLogindata= new UserAdminLogindata(); 
 	RequestSpecification request;
 	ResponseSpecification responseSpec;
@@ -40,6 +44,8 @@ public class UserAdminLogin extends RestUtils {
 			
 			IdHolder.Admintoken =  UserKeyJson(response,"token");
 			  System.out.println("Admintoken ="  +IdHolder.Admintoken);
+			  
+			  logger.info("===========Admin token creation=====================  ");
 	   
 	}
 
@@ -60,6 +66,8 @@ public class UserAdminLogin extends RestUtils {
 		response = request.when().post(routes.getString("Post_UserAdminLoginurl")).then().log().all().extract().response();
 		String error =  UserKeyJson(response,"errorCode");
 		  System.out.println("errorMessage ="  + error);
+		  
+		  logger.info("===========Admin token invalid credential Negative=====================  ");
 	}
 
 	@Then("User recieves {int} unauthorized")
@@ -77,6 +85,8 @@ public class UserAdminLogin extends RestUtils {
 		response = request.when().get(routes.getString("Post_UserAdminLoginurl")).then().log().all().extract().response();
 		String error =  UserKeyJson(response,"error");
 		  System.out.println("errorMessage ="  + error);
+		  
+		  logger.info("===========Admin token invalid Method Negative=====================  ");
 	}
 
 	@Then("User recieves {int} method not allowed")
@@ -99,8 +109,10 @@ public class UserAdminLogin extends RestUtils {
 	@When("User send POST HTTP request with invalid content type endpoint")
 	public void user_send_post_http_request_with_invalid_content_type_endpoint() {
 		response = request.when().post(routes.getString("Post_UserAdminLoginurl")).then().log().all().extract().response();
+		
+		logger.info("===========Admin token invalid content type Negative=====================  ");
 	}
-//Need to ask
+
 	@Then("User recieves {int} unsupported media type")
 	public void user_recieves_unsupported_media_type(Integer int1) {
 		assertEquals(response.getStatusCode(),415);

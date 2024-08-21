@@ -14,6 +14,12 @@ Feature: All Modules Delete and logout Modules Positive
     Given patient creates GET request
     When patient send GET HTTP request with endpoint
     Then patient recieves 200 created with Logout successful message
+    
+     @Positive_05_Delete
+  Scenario: Check admin able to delete dietician by ID
+    Given Admin create Delete request
+    When Admin send Delete "Delete_Dietitian" request with endpoint
+    Then Admin recieves 200 afterDelete and with response body
 
   #Dietician Logout/AdminToken Positive
   @Test03
@@ -28,3 +34,7 @@ Feature: All Modules Delete and logout Modules Positive
     Given Admin creates GET request
     When Admin send GET HTTP request with endpoint
     Then Admin recieves 200 created with Logout successful message
+
+    
+   
+    
