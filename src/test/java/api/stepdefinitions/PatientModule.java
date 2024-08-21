@@ -43,7 +43,7 @@ public class PatientModule extends RestUtils {
 	
 	@Given("Set dietician bearer token")
 	public void set_dietician_bearer_token() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 	
 	 //-----------------------------------Patient Post creation entering valid data(Pdf file added)--------------------------------------//
@@ -83,7 +83,7 @@ public class PatientModule extends RestUtils {
 	@Given("Dietician creates POST request only by valid mandatory details into the form-data key and value fields.")
 	public void dietician_creates_post_request_only_by_valid_mandatory_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
 	    
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 	
 	@When("Dietician send POST http request with endpoint	only with valid mandatory details")
@@ -105,7 +105,7 @@ public class PatientModule extends RestUtils {
 	@Given("User creates Patient Post request with request body")
 	public void user_creates_patient_post_request_with_request_body() throws FileNotFoundException, IOException {
 		
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.patientEmail) );
 	}
 
@@ -133,7 +133,7 @@ public class PatientModule extends RestUtils {
 		@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields No Pdf add.")
 		public void dietician_creates_put_request_by_entering_only_valid_mandatory_details_into_the_form_data_key_and_value_fields_No_Pdf_add() throws FileNotFoundException {
 		    
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 		}
 
 		@When("Dietician send PUT http request with endpoint only valid mandatory details No Pdf add")
@@ -152,7 +152,7 @@ public class PatientModule extends RestUtils {
 	@Given("Dietician creates PUT request by entering valid data. \\( Mandatory and additional details) into the form-data key and value fields Add pdf file.")
 	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields_Add_pdf_file() throws FileNotFoundException {
 		
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send PUT http request with endpoint with valid data Add pdf file")
@@ -178,7 +178,7 @@ public class PatientModule extends RestUtils {
 	@Given("Dietician creates PUT request by not attaching any file into the form-data key and value fields.")
 	public void dietician_creates_put_request_by_not_attaching_any_file_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
 	   
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send PUT http request with endpoint with existing file by not attaching new file")
@@ -196,7 +196,7 @@ public class PatientModule extends RestUtils {
 	@Given("Dietician creates PUT request by entering valid data\\( Mandatory and additional details) into the form-data key and value fields and valid patient ID")
 	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
 	    
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 	}
 
 	@When("Dietician send PUT http request with endpoint by add new reports with vitals for existing patient with valid data")
@@ -219,7 +219,7 @@ public class PatientModule extends RestUtils {
 
 	/*@Given("Patient create GET request")
 	public void patient_create_get_request() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId);
 	}
 
 	@When("Patient send GET http request with endpoint")
@@ -242,7 +242,7 @@ public class PatientModule extends RestUtils {
 	
 	@Given("Dietician creates POST request only by valid additional details into the form-data key and value fields.")
 	public void dietician_creates_post_request_only_by_valid_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@When("Dietician send POST http request with endpoint only for valid additional details")
@@ -263,7 +263,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates POST request only by invalid mandatory details into the form-data key and value fields.")
 	public void dietician_creates_post_request_only_by_invalid_mandatory_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@When("Dietician send POST http request with endpoint only for invalid mandatory details")
@@ -280,7 +280,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates POST request only by invalid additional details into the form-data key and value fields.")
 	public void dietician_creates_post_request_only_by_invalid_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@When("Dietician send POST http request with endpoint for valid mandatory fields and invalid additional details")
@@ -297,7 +297,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields.")
 	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@When("Dietician send PUT http request with endpoint")
@@ -319,7 +319,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates POST request by entering valid data into the form-data key and value fields.")
 	public void dietician_creates_post_request_by_entering_valid_data_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@When("Dietician sent POST http request with invalid endpoint")
@@ -341,7 +341,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates POST request by entering valid data into the form-data key and value fields and invalid content type")
 	public void dietician_creates_post_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_invalid_content_type() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@When("Dietician send POST http request with endpoint and invalid content type")
@@ -363,7 +363,7 @@ public class PatientModule extends RestUtils {
 	
 	@Given("Dietician creates POST request by entering Existing data into the form-data key and value fields")
 	public void dietician_creates_post_request_by_entering_existing_data_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 	}
 
 	@Given("Dietician creates POST request by entering valid data into the form-data key and value fields and sets no auth")
@@ -421,7 +421,7 @@ public class PatientModule extends RestUtils {
 	@Given("Dietician creates PUT request by entering only valid additional details into the form-data key and value fields.")
 	public void dietician_creates_put_request_by_entering_only_valid_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
 		
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send PUT http request with endpoint by mandatory fields empty  only valid additional details")
@@ -436,7 +436,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates PUT request by entering only invalid additional details into the form-data key and value fields.")
 	public void dietician_creates_put_request_by_entering_only_invalid_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send PUT http request with endpoint by only invalid additional details")
@@ -454,7 +454,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields with invalid patient id")
 	public void dietician_creates_put_request_by_entering_only_valid_mandatory_details_into_the_form_data_key_and_value_fields_with_invalid_patient_id() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.invalidpatientId);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.invalidpatientId);
 	}
 
 	@When("Dietician send PUT http request with endpoint by valid data and invalid patient id")
@@ -470,7 +470,7 @@ public class PatientModule extends RestUtils {
 	
 	@Given("Dietician create PUT request by entering valid data into the form-data key and value fields")
 	public void dietician_create_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 	
 	@When("Dietician send POST http request with endpoint entering valid data invalid method")
@@ -498,7 +498,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields and invalid content type")
 	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_invalid_content_type() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send PUT http request with endpoint and invalid content type")
@@ -558,7 +558,7 @@ public class PatientModule extends RestUtils {
 //=========================================================Patient Token creation Negative==============================================================
 	@Given("Patient creates Post request with invalid credential")
 	public void patient_creates_post_request_with_invalid_credential() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.invalidpatientEmail) );
 	}
 
@@ -580,7 +580,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Patient creates GET request with request body.")
 	public void patient_creates_get_request_with_request_body() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.patientEmail) );
 	}
 
@@ -599,7 +599,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Patient creates Post request with request body.")
 	public void patient_creates_post_request_with_request_body() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.patientEmail) );
 		
 		 logger.info("===========Patient token creation with invalid Enpoint Negative =====================  ");
@@ -619,7 +619,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Patient creates Post request with request body and invalid content type.")
 	public void patient_creates_post_request_with_request_body_and_invalid_content_type() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).contentType(ContentType.HTML).header("Authorization", "Bearer "+IdHolder.Dieticiantoken)
+		request=given().spec(requestSpecification()).contentType(ContentType.HTML).header("Authorization", "Bearer "+IdHolder.dietitianToken)
 				.body(PatientPostdata.Patienttokencreation(IdHolder.patientEmail) );
 		
 		 logger.info("===========Patient token creation with invalid content type Negative =====================  ");
@@ -643,7 +643,7 @@ public class PatientModule extends RestUtils {
 			@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields.")
 			public void dietician_creates_put_request_by_entering_only_valid_mandatory_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
 			    
-				request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+				request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 			}
 
 			@When("Dietician send PUT http request with endpoint only valid mandatory details")
@@ -662,7 +662,7 @@ public class PatientModule extends RestUtils {
 		@Given("Dietician creates PUT request by entering valid data. \\( Mandatory and additional details) into the form-data key and value fields.")
 		public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
 			
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 		}
 
 		@When("Dietician send PUT http request with endpoint with valid data")
@@ -686,7 +686,7 @@ public class PatientModule extends RestUtils {
 		@Given("Dietician creates PUT request by not attaching any file into the form-data key and value fields with valid data.")
 		public void dietician_creates_put_request_by_not_attaching_any_file_into_the_form_data_key_and_value_fields_with_valid_data() throws FileNotFoundException {
 		   
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 		}
 
 		@When("Dietician send PUT http request with endpoint with existing file by not attaching new file with valid data")
@@ -702,7 +702,7 @@ public class PatientModule extends RestUtils {
 
 		/*@Given("Patient create GET request")
 		public void patient_create_get_request() throws FileNotFoundException {
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId);
 		}
 
 		@When("Patient send GET http request with endpoint")
@@ -724,7 +724,7 @@ public class PatientModule extends RestUtils {
 
 //	@Given("Dietician creates PUT request by entering valid data\\( Mandatory and additional details) into the form-data key and value fields and valid patient ID")
 //	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
-//		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+//		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 //
 //	}
 //
@@ -742,7 +742,7 @@ public class PatientModule extends RestUtils {
 	//----------- Dietician Adding Reports without Vitals
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields except valid vitals data and valid patient ID")
 	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_except_valid_vitals_data_and_valid_patient_id() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 	}
 
 	@When("Dietician send PUT http request  to the endpoint with valid patient ID")
@@ -761,7 +761,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields except file and valid patient ID")
 	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_except_file_and_valid_patient_id() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 	}
 
 	@When("Dietician sends PUT HTTP request to the endpoint with valid patient ID")
@@ -778,7 +778,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields except file and valid patient ID without reports for existing patient without existing report")
 	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_except_file_and_valid_patient_id_without_reports_for_existing_patient_without_existing_report() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 
 	}
 
@@ -791,7 +791,7 @@ public class PatientModule extends RestUtils {
 	//---------------Dietician Adding Reports with Mandatory Details Only
 	@Given("Dietician creates PUT request by entering valid data \\(Mandatory only) into the form-data key and value fields and valid patient ID")
 	public void dietician_creates_put_request_by_entering_valid_data_mandatory_only_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 
 	}
 
@@ -804,7 +804,7 @@ public class PatientModule extends RestUtils {
 	//-----------------Dietician Adding Reports with Additional Details Only
 	@Given("Dietician creates PUT request by entering valid data \\(Additional details only) into the form-data key and value fields and valid patient ID")
 	public void dietician_creates_put_request_by_entering_valid_data_additional_details_only_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 
 	}
 
@@ -818,7 +818,7 @@ public class PatientModule extends RestUtils {
 
 	@Given("Dietician creates GET request to the endpoint")
 	public void dietician_creates_get_request_to_the_endpoint() throws FileNotFoundException {
-		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken);
 
 	}
 
@@ -963,7 +963,7 @@ public class PatientModule extends RestUtils {
 		
 		@Given("Dietician creates PUT request by entering invalid data \\(Additional details only) into the form-data key and value fields and valid patient ID")
 		public void dietician_creates_put_request_by_entering_invalid_data_additional_details_only_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 
 		}
 
@@ -982,7 +982,7 @@ public class PatientModule extends RestUtils {
 		
 		@Given("Dietician creates PUT request by entering valid data \\(Additional details only) into the form-data key and value fields and invalid patient ID")
 		public void dietician_creates_put_request_by_entering_valid_data_additional_details_only_into_the_form_data_key_and_value_fields_and_invalid_patient_id() throws FileNotFoundException {
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.invalidpatientId);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.invalidpatientId);
 
 		}
 
@@ -996,7 +996,7 @@ public class PatientModule extends RestUtils {
 		//------------ Dietician Using Invalid Method
 		@Given("Dietician creates POST request by entering valid data into the form-data key and value fields and valid patient ID")
 		public void dietician_creates_post_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 
 		}
 
@@ -1019,7 +1019,7 @@ public class PatientModule extends RestUtils {
 		//------------Dietician Using Invalid Content Type
 		@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID with invalid content type")
 		public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id_with_invalid_content_type() throws FileNotFoundException {
-			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
 
 		}
 
@@ -1312,7 +1312,7 @@ public class PatientModule extends RestUtils {
 
 
 
-	}
+	
 
 
 
