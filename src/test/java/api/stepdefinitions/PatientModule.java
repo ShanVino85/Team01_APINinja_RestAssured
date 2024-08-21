@@ -127,14 +127,14 @@ public class PatientModule extends RestUtils {
 	//-----------------------------------Patient PUT request entering only valid mandatory details(No Pdf added)--------------------------------------//
 
 	
-		@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields.")
-		public void dietician_creates_put_request_by_entering_only_valid_mandatory_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
+		@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields No Pdf add.")
+		public void dietician_creates_put_request_by_entering_only_valid_mandatory_details_into_the_form_data_key_and_value_fields_No_Pdf_add() throws FileNotFoundException {
 		    
 			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
 		}
 
-		@When("Dietician send PUT http request with endpoint only valid mandatory details")
-		public void dietician_send_put_http_request_with_endpoint_only_valid_mandatory_details() throws IOException {
+		@When("Dietician send PUT http request with endpoint only valid mandatory details No Pdf add")
+		public void dietician_send_put_http_request_with_endpoint_only_valid_mandatory_details_No_Pdf_add() throws IOException {
 			
 			response = request.contentType("multipart/form-data").multiPart("patientInfo", PatientPutdata.ExcelMandatorydataPUT(),"application/json")
 					.multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
@@ -146,14 +146,14 @@ public class PatientModule extends RestUtils {
 	
 	//-----------------------------------Patient PUT request with valid data(Add pdf file)--------------------------------------//
 
-	@Given("Dietician creates PUT request by entering valid data. \\( Mandatory and additional details) into the form-data key and value fields.")
-	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
+	@Given("Dietician creates PUT request by entering valid data. \\( Mandatory and additional details) into the form-data key and value fields Add pdf file.")
+	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields_Add_pdf_file() throws FileNotFoundException {
 		
 		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
 	}
 
-	@When("Dietician send PUT http request with endpoint with valid data")
-	public void dietician_send_put_http_request_with_endpoint_with_valid_data() throws IOException {
+	@When("Dietician send PUT http request with endpoint with valid data Add pdf file")
+	public void dietician_send_put_http_request_with_endpoint_with_valid_data_Add_pdf_file() throws IOException {
 	   
 		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.ValiddataAddPdfPUT() ,"application/json")
 				  .multiPart("file", file1 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
@@ -161,8 +161,8 @@ public class PatientModule extends RestUtils {
 		logger.info("===========Put Patient by entering valid data=====================  ");
 	}
 
-	@Then("Dietician recieves {int} ok and with updated response body")
-	public void dietician_recieves_ok_and_with_updated_response_body(Integer int1) {
+	@Then("Dietician recieves {int} ok  with updated response body")
+	public void dietician_recieves_ok_with_updated_response_body(Integer int1) {
 		
 		assertEquals(response.getStatusCode(),200);
 	}
@@ -634,6 +634,413 @@ public class PatientModule extends RestUtils {
 		assertEquals(response.getStatusCode(),415);
 	}
 
+	//-----------------------------------Patient PUT request entering only valid mandatory details(No Pdf added)--------------------------------------//
+
+	
+			@Given("Dietician creates PUT request by entering only valid mandatory details into the form-data key and value fields.")
+			public void dietician_creates_put_request_by_entering_only_valid_mandatory_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
+			    
+				request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+			}
+
+			@When("Dietician send PUT http request with endpoint only valid mandatory details")
+			public void dietician_send_put_http_request_with_endpoint_only_valid_mandatory_details() throws IOException {
+				
+				response = request.contentType("multipart/form-data").multiPart("patientInfo", PatientPutdata.ExcelMandatorydataPUT(),"application/json")
+						  .when().put(routes.getString("Put_UpdatePatient"));
+						
+						asString = response.then().log().all().extract().asString();
+				
+			    
+			}
+		
+		//-----------------------------------Patient PUT request with valid data(Add pdf file)--------------------------------------//
+
+		@Given("Dietician creates PUT request by entering valid data. \\( Mandatory and additional details) into the form-data key and value fields.")
+		public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields() throws FileNotFoundException {
+			
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+		}
+
+		@When("Dietician send PUT http request with endpoint with valid data")
+		public void dietician_send_put_http_request_with_endpoint_with_valid_data() throws IOException {
+		   
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.ValiddataAddPdfPUT() ,"application/json")
+					  .multiPart("file", file1 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
+		}
+
+		@Then("Dietician recieves {int} ok and with updated response body")
+		public void dietician_recieves_ok_and_with_updated_response_body(Integer int1) {
+			
+			assertEquals(response.getStatusCode(),200);
+		}
 
 
-}
+		
+
+		//-----------------------------------Patient PUT request with existing file by not attaching new file(using valid data)--------------------------------------//
+		
+		@Given("Dietician creates PUT request by not attaching any file into the form-data key and value fields with valid data.")
+		public void dietician_creates_put_request_by_not_attaching_any_file_into_the_form_data_key_and_value_fields_with_valid_data() throws FileNotFoundException {
+		   
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+		}
+
+		@When("Dietician send PUT http request with endpoint with existing file by not attaching new file with valid data")
+		public void dietician_send_put_http_request_with_endpoint_with_existing_file_by_not_attaching_new_file_with_valid_data() throws IOException {
+		   
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.ExistingpdffilePUT() ,"application/json")
+					  .multiPart("file", file2 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
+		}
+
+		
+		
+		//----------------------------------GET Request---------------------------------//
+
+		/*@Given("Patient create GET request")
+		public void patient_create_get_request() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId);
+		}
+
+		@When("Patient send GET http request with endpoint")
+		public void patient_send_get_http_request_with_endpoint() {
+			response = request.when().get(routes.getString("Get_GetPatientsMorbidityDetails")).then()
+					 .log().all().extract().response();
+			
+			IdHolder.fileIds =  UserKeyJson(response,"fileId");
+			  System.out.println("fileIds ="  +IdHolder.fileIds);
+		}
+
+		@Then("Patient recieves {int} ok with details of the patient id")
+		public void patient_recieves_ok_with_details_of_the_patient_id(Integer int1) {
+			assertEquals(response.getStatusCode(),200);
+		}*/
+		
+		//--------------------------- Put Operation [Add New Reports with/without Vitals for existing Patient]-------------------
+	//-----------------------------------	dietician able to add new reports with vitals
+
+//	@Given("Dietician creates PUT request by entering valid data\\( Mandatory and additional details) into the form-data key and value fields and valid patient ID")
+//	public void dietician_creates_put_request_by_entering_valid_data_mandatory_and_additional_details_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+//		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+//
+//	}
+//
+//	@When("Dietician send PUT http request with endpoint")
+//	public void dietician_send_put_http_request_with_endpoint() throws IOException {
+//		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+//				  .multiPart("file", file2 ,"application/pdf").multiPart("vitals",PatientPutVitals.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+//	}
+
+	@Then("Dietician recieves {int} ok and with updated response body.")
+	public void dietician_recieves_ok_and_with_updated_response_body2(Integer int1) {
+		assertEquals(response.getStatusCode(),200);
+	}
+
+	//----------- Dietician Adding Reports without Vitals
+	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields except valid vitals data and valid patient ID")
+	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_except_valid_vitals_data_and_valid_patient_id() throws FileNotFoundException {
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+	}
+
+	@When("Dietician send PUT http request  to the endpoint with valid patient ID")
+	public void dietician_send_put_http_request_to_the_endpoint_with_valid_patient_id() throws IOException {
+		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPutdata.ExistingpdffilePUT() ,"application/json")
+				  .multiPart("file", file1 ,"application/pdf").when().put(routes.getString("Put_UpdatePatient"));
+	;
+	}
+
+	@Then("Dietician recieves {int} ok and with updated response body contains updated details")
+	public void dietician_recieves_ok_and_with_updated_response_body_contains_updated_details(Integer int1) {
+		assertEquals(response.getStatusCode(),200);
+	}
+
+	//-----------------------Dietician Adding Only Vitals with Report
+
+	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields except file and valid patient ID")
+	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_except_file_and_valid_patient_id() throws FileNotFoundException {
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+	}
+
+	@When("Dietician sends PUT HTTP request to the endpoint with valid patient ID")
+	public void dietician_sends_put_http_request_to_the_endpoint_with_valid_patient_id() throws IOException {
+		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+				  .multiPart("file", file2 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.ModifyvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+	}
+
+	@Then("Dietician receives {int} OK and the response body contains updated details")
+	public void dietician_receives_ok_and_the_response_body_contains_updated_details(Integer int1) {
+		assertEquals(response.getStatusCode(),200);
+	}
+	//---------------Dietician Adding Only Vitals without Report
+
+	@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields except file and valid patient ID without reports for existing patient without existing report")
+	public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_except_file_and_valid_patient_id_without_reports_for_existing_patient_without_existing_report() throws FileNotFoundException {
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+
+	}
+
+	@When("Dietician sends PUT HTTP request to the endpoint with valid patient ID without reports for existing patient without existing report")
+	public void dietician_sends_put_http_request_to_the_endpoint_with_valid_patient_id_without_reports_for_existing_patient_without_existing_report() throws IOException {
+		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+				  .multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+
+	}
+	//---------------Dietician Adding Reports with Mandatory Details Only
+	@Given("Dietician creates PUT request by entering valid data \\(Mandatory only) into the form-data key and value fields and valid patient ID")
+	public void dietician_creates_put_request_by_entering_valid_data_mandatory_only_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId2);
+
+	}
+
+	@When("Dietician sends PUT HTTP request to the endpoint with valid patient ID add new reports with only valid mandatory details")
+	public void dietician_sends_put_http_request_to_the_endpoint_with_valid_patient_id_add_new_reports_with_only_valid_mandatory_details() throws IOException {
+		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+				  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+	}
+
+	//-----------------Dietician Adding Reports with Additional Details Only
+	@Given("Dietician creates PUT request by entering valid data \\(Additional details only) into the form-data key and value fields and valid patient ID")
+	public void dietician_creates_put_request_by_entering_valid_data_additional_details_only_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+
+	}
+
+	@When("Dietician sends PUT HTTP request to the endpoint with valid patient ID add new reports with only valid additional details")
+	public void dietician_sends_put_http_request_to_the_endpoint_with_valid_patient_id_add_new_reports_with_only_valid_additional_details() throws IOException {
+		response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelValiddata(),"application/json")
+				  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+	}
+
+	//----------Feature: Get Operation [Get all Patients]
+
+	@Given("Dietician creates GET request to the endpoint")
+	public void dietician_creates_get_request_to_the_endpoint() throws FileNotFoundException {
+		request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken);
+
+	}
+
+	@When("Dietician sends GET HTTP request to the endpoint with dietician bearer token")
+	public void dietician_sends_get_http_request_to_the_endpoint_with_dietician_bearer_token() throws IOException {
+		response = request.when().get(routes.getString("Get_GetallPatients")).then().log().all().extract().response();
+	}
+
+	@Then("Dietician receives {int} OK with response body containing patient details")
+	public void dietician_receives_ok_with_response_body_containing_patient_details(Integer int1) {
+		assertEquals(response.getStatusCode(),200);
+	}
+		
+	//---------------{Get All Patients Negative} No Authorization 	
+		@Given("Dietician creates GET request to the endpoint with no authorization")
+		public void dietician_creates_get_request_to_the_endpoint_with_no_authorization() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer ");
+		}
+
+		@When("Dietician sends GET HTTP request to the endpoint with no authorization")
+		public void dietician_sends_get_http_request_to_the_endpoint_with_no_authorization() {
+			response = request.when().get(routes.getString("Get_GetallPatients")).then().log().all().extract().response();
+		}
+
+		@Then("Dietician receives {int} Unauthorized")
+		public void dietician_receives_unauthorized(Integer int1) {
+			assertEquals(response.getStatusCode(),401);
+		}
+		//-------------Admin Token
+		@Given("Admin creates GET request to the endpoint")
+		public void admin_creates_get_request_to_the_endpoint() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Admintoken);
+
+		}
+
+		@When("Admin sends GET HTTP request to the endpoint with admin bearer token")
+		public void admin_sends_get_http_request_to_the_endpoint_with_admin_bearer_token() {
+			response = request.when().get(routes.getString("Get_GetallPatients")).then().log().all().extract().response();
+		}
+
+		@Then("Admin receives {int} Forbidden")
+		public void admin_receives_forbidden(Integer int1) {
+			assertEquals(response.getStatusCode(),403);
+		}
+		
+		//-----------Patient Token
+		@Given("Patient creates GET request to the endpoint")
+		public void patient_creates_get_request_to_the_endpoint() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Patienttoken);
+
+		}
+
+		@When("Patient sends GET HTTP request to the endpoint with patient bearer token")
+		public void patient_sends_get_http_request_to_the_endpoint_with_patient_bearer_token() {
+			response = request.when().get(routes.getString("Get_GetallPatients")).then().log().all().extract().response();
+
+		}
+
+		@Then("Patient receives {int} Forbidden")
+		public void patient_receives_forbidden(Integer int1) {
+		    // Write code here that turns the phrase above into concrete actions
+			assertEquals(response.getStatusCode(),403);
+		}
+		
+		//-----Invalid Method
+		@Given("Dietician creates PUT request to the endpoint")
+		public void dietician_creates_put_request_to_the_endpoint() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Patienttoken);
+
+		}
+
+		@When("Dietician sends PUT HTTP request to the endpoint with valid data")
+		public void dietician_sends_put_http_request_to_the_endpoint_with_valid_data() {
+			response = request.when().put(routes.getString("Get_GetallPatients")).then().log().all().extract().response();
+
+		}
+
+		@Then("Dietician receives {int} Method Not Allowed")
+		public void dietician_receives_method_not_allowed(Integer int1) {
+			assertEquals(response.getStatusCode(),405);
+		}
+		
+		//----Invalid Endpoint
+		@Given("Dietician creates GET request to an invalid endpoint")
+		public void dietician_creates_get_request_to_an_invalid_endpoint() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Patienttoken);
+
+		}
+
+		@When("Dietician sends GET HTTP request to the invalid endpoint")
+		public void dietician_sends_get_http_request_to_the_invalid_endpoint() {
+			response = request.when().put(routes.getString("Get_InvalidGetallPatients")).then().log().all().extract().response();
+
+		}
+
+		@Then("Dietician receives {int} Not Found")
+		public void dietician_receives_not_found(Integer int1) {
+			assertEquals(response.getStatusCode(),404);
+		}
+		
+		//-----------Patient Module Putrequest Negative------ No Authorization
+		@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID")
+		public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer ");
+
+		}
+
+		@When("Dietician sends PUT HTTP request to the endpoint with no authorization")
+		public void dietician_sends_put_http_request_to_the_endpoint_with_no_authorization() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+
+		}
+	//---------------Admin Token
+		@Given("Admin creates PUT request by entering valid data into the form-data key and value fields and valid patient ID")
+		public void admin_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Admintoken);
+
+		}
+
+		@When("Admin sends PUT HTTP request to the endpoint with admin bearer token")
+		public void admin_sends_put_http_request_to_the_endpoint_with_admin_bearer_token() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+
+		}
+	//----------------Patient Token
+		@Given("Patient creates PUT request by entering valid data into the form-data key and value fields and valid patient ID")
+		public void patient_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Patienttoken);
+
+		}
+
+		@When("Patient sends PUT HTTP request to the endpoint with patient bearer token")
+		public void patient_sends_put_http_request_to_the_endpoint_with_patient_bearer_token() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.ExcelonlyMandatorydata(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+
+		}
+
+	   // ------------- Dietician Adding Reports with Invalid Data
+		
+		@Given("Dietician creates PUT request by entering invalid data \\(Additional details only) into the form-data key and value fields and valid patient ID")
+		public void dietician_creates_put_request_by_entering_invalid_data_additional_details_only_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+
+		}
+
+		@When("Dietician sends PUT HTTP request to the endpoint with valid patient ID and  with invalid data")
+		public void dietician_sends_put_http_request_to_the_endpoint_with_valid_patient_id_and_with_invalid_data() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.onlyinvalidMandatorydataNeg(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+		}
+
+		@Then("Dietician receives {int} Bad Request")
+		public void dietician_receives_bad_request(Integer int1) {
+			assertEquals(response.getStatusCode(),404);
+		}
+		
+		//-----------Dietician Adding Reports with Invalid Patient ID
+		
+		@Given("Dietician creates PUT request by entering valid data \\(Additional details only) into the form-data key and value fields and invalid patient ID")
+		public void dietician_creates_put_request_by_entering_valid_data_additional_details_only_into_the_form_data_key_and_value_fields_and_invalid_patient_id() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.invalidpatientId);
+
+		}
+
+		@When("Dietician sends PUT HTTP request to the endpoint with invalid patient ID as path parameter")
+		public void dietician_sends_put_http_request_to_the_endpoint_with_invalid_patient_id_as_path_parameter() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.onlyinvalidMandatorydataNeg(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json").when().put(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+
+		}
+		
+		//------------ Dietician Using Invalid Method
+		@Given("Dietician creates POST request by entering valid data into the form-data key and value fields and valid patient ID")
+		public void dietician_creates_post_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+
+		}
+
+		@When("Dietician sends POST HTTP request to the endpoint and add new reports using POST method")
+		public void dietician_sends_post_http_request_to_the_endpoint_and_add_new_reports_using_post_method() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.onlyinvalidMandatorydataNeg(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json")
+					  .when().post(routes.getString("Put_Updatepatientwithvital/withoutvitals"));
+
+		}
+		
+		//-----------Dietician Using Invalid Endpoint
+		@When("Dietician sends PUT HTTP request to an invalid endpoint and unable to add new reports")
+		public void dietician_sends_put_http_request_to_an_invalid_endpoint_and_unable_to_add_new_reports() throws IOException {
+			response = request.contentType("multipart/form-data").multiPart("patientInfo",PatientPostdata.onlyinvalidMandatorydataNeg(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json")
+					  .when().put(routes.getString("Put_invalidUpdatePatient"));
+		}
+		
+		//------------Dietician Using Invalid Content Type
+		@Given("Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID with invalid content type")
+		public void dietician_creates_put_request_by_entering_valid_data_into_the_form_data_key_and_value_fields_and_valid_patient_id_with_invalid_content_type() throws FileNotFoundException {
+			request=given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.Dieticiantoken).pathParam("patientId", IdHolder.patientId1);
+
+		}
+
+		@When("Dietician sends PUT HTTP request to the endpoint and  invalid content type")
+		public void dietician_sends_put_http_request_to_the_endpoint_and_invalid_content_type() throws IOException {
+			response = request.contentType("application/pdf").multiPart("patientInfo",PatientPostdata.onlyinvalidMandatorydataNeg(),"application/json")
+					  .multiPart("file", file1 ,"application/pdf").multiPart("vitals",PatientPutVitalsdata.AddPdfAddvitalsPUT(),"application/json")
+					  .when().put(routes.getString("Put_invalidUpdatePatient"));
+		}
+
+		@Then("Dietician receives {int} Unsupported Media Type")
+		public void dietician_receives_unsupported_media_type(Integer int1) {
+			assertEquals(response.getStatusCode(),415);
+		}
+
+
+
+	}
+
+
+
+
+
+
+
+
+
