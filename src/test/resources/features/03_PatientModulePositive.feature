@@ -49,4 +49,56 @@ Scenario: Check dietician able to add new reports with vitals for existing patie
 Given Dietician creates PUT request by entering valid data( Mandatory and additional details) into the form-data key and value fields and valid patient ID	
 When Dietician send PUT http request with endpoint by add new reports with vitals for existing patient with valid data		
 Then Dietician recieves 200 ok and with updated response body
+
+ # Put Operation [Add New Reports with/without Vitals for existing Patient]
+  # Scenario : Dietician Adding Only Vitals without Report
+  #@Test07
+  #Scenario: Check dietician able to add only new vitals without reports for existing patient without existing report
+    #Given Dietician creates PUT request by entering valid data into the form-data key and value fields except file and valid patient ID without reports for existing patient without existing report
+    #When Dietician sends PUT HTTP request to the endpoint with valid patient ID without reports for existing patient without existing report
+    #Then Dietician receives 200 OK and the response body contains updated details
+
+  # Scenario : Dietician Adding Reports with Mandatory Details Only
+  @Test08
+  Scenario: Check dietician able to add new reports with only valid mandatory details for existing patient
+    Given Dietician creates PUT request by entering valid data (Mandatory only) into the form-data key and value fields and valid patient ID
+    When Dietician sends PUT HTTP request to the endpoint with valid patient ID add new reports with only valid mandatory details
+    Then Dietician receives 200 OK and the response body contains updated details
+
+  # Scenario : Dietician Adding Reports with Vitals
+  @Test09
+  Scenario: Check dietician able to add new reports with vitals for existing patient with valid data
+    Given Dietician creates PUT request by entering valid data( Mandatory and additional details) into the form-data key and value fields and valid patient ID
+    When Dietician send PUT http request with endpoint
+    Then Dietician recieves 200 ok and with updated response body
+
+  # Scenario : Dietician Adding Reports without Vitals
+  @Test10
+  Scenario: Check dietician able to add new reports without vitals for existing patient with valid data
+    Given Dietician creates PUT request by entering valid data into the form-data key and value fields except valid vitals data and valid patient ID
+    When Dietician send PUT http request  to the endpoint with valid patient ID
+    Then Dietician recieves 200 ok and with updated response body contains updated details
+
+  # Scenario : Dietician Adding Only Vitals with Report
+  @Test11
+  Scenario: Check dietician able to add only new vitals without reports for existing patient with existing report
+    Given Dietician creates PUT request by entering valid data into the form-data key and value fields except file and valid patient ID
+    When Dietician sends PUT HTTP request to the endpoint with valid patient ID
+    Then Dietician receives 200 OK and the response body contains updated details
+
+  # Scenario : Dietician Adding Reports with Additional Details Only
+  @Test12
+  Scenario: Check dietician able to add new reports with only valid additional details for existing patient
+    Given Dietician creates PUT request by entering valid data (Additional details only) into the form-data key and value fields and valid patient ID
+    When Dietician sends PUT HTTP request to the endpoint with valid patient ID add new reports with only valid additional details
+    Then Dietician receives 200 OK and the response body contains updated details
+
+  #Feature: Get Operation [Get all Patients]
+  # Scenario : Dietician Token
+  @Test13
+  Scenario: Check dietician able to retrieve all patients with valid dietician token
+    Given Dietician creates GET request to the endpoint
+    When Dietician sends GET HTTP request to the endpoint with dietician bearer token
+    Then Dietician receives 200 OK with response body containing patient details
+
   
