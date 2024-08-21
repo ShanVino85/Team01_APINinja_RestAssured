@@ -150,3 +150,98 @@ Feature: Patient Module Negative
     Given Patient creates Post request with request body and invalid content type.
     When Patient send POST HTTP request with invalid content type endpoint
     Then Patient recieves 415 unsupported media type
+    
+    #Patient Module Putrequest Negative
+  # Scenario 1: No Authorization
+  @Test13
+  Scenario: Check dietician unable to add new reports with no authorization
+    Given Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
+    When Dietician sends PUT HTTP request to the endpoint with no authorization
+    Then Dietician receives 401 Unauthorized
+
+  # Scenario 2: Admin Token
+  @Test14
+  Scenario: Check admin unable to add new reports with admin bearer token
+    Given Admin creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
+    When Admin sends PUT HTTP request to the endpoint with admin bearer token
+    Then Admin receives 403 Forbidden
+
+  # Scenario 3: Patient Token
+  @Test03
+  Scenario: Check patient unable to add new reports with patient bearer token
+    Given Patient creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
+    When Patient sends PUT HTTP request to the endpoint with patient bearer token
+    Then Patient receives 403 Forbidden
+
+  # Scenario : Dietician Adding Reports with Invalid Data
+  @Test10
+  Scenario: Check dietician unable to add new reports with invalid data
+    Given Dietician creates PUT request by entering invalid data (Additional details only) into the form-data key and value fields and valid patient ID
+    When Dietician sends PUT HTTP request to the endpoint with valid patient ID and  with invalid data
+    Then Dietician receives 400 Bad Request
+
+  # Scenario 11: Dietician Adding Reports with Invalid Patient ID
+  @Test11
+  Scenario: Check dietician unable to add new reports with valid data and invalid patient ID as path parameter
+    Given Dietician creates PUT request by entering valid data (Additional details only) into the form-data key and value fields and invalid patient ID
+    When Dietician sends PUT HTTP request to the endpoint with invalid patient ID as path parameter
+    Then Dietician receives 404 Not Found
+
+  # Scenario 12: Dietician Using Invalid Method
+  @Test12
+  Scenario: Check dietician unable to add new reports using POST method instead of PUT
+    Given Dietician creates POST request by entering valid data into the form-data key and value fields and valid patient ID
+    When Dietician sends POST HTTP request to the endpoint and add new reports using POST method
+    Then Dietician receives 405 Method Not Allowed
+
+  # Scenario 13: Dietician Using Invalid Endpoint
+  @Test13
+  Scenario: Check dietician unable to add new reports using an invalid endpoint
+    Given Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
+    When Dietician sends PUT HTTP request to an invalid endpoint and unable to add new reports
+    Then Dietician receives 404 Not Found
+
+  # Scenario : Dietician Using Invalid Content Type
+  @Test14
+  Scenario: Check dietician unable to add new reports with invalid content type
+    Given Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID with invalid content type
+    When Dietician sends PUT HTTP request to the endpoint and  invalid content type
+    Then Dietician receives 415 Unsupported Media Type
+
+  #Patient Module Getrequest Negative
+  #Feature: Get Operation [Get all Patients]
+  # Scenario : No Authorization
+  @Test01
+  Scenario: Check dietician unable to retrieve all patients with no authorization
+    Given Dietician creates GET request to the endpoint with no authorization
+    When Dietician sends GET HTTP request to the endpoint with no authorization
+    Then Dietician receives 401 Unauthorized
+
+  # Scenario : Admin Token
+  @Test02
+  Scenario: Check admin unable to retrieve patients with admin bearer token
+    Given Admin creates GET request to the endpoint
+    When Admin sends GET HTTP request to the endpoint with admin bearer token
+    Then Admin receives 403 Forbidden
+
+  # Scenario : Patient Token
+  @Test03
+  Scenario: Check patient unable to retrieve patients with patient bearer token
+    Given Patient creates GET request to the endpoint
+    When Patient sends GET HTTP request to the endpoint with patient bearer token
+    Then Patient receives 403 Forbidden
+
+  # Scenario 5: Invalid Method
+  @Test05
+  Scenario: Check dietician unable to retrieve all patients with invalid HTTP method
+    Given Dietician creates PUT request to the endpoint
+    When Dietician sends PUT HTTP request to the endpoint with valid data
+    Then Dietician receives 405 Method Not Allowed
+
+  # Scenario 6: Invalid Endpoint
+  @Test06
+  Scenario: Check dietician unable to retrieve all patients with invalid endpoint
+    Given Dietician creates GET request to an invalid endpoint
+    When Dietician sends GET HTTP request to the invalid endpoint
+    Then Dietician receives 404 Not Found
+    

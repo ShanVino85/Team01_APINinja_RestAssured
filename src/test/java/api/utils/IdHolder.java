@@ -10,7 +10,7 @@ public static String Admintoken;
 	public static String patientEmail;
 	public static String Patienttoken;
         public static String testName; 
-	 public static String FileID;	
+	 public static String fileId;	
 
 
         public static String token;
