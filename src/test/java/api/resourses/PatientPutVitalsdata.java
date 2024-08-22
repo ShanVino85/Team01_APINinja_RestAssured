@@ -33,11 +33,11 @@ public static  PatientPutPojo ModifyvitalsPUT() throws IOException  {
 PatientPutPojo Createpatientput1 = new PatientPutPojo();
 
 
-Createpatientput1.setWeight(Float.parseFloat(er.getCellData("PatientPutVitals", 2, 0)));
-Createpatientput1.setHeight(Float.parseFloat(er.getCellData("PatientPutVitals", 2, 1)));
-Createpatientput1.setTemperature(Float.parseFloat(er.getCellData("PatientPutVitals", 2, 2)));
-Createpatientput1.setSP(Integer.parseInt(er.getCellData("PatientPutVitals", 2, 3)));
-Createpatientput1.setDP(Integer.parseInt(er.getCellData("PatientPutVitals", 2, 4)));
+Createpatientput1.setWeight(Float.parseFloat(er.getCellData("PatientPutVital", 2, 0)));
+Createpatientput1.setHeight(Float.parseFloat(er.getCellData("PatientPutVital", 2, 1)));
+Createpatientput1.setTemperature(Float.parseFloat(er.getCellData("PatientPutVital", 2, 2)));
+Createpatientput1.setSP(Integer.parseInt(er.getCellData("PatientPutVital", 2, 3)));
+Createpatientput1.setDP(Integer.parseInt(er.getCellData("PatientPutVital", 2, 4)));
 
 return Createpatientput1;
 }

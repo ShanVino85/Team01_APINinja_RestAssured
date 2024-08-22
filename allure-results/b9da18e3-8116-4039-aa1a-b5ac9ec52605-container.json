@@ -1,0 +1,1 @@
+{"uuid":"b9da18e3-8116-4039-aa1a-b5ac9ec52605","name":"Scenario: Check dietician able to create patient with valid data and token","children":["0fceb8e0-51dd-405d-a990-9a59479f9cd3"],"befores":[],"afters":[],"start":1724271240665,"stop":1724271242372}

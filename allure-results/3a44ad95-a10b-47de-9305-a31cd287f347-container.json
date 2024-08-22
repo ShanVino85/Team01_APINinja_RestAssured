@@ -1,0 +1,1 @@
+{"uuid":"3a44ad95-a10b-47de-9305-a31cd287f347","name":"Scenario: Check admin able to update patient with valid data and admin token","children":["3daf6dc1-a6bf-4a5e-adc9-f9cf4188524a"],"befores":[],"afters":[],"start":1724273701784,"stop":1724273702365}

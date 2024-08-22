@@ -1,0 +1,1 @@
+{"uuid":"59c76888-6ad2-44a9-9256-755552f92282","name":"Scenario: Check dietician able to retrieve all patients with valid dietician token","children":["fef9488a-c3be-4e71-9f0b-537625125e5d"],"befores":[],"afters":[],"start":1724288961002,"stop":1724288961185}

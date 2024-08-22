@@ -1,0 +1,1 @@
+{"uuid":"491f9205-3aa8-414e-9c55-bc2fe74cfe76","name":"Scenario: Check dietician able to update patient with valid data, patient id and invalid content type","children":["7b392303-9f57-4809-877d-c9730c931c03"],"befores":[],"afters":[],"start":1724288981128,"stop":1724288981554}

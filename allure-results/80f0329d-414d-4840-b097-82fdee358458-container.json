@@ -1,0 +1,1 @@
+{"uuid":"80f0329d-414d-4840-b097-82fdee358458","name":"Scenario: Check patient able to create patient with valid data and patient token","children":["f57fd14d-762e-4c7d-a7ab-80b544b006b9"],"befores":[],"afters":[],"start":1724273696885,"stop":1724273697468}

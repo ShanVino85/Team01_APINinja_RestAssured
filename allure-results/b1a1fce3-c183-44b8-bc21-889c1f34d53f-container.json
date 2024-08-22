@@ -1,0 +1,1 @@
+{"uuid":"b1a1fce3-c183-44b8-bc21-889c1f34d53f","name":"Scenario: Check admin able to retrieve all morbidities details with admin token","children":["a3840fd8-17d5-4176-a7a1-234ba3e05467"],"befores":[],"afters":[],"start":1724273686424,"stop":1724273686626}

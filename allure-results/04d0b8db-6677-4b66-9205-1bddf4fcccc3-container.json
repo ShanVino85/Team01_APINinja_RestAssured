@@ -1,0 +1,1 @@
+{"uuid":"04d0b8db-6677-4b66-9205-1bddf4fcccc3","name":"Scenario: Check admin able to retrieve dietician by ID with no auth","children":["d3af88c7-0199-4b4b-b144-6e04f84b39d6"],"befores":[],"afters":[],"start":1724288968451,"stop":1724288968771}

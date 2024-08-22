@@ -1,4 +1,4 @@
-@Positive
+@tag02
 Feature: Dietitian Positive Flow
 
   @Positive_01_Post
@@ -29,8 +29,7 @@ Feature: Dietitian Positive Flow
     Given Admin create GET request
     When Admin send GET "Get_AllDietitianByID" request with endpoint
     Then Admin recieves 200 afterGet and with response body
-    
-    
+
   @Positive_05_Put
   Scenario Outline: Check admin able to update dietician with valid data , dietician id and token
     Given Admin creates PUT request with valid data "<sheetname>", <rownum>
@@ -38,9 +37,5 @@ Feature: Dietitian Positive Flow
     Then Admin recieves 200 afterPost and with response body
 
     Examples: 
-      | sheetname     | rownum |
-      | DietitianPut |      1 |  
-    
-    
-  
- 
+      | sheetname    | rownum |
+      | DietitianPut |      1 |
