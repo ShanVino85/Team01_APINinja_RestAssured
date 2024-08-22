@@ -1,0 +1,1 @@
+{"uuid":"e34e8d3a-c5ea-470b-be57-3e1b2b7c637d","name":"Scenario: Check user able to login as admin with valid credential and invalid endpoint","children":["6df7e5fa-6850-4072-a0f8-07b491dde544"],"befores":[],"afters":[],"start":1724336222859,"stop":1724336223145}

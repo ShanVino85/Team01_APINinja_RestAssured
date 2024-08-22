@@ -1,0 +1,1 @@
+{"uuid":"dbd3eb9e-b3c1-4637-93b3-a31dcb1de8f0","name":"Scenario: Check admin able to create dietician with valid data and token","children":["d86e34e8-0934-45be-ab0a-167133abe74a"],"befores":[],"afters":[],"start":1724336212460,"stop":1724336212716}

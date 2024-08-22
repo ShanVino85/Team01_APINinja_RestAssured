@@ -1,0 +1,1 @@
+{"uuid":"551aca1f-e2c8-4fa0-8bfe-1589d02bb085","name":"Scenario: Check patient unable to retrieve patients with patient bearer token","children":["b3044e14-e551-43a9-8104-f0264721ce2f"],"befores":[],"afters":[],"start":1724333089654,"stop":1724333089790}

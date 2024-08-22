@@ -1,0 +1,1 @@
+{"uuid":"e79a97b6-c5cd-42b3-a42e-b1d07dbd559f","name":"Scenario: Check dietician able to create patient with valid data and invalid content type","children":["a86670bf-d15d-482f-a92a-ffedd35521b1"],"befores":[],"afters":[],"start":1724333078885,"stop":1724333079006}
