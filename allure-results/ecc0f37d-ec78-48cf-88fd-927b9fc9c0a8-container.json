@@ -1,0 +1,1 @@
+{"uuid":"ecc0f37d-ec78-48cf-88fd-927b9fc9c0a8","name":"Scenario: Check patient unable to add new reports with patient bearer token","children":["bbb0c15a-5432-41c7-bf6b-4e2825c50a18"],"befores":[],"afters":[],"start":1724288986372,"stop":1724288987071}

@@ -1,4 +1,4 @@
-@tag01
+@tag06
 Feature: User Admin Post Request Negative
 
   #Negative

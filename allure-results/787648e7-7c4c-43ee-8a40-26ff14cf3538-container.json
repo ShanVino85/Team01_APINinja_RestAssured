@@ -1,0 +1,1 @@
+{"uuid":"787648e7-7c4c-43ee-8a40-26ff14cf3538","name":"Scenario: Check dietician unable to retrieve all patients with invalid HTTP method","children":["3b0efb3b-eef4-462d-b0ab-9a3cdb0759f0"],"befores":[],"afters":[],"start":1724288991676,"stop":1724288991839}

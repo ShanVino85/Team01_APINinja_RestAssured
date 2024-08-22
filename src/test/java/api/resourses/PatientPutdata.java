@@ -43,7 +43,7 @@ public static  PatientPostPojo ExcelMandatorydataPUT() throws IOException  {
 		
 		return Createpatientput1;
 	}
-public static  PatientPostPojo ValiddataAddPdfPUT() throws IOException  {
+public static  PatientPostPojo ValiddataPUT() throws IOException  {
 		
 		PatientPostPojo Createpatientput1 = new PatientPostPojo();
 		

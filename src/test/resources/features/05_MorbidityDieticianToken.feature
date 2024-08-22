@@ -1,5 +1,7 @@
+@tag05
 Feature: Morbidity Module Dietician Token
 
+  #Morbidity Module using Dietician token
   @Test01
   Scenario: Check dietician able to retrieve all morbidities details
     Given Dietician create GET request with dietician token to retrieve all morbidities details

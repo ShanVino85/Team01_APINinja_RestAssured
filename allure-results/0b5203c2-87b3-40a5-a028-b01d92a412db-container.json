@@ -1,0 +1,1 @@
+{"uuid":"0b5203c2-87b3-40a5-a028-b01d92a412db","name":"Scenario: Check dietician able to add new reports with only valid mandatory details for existing patient","children":["c477b8ac-61b5-4c76-945a-1e22aa853a2c"],"befores":[],"afters":[],"start":1724269783242,"stop":1724269783779}

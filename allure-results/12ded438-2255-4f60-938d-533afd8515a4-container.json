@@ -1,0 +1,1 @@
+{"uuid":"12ded438-2255-4f60-938d-533afd8515a4","name":"Scenario: Check admin able to retrieve dietician by id with invalid endpoint","children":["a199af13-ed64-4c3a-9152-8b9f7585ce7a"],"befores":[],"afters":[],"start":1724288967938,"stop":1724288968102}

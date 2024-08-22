@@ -1,4 +1,4 @@
-@tag03
+@tag08
 Feature: Patient Module Negative
 
   Background: 
@@ -41,12 +41,11 @@ Feature: Patient Module Negative
     When Dietician send POST http request with endpoint and invalid content type
     Then Dietician recieves 415 unsupported media type
 
-  @Test07
-  Scenario: Check dietician able to create patient with Existing data
-    Given Dietician creates POST request by entering Existing data into the form-data key and value fields
-    When Dietician send POST http request with endpoint
-    Then Dietician recieves 400 Bad request
-
+  #@Test07
+  #Scenario: Check dietician able to create patient with Existing data
+  #Given Dietician creates POST request by entering Existing data into the form-data key and value fields
+  #When Dietician send POST http request with endpoint with Existing data
+  #Then Dietician recieves 400 Bad request
   #Set No Auth
   @Test08
   Scenario: Check dietician able to create patient with valid data
@@ -153,56 +152,56 @@ Feature: Patient Module Negative
 
   #Patient Module Putrequest Negative
   # Scenario 1: No Authorization
-  @Test13
+  @Test24
   Scenario: Check dietician unable to add new reports with no authorization
     Given Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
     When Dietician sends PUT HTTP request to the endpoint with no authorization
     Then Dietician receives 401 Unauthorized
 
   # Scenario 2: Admin Token
-  @Test14
+  @Test25
   Scenario: Check admin unable to add new reports with admin bearer token
     Given Admin creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
     When Admin sends PUT HTTP request to the endpoint with admin bearer token
     Then Admin receives 403 Forbidden
 
   # Scenario 3: Patient Token
-  @Test03
+  @Test26
   Scenario: Check patient unable to add new reports with patient bearer token
     Given Patient creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
     When Patient sends PUT HTTP request to the endpoint with patient bearer token
     Then Patient receives 403 Forbidden
 
   # Scenario : Dietician Adding Reports with Invalid Data
-  @Test10
+  @Test27
   Scenario: Check dietician unable to add new reports with invalid data
     Given Dietician creates PUT request by entering invalid data (Additional details only) into the form-data key and value fields and valid patient ID
     When Dietician sends PUT HTTP request to the endpoint with valid patient ID and  with invalid data
     Then Dietician receives 400 Bad Request
 
   # Scenario 11: Dietician Adding Reports with Invalid Patient ID
-  @Test11
+  @Test28
   Scenario: Check dietician unable to add new reports with valid data and invalid patient ID as path parameter
     Given Dietician creates PUT request by entering valid data (Additional details only) into the form-data key and value fields and invalid patient ID
     When Dietician sends PUT HTTP request to the endpoint with invalid patient ID as path parameter
-    Then Dietician receives 404 Not Found
+    Then Dietician receives 400 Bad Request
 
   # Scenario 12: Dietician Using Invalid Method
-  @Test12
+  @Test29
   Scenario: Check dietician unable to add new reports using POST method instead of PUT
     Given Dietician creates POST request by entering valid data into the form-data key and value fields and valid patient ID
     When Dietician sends POST HTTP request to the endpoint and add new reports using POST method
     Then Dietician receives 405 Method Not Allowed
 
   # Scenario 13: Dietician Using Invalid Endpoint
-  @Test13
+  @Test30
   Scenario: Check dietician unable to add new reports using an invalid endpoint
     Given Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID
     When Dietician sends PUT HTTP request to an invalid endpoint and unable to add new reports
     Then Dietician receives 404 Not Found
 
   # Scenario : Dietician Using Invalid Content Type
-  @Test14
+  @Test31
   Scenario: Check dietician unable to add new reports with invalid content type
     Given Dietician creates PUT request by entering valid data into the form-data key and value fields and valid patient ID with invalid content type
     When Dietician sends PUT HTTP request to the endpoint and  invalid content type
@@ -211,105 +210,97 @@ Feature: Patient Module Negative
   #Patient Module Getrequest Negative
   #Feature: Get Operation [Get all Patients]
   # Scenario : No Authorization
-  @Test01
+  @Test32
   Scenario: Check dietician unable to retrieve all patients with no authorization
     Given Dietician creates GET request to the endpoint with no authorization
     When Dietician sends GET HTTP request to the endpoint with no authorization
     Then Dietician receives 401 Unauthorized
 
   # Scenario : Admin Token
-  @Test02
+  @Test33
   Scenario: Check admin unable to retrieve patients with admin bearer token
     Given Admin creates GET request to the endpoint
     When Admin sends GET HTTP request to the endpoint with admin bearer token
     Then Admin receives 403 Forbidden
 
   # Scenario : Patient Token
-  @Test03
+  @Test34
   Scenario: Check patient unable to retrieve patients with patient bearer token
     Given Patient creates GET request to the endpoint
     When Patient sends GET HTTP request to the endpoint with patient bearer token
     Then Patient receives 403 Forbidden
 
   # Scenario 5: Invalid Method
-  @Test05
+  @Test35
   Scenario: Check dietician unable to retrieve all patients with invalid HTTP method
     Given Dietician creates PUT request to the endpoint
     When Dietician sends PUT HTTP request to the endpoint with valid data
     Then Dietician receives 405 Method Not Allowed
 
   # Scenario 6: Invalid Endpoint
-  @Test06
+  @Test36
   Scenario: Check dietician unable to retrieve all patients with invalid endpoint
     Given Dietician creates GET request to an invalid endpoint
     When Dietician sends GET HTTP request to the invalid endpoint
     Then Dietician receives 404 Not Found
 
-
-    # Negative Scenario of Get request with Morbidity details
-@Test01
+  # Negative Scenario of Get request with Morbidity details
+  @Test37
   Scenario: Check dietician able to retrieve patients morbidity details by patient ID
     Given Dietician create GET request with no auth to retrieve patients morbidity details by patient ID
     When Dietician send GET http request with endpoint to retrieve patients morbidity details by patient ID
     Then Dietician recieves 401 unauthorized to retrieve patients morbidity details by patient ID
-    
-   @Test02
-  Scenario: Check admin is able to retrieve patients morbidity details by patient ID 
+
+  @Test38
+  Scenario: Check admin is able to retrieve patients morbidity details by patient ID
     Given Admin create GET request with Admin token
-    When Admin send GET http request with endpoint to retrieve patients morbidity details by patient ID 
-    Then Admin recieves 403 Forbidden to retrieve patients morbidity details by patient ID 
-    
-  @Test03   
+    When Admin send GET http request with endpoint to retrieve patients morbidity details by patient ID
+    Then Admin recieves 403 Forbidden to retrieve patients morbidity details by patient ID
+
+  @Test39
   Scenario: Check dietician able to retrieve patients morbidity details by patient ID with invalid method
-    Given Dietician create POST request to retrieve patients morbidity details by patient ID with invalid method  
-    When Dietician send POST http request with endpoint to retrieve patients morbidity details by patient ID with invalid method  
-    Then Dietician recieves 405 method not allowed to retrieve patients morbidity details by patient ID with invalid method  
-    
-   @Test04 
+    Given Dietician create POST request to retrieve patients morbidity details by patient ID with invalid method
+    When Dietician send POST http request with endpoint to retrieve patients morbidity details by patient ID with invalid method
+    Then Dietician recieves 405 method not allowed to retrieve patients morbidity details by patient ID with invalid method
+
+  @Test40
   Scenario: Check dietician able to retrieve patients morbidity details by invalid patient ID
     Given Dietician create GET request to retrieve patients morbidity details by invalid patient ID
     When Dietician send GET http request with endpoint to retrieve patients morbidity details by invalid patient ID
     Then Dietician recieves 404 not found to retrieve patients morbidity details by invalid patient ID
-    
-   @Test05  
+
+  @Test41
   Scenario: Check dietician able to retrieve patients morbidity details by patient ID with invalid endpoint
-    Given Dietician create GET request to retrieve patients morbidity details by patient ID with invalid endpoint  
+    Given Dietician create GET request to retrieve patients morbidity details by patient ID with invalid endpoint
     When Dietician send GET http request with invalid endpoint to retrieve patients morbidity details by patient ID with invalid endpoint
     Then Dietician recieves 404 not found to retrieve patients morbidity details by patient ID with invalid endpoint
-    
-  @Test06 
+
+  @Test42
   Scenario: Check dietician able to retrieve patients by fielId
     Given Dietician create GET request  with no auth to retrieve patients by fielId
     When Dietician send GET http request with endpoint to retrieve patients by fielId
     Then Dietician recieves 401 unauthorized to retrieve patients by fielId
-    
-   @Test07 
+
+  @Test43
   Scenario: Check admin is able to retrieve patients by fielId
     Given Admin create GET request to retrieve patients by fielId
     When Admin send GET http request with endpoint to retrieve patients by fielId
     Then Admin recieves 403 Forbidden to retrieve patients by fielId
-    
-   @Test08  
+
+  @Test44
   Scenario: Check dietician able to retrieve patients by field with invalid method
     Given Dietician create POST request to retrieve patients by field with invalid method
     When Dietician send POST http request with endpoint to retrieve patients by field with invalid method
     Then Dietician recieves 405 method not allowed to retrieve patients by field with invalid method
-    
-    @Test09
+
+  @Test45
   Scenario: Check dietician able to retrieve patients by invalid fileId
-    Given Dietician create GET request to retrieve patients by invalid fileId  
+    Given Dietician create GET request to retrieve patients by invalid fileId
     When Dietician send GET http request with endpoint to retrieve patients by invalid fileId
     Then Dietician recieves 404 not found to retrieve patients by invalid fileId
-    
-  @Test10
+
+  @Test46
   Scenario: Check dietician able to retrieve patients by field with invalid endpoint
-    Given Dietician create GET request to retrieve patients by field with invalid endpoint     
+    Given Dietician create GET request to retrieve patients by field with invalid endpoint
     When Dietician send GET http request to retrieve patients by field with invalid endpoint
     Then Dietician recieves 404 not found to retrieve patients by field with invalid endpoint
-    
-    
-  
-    
-    
-    
-

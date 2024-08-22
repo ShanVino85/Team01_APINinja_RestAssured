@@ -1,0 +1,1 @@
+{"uuid":"06ad2d99-8f7d-4c05-82d6-b3be7e25ad21","name":"Scenario: Check user able to login as admin with valid credential and invalid content type","children":["4b33b707-db6d-4336-a572-ea9b1cc4c3cb"],"befores":[],"afters":[],"start":1724288964064,"stop":1724288964160}

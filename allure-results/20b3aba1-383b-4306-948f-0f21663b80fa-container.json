@@ -1,0 +1,1 @@
+{"uuid":"20b3aba1-383b-4306-948f-0f21663b80fa","name":"Scenario: Check Patient able to login as admin with valid credential and invalid endpoint","children":["612f48bc-14f1-4691-a714-d60394032c33"],"befores":[],"afters":[],"start":1724269796414,"stop":1724269796538}

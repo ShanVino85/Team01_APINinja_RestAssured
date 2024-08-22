@@ -1,0 +1,1 @@
+{"uuid":"76a51215-0af3-4a23-9051-e61d739337e4","name":"Scenario: Check admin unable to retrieve patients with admin bearer token","children":["e05b2c34-7578-47d9-8351-74ab703f6dab"],"befores":[],"afters":[],"start":1724269798274,"stop":1724269798407}

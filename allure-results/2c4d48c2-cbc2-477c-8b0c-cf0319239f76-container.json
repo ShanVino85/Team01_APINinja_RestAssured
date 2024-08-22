@@ -1,0 +1,1 @@
+{"uuid":"2c4d48c2-cbc2-477c-8b0c-cf0319239f76","name":"Scenario: Check Patient able to retrieve patients morbidity details by patient Endpoint with Patient Token","children":["89fe238e-11dd-4e01-b087-6e71aa18c850"],"befores":[],"afters":[],"start":1724271252426,"stop":1724271252627}
