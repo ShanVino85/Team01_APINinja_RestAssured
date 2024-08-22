@@ -1,0 +1,1 @@
+{"uuid":"a6ffa3eb-2dc1-4d03-88ab-184214b8b3ec","name":"Scenario Outline: Check admin able to update dietician with valid data , dietician id and token","children":["dc7369c5-501f-4856-a2b8-b534f403a1e1"],"befores":[],"afters":[],"start":1724343002278,"stop":1724343002615}

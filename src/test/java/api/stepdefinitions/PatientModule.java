@@ -39,7 +39,9 @@ public class PatientModule extends RestUtils {
 	File file2=new File("C:\\Users\\shanj\\vino-workspace\\Team01_API_Ninja\\src\\test\\resources\\Samplefile\\HyperThyroid_Report.pdf");
 	File file3=new File("C:\\Users\\shanj\\vino-workspace\\Team01_API_Ninja\\src\\test\\resources\\Samplefile\\DiabeticandHemogramTest_Thyrocarelab.pdf");
 	
-	
+	/*File file1=new File("./HypoThyroid-Report.pdf");
+	File file2=new File("./HyperThyroid_Report.pdf");
+	File file3=new File("./DiabeticandHemogramTest_Thyrocarelab.pdf");*/
 	
 	@Given("Set dietician bearer token")
 	public void set_dietician_bearer_token() throws FileNotFoundException {

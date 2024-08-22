@@ -1,0 +1,1 @@
+{"uuid":"7c1dd155-3056-4b0b-8250-357ac87d8caa","name":"Scenario: Check user able to login as Patient with valid data(Patient token)","children":["3b3f0d85-f307-497d-b128-4d8dfcef6181"],"befores":[],"afters":[],"start":1724342831096,"stop":1724342831422}

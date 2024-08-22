@@ -1,0 +1,1 @@
+{"uuid":"d801b639-c906-4a7c-bfd0-aa5c342c46ca","name":"Scenario: Check dietician unable to retrieve all patients with invalid endpoint","children":["d90d02dd-9ca0-4450-a407-23783bcd9e49"],"befores":[],"afters":[],"start":1724343038593,"stop":1724343038611}

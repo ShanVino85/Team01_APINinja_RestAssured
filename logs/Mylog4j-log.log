@@ -625,3 +625,95 @@
 [INFO ] 2024-08-22 10:17:25.900 [main] java - ===========Patient Logout=====================  
 [INFO ] 2024-08-22 10:17:26.191 [main] java - ===========Dietician Logout====================  
 [INFO ] 2024-08-22 10:17:26.343 [main] java - ===========Admin Logout====================  
+[INFO ] 2024-08-22 12:07:02.478 [main] java - ===========Admin token creation=====================  
+[INFO ] 2024-08-22 12:07:08.928 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-22 12:07:11.012 [main] java - ===========POST Patient request with valid mandatory details=====================  
+[INFO ] 2024-08-22 12:07:11.115 [main] java - ===========POST Patient Token creation=====================  
+[INFO ] 2024-08-22 12:07:13.059 [main] java - ----------admin gets all morbidity details-----------
+[INFO ] 2024-08-22 12:07:13.360 [main] java - ----------admin gets all condition bytest name-----------
+[INFO ] 2024-08-22 12:07:13.913 [main] java - ----------Dietician  gets all morbidity details by test name-----------
+[INFO ] 2024-08-22 12:07:14.522 [main] java - ===========Admin token invalid credential Negative=====================  
+[INFO ] 2024-08-22 12:07:14.999 [main] java - ===========Admin token invalid Method Negative=====================  
+[INFO ] 2024-08-22 12:07:22.651 [main] java - ===========Post Patient by valid additional details Negative =====================  
+[INFO ] 2024-08-22 12:07:27.367 [main] java - ===========Post Patient with no auth Negative =====================  
+[INFO ] 2024-08-22 12:07:27.376 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-22 12:07:32.009 [main] java - ===========Patient token creation with invalid credential Negative =====================  
+[INFO ] 2024-08-22 12:07:32.281 [main] java - ===========Patient token creation with invalid Method Negative =====================  
+[INFO ] 2024-08-22 12:07:32.324 [main] java - ===========Patient token creation with invalid Enpoint Negative =====================  
+[INFO ] 2024-08-22 12:07:32.548 [main] java - ===========Patient token creation with invalid content type Negative =====================  
+[INFO ] 2024-08-22 12:07:37.068 [main] java - ----------Dietician send get request with no auth-----------
+[INFO ] 2024-08-22 12:07:37.282 [main] java - ----------Patient  send get request to retrive all morbidities details-----------
+[INFO ] 2024-08-22 12:07:37.487 [main] java - ----------Admin  send onvalid method-----------
+[INFO ] 2024-08-22 12:07:37.655 [main] java - ----------Admin  send request with invalid endpoint-----------
+[INFO ] 2024-08-22 12:07:37.815 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-22 12:07:37.992 [main] java - ----------Dietician  send get request with invalid endpint-----------
+[INFO ] 2024-08-22 12:07:38.144 [main] java - ----------Dietician  send request with no auth -----------
+[INFO ] 2024-08-22 12:07:38.309 [main] java - ----------patient send get request with test name-----------
+[INFO ] 2024-08-22 12:07:38.463 [main] java - ----------admin  send request with invalid method-----------
+[INFO ] 2024-08-22 12:07:38.676 [main] java - ----------admin  send request with invalid testname-----------
+[INFO ] 2024-08-22 12:07:39.010 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-22 12:07:39.429 [main] java - ----------Dietician  send request with invalid test name-----------
+[INFO ] 2024-08-22 12:07:39.594 [main] java - ----------Dietician  send request with invalid endpoind-----------
+[INFO ] 2024-08-22 12:07:39.717 [main] java - ===========Delete patientid  by Patienttoken===================  
+[INFO ] 2024-08-22 12:07:39.862 [main] java - ===========Patient Logout with in valid Method===================  
+[INFO ] 2024-08-22 12:07:39.880 [main] java - ===========Patient Logout with No auth==================  
+[INFO ] 2024-08-22 12:07:40.037 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-22 12:07:40.962 [main] java - ===========Dietician Logout with invalid method==================  
+[INFO ] 2024-08-22 12:07:40.987 [main] java - ===========Dietician Logout with No auth==================  
+[INFO ] 2024-08-22 12:07:41.149 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-22 12:07:41.340 [main] java - ===========Admin Logout with invalid method==================  
+[INFO ] 2024-08-22 12:07:41.509 [main] java - ===========Admin Logout with No auth==================  
+[INFO ] 2024-08-22 12:07:41.761 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-22 12:07:42.107 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-22 12:07:42.313 [main] java - ===========Admin Logout====================  
+[INFO ] 2024-08-22 12:09:55.764 [main] java - ===========Admin token creation=====================  
+[INFO ] 2024-08-22 12:10:02.732 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-22 12:10:05.356 [main] java - ===========POST Patient request with valid mandatory details=====================  
+[INFO ] 2024-08-22 12:10:05.398 [main] java - ===========POST Patient Token creation=====================  
+[INFO ] 2024-08-22 12:10:12.182 [main] java - ----------admin gets all morbidity details-----------
+[INFO ] 2024-08-22 12:10:12.397 [main] java - ----------admin gets all condition bytest name-----------
+[INFO ] 2024-08-22 12:10:12.626 [main] java - ----------Dietician  gets all morbidity details-----------
+[INFO ] 2024-08-22 12:10:12.826 [main] java - ----------Dietician  gets all morbidity details by test name-----------
+[INFO ] 2024-08-22 12:10:13.296 [main] java - ===========Admin token invalid credential Negative=====================  
+[INFO ] 2024-08-22 12:10:13.562 [main] java - ===========Admin token invalid Method Negative=====================  
+[INFO ] 2024-08-22 12:10:19.848 [main] java - ===========Post Patient by valid additional details Negative =====================  
+[INFO ] 2024-08-22 12:10:22.877 [main] java - ===========Post Patient with no auth Negative =====================  
+[INFO ] 2024-08-22 12:10:22.879 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-22 12:10:30.757 [main] java - ===========Patient token creation with invalid credential Negative =====================  
+[INFO ] 2024-08-22 12:10:30.924 [main] java - ===========Patient token creation with invalid Method Negative =====================  
+[INFO ] 2024-08-22 12:10:30.953 [main] java - ===========Patient token creation with invalid Enpoint Negative =====================  
+[INFO ] 2024-08-22 12:10:31.127 [main] java - ===========Patient token creation with invalid content type Negative =====================  
+[INFO ] 2024-08-22 12:10:38.814 [main] java - ----------Dietician send  get  request with no auth -----------
+[INFO ] 2024-08-22 12:10:39.048 [main] java - ----------Dietician send  invalid method -----------
+[INFO ] 2024-08-22 12:10:39.372 [main] java - ----------Dietician send get request with  invalid endpoint -----------
+[INFO ] 2024-08-22 12:10:39.829 [main] java - ----------Dietician send get request with no auth-----------
+[INFO ] 2024-08-22 12:10:40.005 [main] java - ----------Patient  send get request to retrive all morbidities details-----------
+[INFO ] 2024-08-22 12:10:40.186 [main] java - ----------Admin  send onvalid method-----------
+[INFO ] 2024-08-22 12:10:40.377 [main] java - ----------Admin  send request with invalid endpoint-----------
+[INFO ] 2024-08-22 12:10:40.545 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-22 12:10:40.734 [main] java - ----------Dietician  send get request with invalid endpint-----------
+[INFO ] 2024-08-22 12:10:40.948 [main] java - ----------Dietician  send request with no auth -----------
+[INFO ] 2024-08-22 12:10:41.325 [main] java - ----------patient send get request with test name-----------
+[INFO ] 2024-08-22 12:10:41.545 [main] java - ----------admin  send request with invalid method-----------
+[INFO ] 2024-08-22 12:10:41.802 [main] java - ----------admin  send request with invalid testname-----------
+[INFO ] 2024-08-22 12:10:42.231 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-22 12:10:42.448 [main] java - ----------Dietician  send request with invalid test name-----------
+[INFO ] 2024-08-22 12:10:42.679 [main] java - ----------Dietician  send request with invalid endpoind-----------
+[INFO ] 2024-08-22 12:10:42.946 [main] java - ===========Delete patient by id with invalid method====================  
+[INFO ] 2024-08-22 12:10:43.145 [main] java - ===========Delete patientid  by invalid id====================  
+[INFO ] 2024-08-22 12:10:43.353 [main] java - ===========Delete patientid  by invalid endpoint====================  
+[INFO ] 2024-08-22 12:10:43.394 [main] java - ===========Delete patientid  by No auth====================  
+[INFO ] 2024-08-22 12:10:43.558 [main] java - ===========Delete PatientId By Dietician=====================  
+[INFO ] 2024-08-22 12:10:43.590 [main] java - ===========Delete patientid  by Patienttoken===================  
+[INFO ] 2024-08-22 12:10:43.748 [main] java - ===========Patient Logout with in valid Method===================  
+[INFO ] 2024-08-22 12:10:43.800 [main] java - ===========Patient Logout with No auth==================  
+[INFO ] 2024-08-22 12:10:43.952 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-22 12:10:45.199 [main] java - ===========Dietician Logout with invalid method==================  
+[INFO ] 2024-08-22 12:10:45.235 [main] java - ===========Dietician Logout with No auth==================  
+[INFO ] 2024-08-22 12:10:45.407 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-22 12:10:45.595 [main] java - ===========Admin Logout with invalid method==================  
+[INFO ] 2024-08-22 12:10:45.789 [main] java - ===========Admin Logout with No auth==================  
+[INFO ] 2024-08-22 12:10:45.995 [main] java - ===========Delete PatientId By Dietician=====================  
+[INFO ] 2024-08-22 12:10:46.191 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-22 12:10:46.595 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-22 12:10:46.870 [main] java - ===========Admin Logout====================  

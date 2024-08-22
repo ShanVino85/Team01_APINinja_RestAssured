@@ -1,0 +1,1 @@
+{"uuid":"a47ceff6-60b7-4d51-b9a4-f5c25ffc8a0d","name":"Scenario: Check dietician able to retrieve patients morbidity details by patient ID with invalid method","children":["9ef6a993-5be9-4018-a3bb-b1b112adc1ac"],"befores":[],"afters":[],"start":1724342856424,"stop":1724342856442}

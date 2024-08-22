@@ -1,0 +1,1 @@
+{"uuid":"686fcdac-f084-45b0-96f3-bd48c83133b6","name":"Scenario: Check admin able to retrieve all morbidities details with invalid endpoint","children":["8a8817ce-c09c-4d4b-80ec-e138b9bd70db"],"befores":[],"afters":[],"start":1724342857508,"stop":1724342857657}
