@@ -103,7 +103,7 @@ public class UserAdminLogin extends RestUtils {
 
 	@Given("User creates Post request with request body and invalid content type.")
 	public void user_creates_post_request_with_request_body_and_invalid_content_type() throws FileNotFoundException, IOException {
-		request=given().spec(requestSpecification()).contentType(ContentType.JSON).body( UserAdminLogindata.dataBuild());
+		request=given().spec(requestSpecification()).contentType(ContentType.HTML).body( UserAdminLogindata.dataBuild());
 	}
 
 	@When("User send POST HTTP request with invalid content type endpoint")

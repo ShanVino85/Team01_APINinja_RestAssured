@@ -1,0 +1,1 @@
+{"uuid":"b7faf2a2-0bcf-45a0-b6f2-b88cbefff6fd","name":"Scenario: Check admin able to delete dietician by id with invalid method","children":["560b78fa-c0d0-4ef4-b08c-93126631d1bf"],"befores":[],"afters":[],"start":1724271275390,"stop":1724271275569}

@@ -51,7 +51,7 @@ public class DeleteandLogoutModules extends RestUtils {
 	@Given("Dietician create DELETE request")
 	public void dietician_create_delete_request() throws FileNotFoundException {
 		
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 	}
 
 	@When("Dietician send DELETE http request with endpoint")
@@ -106,7 +106,7 @@ public class DeleteandLogoutModules extends RestUtils {
 	
 	@Given("Dietician create POST request")
 	public void dietician_create_post_request() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId1);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+IdHolder.dietitianToken).pathParam("patientId", IdHolder.patientId2);
 	}
 
 	@When("Dietician send POST http to delete patient by id request with endpoint")
@@ -123,7 +123,7 @@ public class DeleteandLogoutModules extends RestUtils {
 
 	@Given("Dietician create DELETE request by invalid id")
 	public void dietician_create_delete_request_by_invalid_id() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+"DT05").pathParam("patientId", IdHolder.patientId1);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer "+"DT05").pathParam("patientId", IdHolder.patientId2);
 	}
 
 	@When("Dietician send DELETE http request with endpoint by invalid id")
@@ -147,7 +147,7 @@ public class DeleteandLogoutModules extends RestUtils {
 
 	@Given("Dietician create DELETE request with no auth")
 	public void dietician_create_delete_request_with_no_auth() throws FileNotFoundException {
-		request = given().spec(requestSpecification()).header("Authorization", "Bearer ").pathParam("patientId", IdHolder.patientId1);
+		request = given().spec(requestSpecification()).header("Authorization", "Bearer ").pathParam("patientId", IdHolder.patientId2);
 		
 		logger.info("===========Delete patientid  by No auth====================  ");
 	}

@@ -221,3 +221,275 @@
 [INFO ] 2024-08-21 11:00:18.476 [main] java - ===========Patient Logout=====================  
 [INFO ] 2024-08-21 11:00:18.805 [main] java - ===========Dietician Logout====================  
 [INFO ] 2024-08-21 11:00:18.996 [main] java - ===========Admin Logout====================  
+[INFO ] 2024-08-21 15:49:34.840 [main] java - ===========Admin token creation=====================  
+[INFO ] 2024-08-21 15:49:38.560 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 15:49:40.122 [main] java - ===========POST Patient request with valid mandatory details=====================  
+[INFO ] 2024-08-21 15:49:40.155 [main] java - ===========POST Patient Token creation=====================  
+[INFO ] 2024-08-21 15:49:41.070 [main] java - ===========Put Patient with existing file by not attaching new file=====================  
+[INFO ] 2024-08-21 15:49:42.755 [main] java - ===========Put Patient with Vitals=====================  
+[INFO ] 2024-08-21 15:49:45.715 [main] java - ----------Dietician gets  morbidity details with file id -----------
+[INFO ] 2024-08-21 15:49:46.056 [main] java - ----------Dietician send  get  request  with file id -----------
+[INFO ] 2024-08-21 15:49:46.208 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 15:49:46.445 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 15:49:46.598 [main] java - ----------admin gets all morbidity details-----------
+[INFO ] 2024-08-21 15:49:46.758 [main] java - ----------admin gets all condition bytest name-----------
+[INFO ] 2024-08-21 15:49:46.918 [main] java - ----------Dietician  gets all morbidity details-----------
+[INFO ] 2024-08-21 15:49:47.063 [main] java - ----------Dietician  gets all morbidity details by test name-----------
+[INFO ] 2024-08-21 15:49:47.346 [main] java - ===========Admin token invalid credential Negative=====================  
+[INFO ] 2024-08-21 15:49:47.532 [main] java - ===========Admin token invalid Method Negative=====================  
+[INFO ] 2024-08-21 15:49:52.162 [main] java - ===========Post Patient by valid additional details Negative =====================  
+[INFO ] 2024-08-21 15:49:52.568 [main] java - ===========Post Patient by invalid mandatory details Negative =====================  
+[INFO ] 2024-08-21 15:49:52.992 [main] java - ===========Post Patient by invalid additional details Negative =====================  
+[INFO ] 2024-08-21 15:49:53.404 [main] java - ===========Post Patient by invalid Method Negative =====================  
+[INFO ] 2024-08-21 15:49:53.887 [main] java - ===========Post Patient by invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 15:49:54.021 [main] java - ===========Post Patient with no auth Negative =====================  
+[INFO ] 2024-08-21 15:49:54.021 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 15:49:54.897 [main] java - ===========Post Patient with Admin Token Negative =====================  
+[INFO ] 2024-08-21 15:49:55.298 [main] java - ===========Post Patient with Patient Token Negative =====================  
+[INFO ] 2024-08-21 15:49:55.751 [main] java - ===========Put Patient by valid data and invalid patient id Negative =====================  
+[INFO ] 2024-08-21 15:49:56.264 [main] java - ===========Patient token creation with invalid credential Negative =====================  
+[INFO ] 2024-08-21 15:49:56.400 [main] java - ===========Patient token creation with invalid Method Negative =====================  
+[INFO ] 2024-08-21 15:49:56.416 [main] java - ===========Patient token creation with invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 15:49:56.547 [main] java - ===========Patient token creation with invalid content type Negative =====================  
+[INFO ] 2024-08-21 15:49:58.889 [main] java - ----------Dietician send get request with no auth -----------
+[INFO ] 2024-08-21 15:49:59.028 [main] java - ----------Admin send get request with  patients by fielId -----------
+[INFO ] 2024-08-21 15:49:59.167 [main] java - ----------Dietician send post  invalid method  -----------
+[INFO ] 2024-08-21 15:49:59.301 [main] java - ----------Dietician send get request  invalid fileId  -----------
+[INFO ] 2024-08-21 15:49:59.476 [main] java - ----------Dietician send get request  invalid endpoint  -----------
+[INFO ] 2024-08-21 15:49:59.633 [main] java - ----------Dietician send get request with no auth-----------
+[INFO ] 2024-08-21 15:49:59.789 [main] java - ----------Patient  send get request to retrive all morbidities details-----------
+[INFO ] 2024-08-21 15:49:59.956 [main] java - ----------Admin  send onvalid method-----------
+[INFO ] 2024-08-21 15:50:00.105 [main] java - ----------Admin  send request with invalid endpoint-----------
+[INFO ] 2024-08-21 15:50:00.252 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 15:50:00.406 [main] java - ----------Dietician  send get request with invalid endpint-----------
+[INFO ] 2024-08-21 15:50:00.548 [main] java - ----------Dietician  send request with no auth -----------
+[INFO ] 2024-08-21 15:50:00.713 [main] java - ----------patient send get request with test name-----------
+[INFO ] 2024-08-21 15:50:00.872 [main] java - ----------admin  send request with invalid method-----------
+[INFO ] 2024-08-21 15:50:01.019 [main] java - ----------admin  send request with invalid testname-----------
+[INFO ] 2024-08-21 15:50:01.335 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 15:50:01.483 [main] java - ----------Dietician  send request with invalid test name-----------
+[INFO ] 2024-08-21 15:50:01.640 [main] java - ----------Dietician  send request with invalid endpoind-----------
+[INFO ] 2024-08-21 15:50:01.721 [main] java - ===========Delete patientid  by Patienttoken===================  
+[INFO ] 2024-08-21 15:50:01.853 [main] java - ===========Patient Logout with in valid Method===================  
+[INFO ] 2024-08-21 15:50:01.867 [main] java - ===========Patient Logout with No auth==================  
+[INFO ] 2024-08-21 15:50:02.008 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 15:50:02.162 [main] java - ===========Dietician Logout with invalid method==================  
+[INFO ] 2024-08-21 15:50:02.180 [main] java - ===========Dietician Logout with No auth==================  
+[INFO ] 2024-08-21 15:50:02.312 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 15:50:02.469 [main] java - ===========Admin Logout with invalid method==================  
+[INFO ] 2024-08-21 15:50:02.609 [main] java - ===========Admin Logout with No auth==================  
+[INFO ] 2024-08-21 15:50:02.782 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 15:50:03.100 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 15:50:03.248 [main] java - ===========Admin Logout====================  
+[INFO ] 2024-08-21 16:13:55.450 [main] java - ===========Admin token creation=====================  
+[INFO ] 2024-08-21 16:14:00.699 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 16:14:03.260 [main] java - ===========POST Patient request with valid mandatory details=====================  
+[INFO ] 2024-08-21 16:14:03.307 [main] java - ===========POST Patient Token creation=====================  
+[INFO ] 2024-08-21 16:14:04.698 [main] java - ===========Put Patient with existing file by not attaching new file=====================  
+[INFO ] 2024-08-21 16:14:07.326 [main] java - ===========Put Patient with Vitals=====================  
+[INFO ] 2024-08-21 16:14:11.947 [main] java - ----------Dietician gets  morbidity details with file id -----------
+[INFO ] 2024-08-21 16:14:12.387 [main] java - ----------Dietician send  get  request  with file id -----------
+[INFO ] 2024-08-21 16:14:12.595 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 16:14:12.938 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 16:14:13.156 [main] java - ----------admin gets all morbidity details-----------
+[INFO ] 2024-08-21 16:14:13.368 [main] java - ----------admin gets all condition bytest name-----------
+[INFO ] 2024-08-21 16:14:13.581 [main] java - ----------Dietician  gets all morbidity details-----------
+[INFO ] 2024-08-21 16:14:13.751 [main] java - ----------Dietician  gets all morbidity details by test name-----------
+[INFO ] 2024-08-21 16:14:14.177 [main] java - ===========Admin token invalid credential Negative=====================  
+[INFO ] 2024-08-21 16:14:14.449 [main] java - ===========Admin token invalid Method Negative=====================  
+[INFO ] 2024-08-21 16:14:20.326 [main] java - ===========Post Patient by valid additional details Negative =====================  
+[INFO ] 2024-08-21 16:14:20.918 [main] java - ===========Post Patient by invalid mandatory details Negative =====================  
+[INFO ] 2024-08-21 16:14:21.491 [main] java - ===========Post Patient by invalid additional details Negative =====================  
+[INFO ] 2024-08-21 16:14:22.180 [main] java - ===========Post Patient by invalid Method Negative =====================  
+[INFO ] 2024-08-21 16:14:22.876 [main] java - ===========Post Patient by invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 16:14:23.461 [main] java - ===========Post Patient with no auth Negative =====================  
+[INFO ] 2024-08-21 16:14:23.462 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 16:14:25.186 [main] java - ===========Post Patient with Admin Token Negative =====================  
+[INFO ] 2024-08-21 16:14:25.973 [main] java - ===========Post Patient with Patient Token Negative =====================  
+[INFO ] 2024-08-21 16:14:26.980 [main] java - ===========Put Patient by valid data and invalid patient id Negative =====================  
+[INFO ] 2024-08-21 16:14:27.389 [main] java - ===========Patient token creation with invalid credential Negative =====================  
+[INFO ] 2024-08-21 16:14:27.541 [main] java - ===========Patient token creation with invalid Method Negative =====================  
+[INFO ] 2024-08-21 16:14:27.564 [main] java - ===========Patient token creation with invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 16:14:27.745 [main] java - ===========Patient token creation with invalid content type Negative =====================  
+[INFO ] 2024-08-21 16:14:31.577 [main] java - ----------Dietician send get request with no auth -----------
+[INFO ] 2024-08-21 16:14:31.731 [main] java - ----------Admin send get request with  patients by fielId -----------
+[INFO ] 2024-08-21 16:14:31.909 [main] java - ----------Dietician send post  invalid method  -----------
+[INFO ] 2024-08-21 16:14:32.076 [main] java - ----------Dietician send get request  invalid fileId  -----------
+[INFO ] 2024-08-21 16:14:32.244 [main] java - ----------Dietician send get request  invalid endpoint  -----------
+[INFO ] 2024-08-21 16:14:32.431 [main] java - ----------Dietician send get request with no auth-----------
+[INFO ] 2024-08-21 16:14:32.593 [main] java - ----------Patient  send get request to retrive all morbidities details-----------
+[INFO ] 2024-08-21 16:14:32.776 [main] java - ----------Admin  send onvalid method-----------
+[INFO ] 2024-08-21 16:14:32.935 [main] java - ----------Admin  send request with invalid endpoint-----------
+[INFO ] 2024-08-21 16:14:33.099 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 16:14:33.270 [main] java - ----------Dietician  send get request with invalid endpint-----------
+[INFO ] 2024-08-21 16:14:33.453 [main] java - ----------Dietician  send request with no auth -----------
+[INFO ] 2024-08-21 16:14:33.609 [main] java - ----------patient send get request with test name-----------
+[INFO ] 2024-08-21 16:14:33.770 [main] java - ----------admin  send request with invalid method-----------
+[INFO ] 2024-08-21 16:14:34.002 [main] java - ----------admin  send request with invalid testname-----------
+[INFO ] 2024-08-21 16:14:34.343 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 16:14:34.525 [main] java - ----------Dietician  send request with invalid test name-----------
+[INFO ] 2024-08-21 16:14:34.704 [main] java - ----------Dietician  send request with invalid endpoind-----------
+[INFO ] 2024-08-21 16:14:34.853 [main] java - ===========Delete patientid  by Patienttoken===================  
+[INFO ] 2024-08-21 16:14:34.990 [main] java - ===========Patient Logout with in valid Method===================  
+[INFO ] 2024-08-21 16:14:35.017 [main] java - ===========Patient Logout with No auth==================  
+[INFO ] 2024-08-21 16:14:35.174 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 16:14:36.074 [main] java - ===========Dietician Logout with invalid method==================  
+[INFO ] 2024-08-21 16:14:36.100 [main] java - ===========Dietician Logout with No auth==================  
+[INFO ] 2024-08-21 16:14:36.246 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 16:14:36.423 [main] java - ===========Admin Logout with invalid method==================  
+[INFO ] 2024-08-21 16:14:36.601 [main] java - ===========Admin Logout with No auth==================  
+[INFO ] 2024-08-21 16:14:36.813 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 16:14:37.175 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 16:14:37.343 [main] java - ===========Admin Logout====================  
+[INFO ] 2024-08-21 16:54:31.017 [main] java - ===========Admin token creation=====================  
+[INFO ] 2024-08-21 16:54:35.524 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 16:54:38.224 [main] java - ===========POST Patient request with valid mandatory details=====================  
+[INFO ] 2024-08-21 16:54:38.257 [main] java - ===========POST Patient Token creation=====================  
+[INFO ] 2024-08-21 16:54:39.324 [main] java - ===========Put Patient with existing file by not attaching new file=====================  
+[INFO ] 2024-08-21 16:54:41.286 [main] java - ===========Put Patient with Vitals=====================  
+[INFO ] 2024-08-21 16:54:45.462 [main] java - ----------Dietician gets  morbidity details with file id -----------
+[INFO ] 2024-08-21 16:54:45.937 [main] java - ----------Dietician send  get  request  with file id -----------
+[INFO ] 2024-08-21 16:54:46.119 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 16:54:46.391 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 16:54:46.609 [main] java - ----------admin gets all morbidity details-----------
+[INFO ] 2024-08-21 16:54:46.793 [main] java - ----------admin gets all condition bytest name-----------
+[INFO ] 2024-08-21 16:54:47.006 [main] java - ----------Dietician  gets all morbidity details-----------
+[INFO ] 2024-08-21 16:54:47.170 [main] java - ----------Dietician  gets all morbidity details by test name-----------
+[INFO ] 2024-08-21 16:54:47.536 [main] java - ===========Admin token invalid credential Negative=====================  
+[INFO ] 2024-08-21 16:54:47.795 [main] java - ===========Admin token invalid Method Negative=====================  
+[INFO ] 2024-08-21 16:54:52.970 [main] java - ===========Post Patient by valid additional details Negative =====================  
+[INFO ] 2024-08-21 16:54:53.581 [main] java - ===========Post Patient by invalid mandatory details Negative =====================  
+[INFO ] 2024-08-21 16:54:54.208 [main] java - ===========Post Patient by invalid additional details Negative =====================  
+[INFO ] 2024-08-21 16:54:54.792 [main] java - ===========Post Patient by invalid Method Negative =====================  
+[INFO ] 2024-08-21 16:54:55.398 [main] java - ===========Post Patient by invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 16:54:55.660 [main] java - ===========Post Patient with no auth Negative =====================  
+[INFO ] 2024-08-21 16:54:55.661 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 16:54:56.871 [main] java - ===========Post Patient with Admin Token Negative =====================  
+[INFO ] 2024-08-21 16:54:57.466 [main] java - ===========Post Patient with Patient Token Negative =====================  
+[INFO ] 2024-08-21 16:54:58.049 [main] java - ===========Put Patient by mandatory fields empty and only valid additional details Negative =====================  
+[INFO ] 2024-08-21 16:54:58.647 [main] java - ===========Put Patient only invalid additional details Negative =====================  
+[INFO ] 2024-08-21 16:54:59.262 [main] java - ===========Put Patient by valid data and invalid patient id Negative =====================  
+[INFO ] 2024-08-21 16:54:59.997 [main] java - ===========Put Patient by entering valid data invalid method Negative =====================  
+[INFO ] 2024-08-21 16:55:00.675 [main] java - ===========Put Patient with invalid endpoint Negative =====================  
+[INFO ] 2024-08-21 16:55:01.764 [main] java - ===========Put Patient sets no auth Negative =====================  
+[INFO ] 2024-08-21 16:55:02.362 [main] java - ===========Put Patient sets Admintoken Negative =====================  
+[INFO ] 2024-08-21 16:55:02.972 [main] java - ===========Put Patient sets Patienttoken Negative =====================  
+[INFO ] 2024-08-21 16:55:03.207 [main] java - ===========Patient token creation with invalid credential Negative =====================  
+[INFO ] 2024-08-21 16:55:03.360 [main] java - ===========Patient token creation with invalid Method Negative =====================  
+[INFO ] 2024-08-21 16:55:03.380 [main] java - ===========Patient token creation with invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 16:55:03.544 [main] java - ===========Patient token creation with invalid content type Negative =====================  
+[INFO ] 2024-08-21 16:55:08.954 [main] java - ----------Dietician send  get  request with no auth -----------
+[INFO ] 2024-08-21 16:55:09.112 [main] java - ----------Dietician send  invalid method -----------
+[INFO ] 2024-08-21 16:55:09.333 [main] java - ----------Dietician send get request with  invalid endpoint -----------
+[INFO ] 2024-08-21 16:55:09.492 [main] java - ----------Dietician send get request with no auth -----------
+[INFO ] 2024-08-21 16:55:09.867 [main] java - ----------Admin send get request with  patients by fielId -----------
+[INFO ] 2024-08-21 16:55:10.033 [main] java - ----------Dietician send post  invalid method  -----------
+[INFO ] 2024-08-21 16:55:10.196 [main] java - ----------Dietician send get request  invalid fileId  -----------
+[INFO ] 2024-08-21 16:55:10.355 [main] java - ----------Dietician send get request  invalid endpoint  -----------
+[INFO ] 2024-08-21 16:55:10.509 [main] java - ----------Dietician send get request with no auth-----------
+[INFO ] 2024-08-21 16:55:10.659 [main] java - ----------Patient  send get request to retrive all morbidities details-----------
+[INFO ] 2024-08-21 16:55:10.848 [main] java - ----------Admin  send onvalid method-----------
+[INFO ] 2024-08-21 16:55:11.014 [main] java - ----------Admin  send request with invalid endpoint-----------
+[INFO ] 2024-08-21 16:55:11.170 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 16:55:11.321 [main] java - ----------Dietician  send get request with invalid endpint-----------
+[INFO ] 2024-08-21 16:55:11.477 [main] java - ----------Dietician  send request with no auth -----------
+[INFO ] 2024-08-21 16:55:12.623 [main] java - ----------patient send get request with test name-----------
+[INFO ] 2024-08-21 16:55:12.762 [main] java - ----------admin  send request with invalid method-----------
+[INFO ] 2024-08-21 16:55:12.903 [main] java - ----------admin  send request with invalid testname-----------
+[INFO ] 2024-08-21 16:55:13.286 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 16:55:13.428 [main] java - ----------Dietician  send request with invalid test name-----------
+[INFO ] 2024-08-21 16:55:13.585 [main] java - ----------Dietician  send request with invalid endpoind-----------
+[INFO ] 2024-08-21 16:55:13.735 [main] java - ===========Delete patient by id with invalid method====================  
+[INFO ] 2024-08-21 16:55:13.877 [main] java - ===========Delete patientid  by invalid id====================  
+[INFO ] 2024-08-21 16:55:14.102 [main] java - ===========Delete patientid  by invalid endpoint====================  
+[INFO ] 2024-08-21 16:55:14.119 [main] java - ===========Delete patientid  by No auth====================  
+[INFO ] 2024-08-21 16:55:14.254 [main] java - ===========Delete PatientId By Dietician=====================  
+[INFO ] 2024-08-21 16:55:14.281 [main] java - ===========Delete patientid  by Patienttoken===================  
+[INFO ] 2024-08-21 16:55:14.626 [main] java - ===========Patient Logout with in valid Method===================  
+[INFO ] 2024-08-21 16:55:14.642 [main] java - ===========Patient Logout with No auth==================  
+[INFO ] 2024-08-21 16:55:14.773 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 16:55:15.543 [main] java - ===========Dietician Logout with invalid method==================  
+[INFO ] 2024-08-21 16:55:15.555 [main] java - ===========Dietician Logout with No auth==================  
+[INFO ] 2024-08-21 16:55:15.686 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 16:55:15.842 [main] java - ===========Admin Logout with invalid method==================  
+[INFO ] 2024-08-21 16:55:15.991 [main] java - ===========Admin Logout with No auth==================  
+[INFO ] 2024-08-21 16:55:16.222 [main] java - ===========Delete PatientId By Dietician=====================  
+[INFO ] 2024-08-21 16:55:16.504 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 16:55:17.033 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 16:55:17.247 [main] java - ===========Admin Logout====================  
+[INFO ] 2024-08-21 21:09:03.864 [main] java - ===========Admin token creation=====================  
+[INFO ] 2024-08-21 21:09:09.341 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 21:09:12.191 [main] java - ===========POST Patient request with valid mandatory details=====================  
+[INFO ] 2024-08-21 21:09:12.250 [main] java - ===========POST Patient Token creation=====================  
+[INFO ] 2024-08-21 21:09:13.666 [main] java - ===========Put Patient with existing file by not attaching new file=====================  
+[INFO ] 2024-08-21 21:09:16.529 [main] java - ===========Put Patient with Vitals=====================  
+[INFO ] 2024-08-21 21:09:21.543 [main] java - ----------Dietician gets  morbidity details with file id -----------
+[INFO ] 2024-08-21 21:09:21.854 [main] java - ----------Dietician send  get  request  with file id -----------
+[INFO ] 2024-08-21 21:09:22.055 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 21:09:22.317 [main] java - ----------Patient send  get  request  Get_GetPatientsMorbidityDetails -----------
+[INFO ] 2024-08-21 21:09:22.541 [main] java - ----------admin gets all morbidity details-----------
+[INFO ] 2024-08-21 21:09:22.764 [main] java - ----------admin gets all condition bytest name-----------
+[INFO ] 2024-08-21 21:09:22.971 [main] java - ----------Dietician  gets all morbidity details-----------
+[INFO ] 2024-08-21 21:09:23.162 [main] java - ----------Dietician  gets all morbidity details by test name-----------
+[INFO ] 2024-08-21 21:09:23.540 [main] java - ===========Admin token invalid credential Negative=====================  
+[INFO ] 2024-08-21 21:09:23.808 [main] java - ===========Admin token invalid Method Negative=====================  
+[INFO ] 2024-08-21 21:09:30.334 [main] java - ===========Post Patient by valid additional details Negative =====================  
+[INFO ] 2024-08-21 21:09:31.131 [main] java - ===========Post Patient by invalid mandatory details Negative =====================  
+[INFO ] 2024-08-21 21:09:31.888 [main] java - ===========Post Patient by invalid additional details Negative =====================  
+[INFO ] 2024-08-21 21:09:32.650 [main] java - ===========Post Patient by invalid Method Negative =====================  
+[INFO ] 2024-08-21 21:09:33.633 [main] java - ===========Post Patient by invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 21:09:34.161 [main] java - ===========Post Patient with no auth Negative =====================  
+[INFO ] 2024-08-21 21:09:34.162 [main] java - ===========POST Patient creation  with endpoint=====================  
+[INFO ] 2024-08-21 21:09:36.203 [main] java - ===========Post Patient with Admin Token Negative =====================  
+[INFO ] 2024-08-21 21:09:37.154 [main] java - ===========Post Patient with Patient Token Negative =====================  
+[INFO ] 2024-08-21 21:09:38.002 [main] java - ===========Put Patient by mandatory fields empty and only valid additional details Negative =====================  
+[INFO ] 2024-08-21 21:09:38.821 [main] java - ===========Put Patient only invalid additional details Negative =====================  
+[INFO ] 2024-08-21 21:09:39.643 [main] java - ===========Put Patient by valid data and invalid patient id Negative =====================  
+[INFO ] 2024-08-21 21:09:40.298 [main] java - ===========Put Patient by entering valid data invalid method Negative =====================  
+[INFO ] 2024-08-21 21:09:41.101 [main] java - ===========Put Patient with invalid endpoint Negative =====================  
+[INFO ] 2024-08-21 21:09:42.261 [main] java - ===========Put Patient sets no auth Negative =====================  
+[INFO ] 2024-08-21 21:09:43.008 [main] java - ===========Put Patient sets Admintoken Negative =====================  
+[INFO ] 2024-08-21 21:09:43.711 [main] java - ===========Put Patient sets Patienttoken Negative =====================  
+[INFO ] 2024-08-21 21:09:43.977 [main] java - ===========Patient token creation with invalid credential Negative =====================  
+[INFO ] 2024-08-21 21:09:44.162 [main] java - ===========Patient token creation with invalid Method Negative =====================  
+[INFO ] 2024-08-21 21:09:44.185 [main] java - ===========Patient token creation with invalid Enpoint Negative =====================  
+[INFO ] 2024-08-21 21:09:44.410 [main] java - ===========Patient token creation with invalid content type Negative =====================  
+[INFO ] 2024-08-21 21:09:52.071 [main] java - ----------Dietician send  get  request with no auth -----------
+[INFO ] 2024-08-21 21:09:52.316 [main] java - ----------Dietician send  invalid method -----------
+[INFO ] 2024-08-21 21:09:52.566 [main] java - ----------Dietician send get request with  invalid endpoint -----------
+[INFO ] 2024-08-21 21:09:52.773 [main] java - ----------Dietician send get request with no auth -----------
+[INFO ] 2024-08-21 21:09:52.981 [main] java - ----------Admin send get request with  patients by fielId -----------
+[INFO ] 2024-08-21 21:09:53.180 [main] java - ----------Dietician send post  invalid method  -----------
+[INFO ] 2024-08-21 21:09:53.392 [main] java - ----------Dietician send get request  invalid fileId  -----------
+[INFO ] 2024-08-21 21:09:53.600 [main] java - ----------Dietician send get request  invalid endpoint  -----------
+[INFO ] 2024-08-21 21:09:53.828 [main] java - ----------Dietician send get request with no auth-----------
+[INFO ] 2024-08-21 21:09:54.027 [main] java - ----------Patient  send get request to retrive all morbidities details-----------
+[INFO ] 2024-08-21 21:09:54.201 [main] java - ----------Admin  send onvalid method-----------
+[INFO ] 2024-08-21 21:09:54.402 [main] java - ----------Admin  send request with invalid endpoint-----------
+[INFO ] 2024-08-21 21:09:54.584 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 21:09:54.774 [main] java - ----------Dietician  send get request with invalid endpint-----------
+[INFO ] 2024-08-21 21:09:54.981 [main] java - ----------Dietician  send request with no auth -----------
+[INFO ] 2024-08-21 21:09:55.199 [main] java - ----------patient send get request with test name-----------
+[INFO ] 2024-08-21 21:09:55.387 [main] java - ----------admin  send request with invalid method-----------
+[INFO ] 2024-08-21 21:09:55.649 [main] java - ----------admin  send request with invalid testname-----------
+[INFO ] 2024-08-21 21:09:56.046 [main] java - ----------Dietician  send request with invalid method-----------
+[INFO ] 2024-08-21 21:09:56.236 [main] java - ----------Dietician  send request with invalid test name-----------
+[INFO ] 2024-08-21 21:09:56.418 [main] java - ----------Dietician  send request with invalid endpoind-----------
+[INFO ] 2024-08-21 21:09:56.642 [main] java - ===========Delete patient by id with invalid method====================  
+[INFO ] 2024-08-21 21:09:56.841 [main] java - ===========Delete patientid  by invalid id====================  
+[INFO ] 2024-08-21 21:09:57.041 [main] java - ===========Delete patientid  by invalid endpoint====================  
+[INFO ] 2024-08-21 21:09:57.076 [main] java - ===========Delete patientid  by No auth====================  
+[INFO ] 2024-08-21 21:09:57.240 [main] java - ===========Delete PatientId By Dietician=====================  
+[INFO ] 2024-08-21 21:09:57.275 [main] java - ===========Delete patientid  by Patienttoken===================  
+[INFO ] 2024-08-21 21:09:57.435 [main] java - ===========Patient Logout with in valid Method===================  
+[INFO ] 2024-08-21 21:09:57.468 [main] java - ===========Patient Logout with No auth==================  
+[INFO ] 2024-08-21 21:09:57.631 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 21:09:58.667 [main] java - ===========Dietician Logout with invalid method==================  
+[INFO ] 2024-08-21 21:09:58.705 [main] java - ===========Dietician Logout with No auth==================  
+[INFO ] 2024-08-21 21:09:58.873 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 21:09:59.065 [main] java - ===========Admin Logout with invalid method==================  
+[INFO ] 2024-08-21 21:09:59.278 [main] java - ===========Admin Logout with No auth==================  
+[INFO ] 2024-08-21 21:09:59.540 [main] java - ===========Delete PatientId By Dietician=====================  
+[INFO ] 2024-08-21 21:09:59.734 [main] java - ===========Patient Logout=====================  
+[INFO ] 2024-08-21 21:10:00.141 [main] java - ===========Dietician Logout====================  
+[INFO ] 2024-08-21 21:10:00.325 [main] java - ===========Admin Logout====================  

@@ -1,0 +1,1 @@
+{"uuid":"e57faff1-1569-418d-a15c-207d5f67b5c0","name":"Scenario: Check dietician able to delete patient by id with invalid endpoint","children":["59e81b77-7d5b-4fc5-b812-765ce8850a0d"],"befores":[],"afters":[],"start":1724288996868,"stop":1724288997049}

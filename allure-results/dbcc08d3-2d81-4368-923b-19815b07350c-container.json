@@ -1,0 +1,1 @@
+{"uuid":"dbcc08d3-2d81-4368-923b-19815b07350c","name":"Scenario: Check dietician able to update patient only with valid mandatory details","children":["6509c033-77d1-4261-a36d-2553af8633da"],"befores":[],"afters":[],"start":1724271245556,"stop":1724271246207}

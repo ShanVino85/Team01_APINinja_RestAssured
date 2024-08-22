@@ -1,0 +1,1 @@
+{"uuid":"2c00fbfa-199b-457f-b25f-607eb1b4c20c","name":"Scenario: Check patient able to update patient with valid data and patient token","children":["bfbd7122-16fa-454a-9244-8d75620e5f10"],"befores":[],"afters":[],"start":1724269795819,"stop":1724269795823}

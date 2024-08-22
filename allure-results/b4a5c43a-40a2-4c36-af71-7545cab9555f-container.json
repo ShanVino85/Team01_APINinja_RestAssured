@@ -1,0 +1,1 @@
+{"uuid":"b4a5c43a-40a2-4c36-af71-7545cab9555f","name":"Scenario: Check dietician able to retrieve patients morbidity details by patient Endpoint with Dietician Token","children":["545f14a1-dede-4a37-97e8-e2801b4de05e"],"befores":[],"afters":[],"start":1724271251661,"stop":1724271252079}

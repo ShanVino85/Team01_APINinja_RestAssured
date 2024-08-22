@@ -1,4 +1,4 @@
-@tag02
+@tag01
 Feature: User Admin Post Request
 
   #Positive

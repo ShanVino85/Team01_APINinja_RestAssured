@@ -1,0 +1,1 @@
+{"uuid":"eeaefa2f-6b42-42d4-a5e6-9019a911e8a0","name":"Scenario: Check dietician able to add only new vitals without reports for existing patient with existing report","children":["a9bd57b5-7c23-4050-95d2-6ed6a6cf1bd5"],"befores":[],"afters":[],"start":1724288959044,"stop":1724288960089}

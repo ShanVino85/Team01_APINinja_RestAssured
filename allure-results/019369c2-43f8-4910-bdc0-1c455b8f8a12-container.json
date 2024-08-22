@@ -1,0 +1,1 @@
+{"uuid":"019369c2-43f8-4910-bdc0-1c455b8f8a12","name":"Scenario: Check admin able to retrieve dietician by id with invalid method","children":["ec50c49b-d912-4028-b440-ebf7549cb68b"],"befores":[],"afters":[],"start":1724273691189,"stop":1724273691345}
