@@ -56,7 +56,7 @@ public class PatientModule extends RestUtils {
 	@When("Dietician send POST http request with endpoint")
 	public void dietician_send_post_http_request_with_endpoint() throws IOException {
 	
-		//asString = response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/PatientModule/PostreqPatient.json")).log().all().extract().asString();
+		
 		
 		logger.info("===========POST Patient creation  with endpoint=====================  ");
 		
@@ -64,6 +64,8 @@ public class PatientModule extends RestUtils {
 		  .multiPart("file", file2 ,"application/pdf").when().post(routes.getString("Post_Createpatient"));
 		
 		asString = response.then().log().all().extract().asString();
+		
+		//asString = response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schema/PatientModule/PostreqPatient.json")).log().all().extract().asString();
 		
 			IdHolder.patientId1 =  UserKeyJson(response,"patientId");
 			  System.out.println("patientId ="  +IdHolder.patientId1);

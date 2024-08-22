@@ -1,0 +1,1 @@
+{"uuid":"8611ef87-f024-46e0-acb5-c2c59bc5264e","name":"Scenario: Check dietician able to delete patient by id with invalid method","children":["0e43bd3f-973d-4124-927c-4fd23af5ad50"],"befores":[],"afters":[],"start":1724333092628,"stop":1724333092760}

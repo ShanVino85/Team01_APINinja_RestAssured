@@ -1,0 +1,1 @@
+{"uuid":"9da5dbfa-ad6b-494f-ae5a-6c8006fe6a3e","name":"Scenario: Check admin is able to retrieve patients morbidity details by patient ID","children":["ddbdcc31-42e1-4333-83b5-9554d7f00871"],"befores":[],"afters":[],"start":1724333090141,"stop":1724333090144}

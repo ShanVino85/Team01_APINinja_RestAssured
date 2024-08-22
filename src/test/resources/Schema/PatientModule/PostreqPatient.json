@@ -29,7 +29,7 @@
     "FileMorbidity": {
       "type": "object",
       "properties": {
-        "^[0-9]{10}$": {
+        "^[a-zA-Z0-9]+$": {
           "type": "object",
           "properties": {
             "T4": {
@@ -46,18 +46,18 @@
         }
       },
       "required": [
-        "^[0-9]{10}$"
+        "^[a-zA-Z0-9]+$"
       ]
     },
     "FileMorbidityCondition": {
       "type": "object",
       "properties": {
-        "^[0-9]{10}$": {
+        "^[a-zA-Z0-9]+$": {
           "type": "string"
         }
       },
       "required": [
-        "^[0-9]{10}$"
+        "^[a-zA-Z0-9]+$"
       ]
     },
     "DateOfBirth": {
@@ -98,7 +98,7 @@
         }
       },
       "required": [
-        "^[0-9]{10}$"
+        "^[a-zA-Z0-9]+$"
       ]
     },
     "LastVisitDate": {
@@ -122,3 +122,7 @@
     "LastVisitDate"
   ]
 }
+
+
+
+
