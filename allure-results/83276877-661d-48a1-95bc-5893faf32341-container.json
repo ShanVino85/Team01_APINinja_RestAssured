@@ -1,0 +1,1 @@
+{"uuid":"83276877-661d-48a1-95bc-5893faf32341","name":"Scenario: Check admin able to create patient with valid data and admin token","children":["96ac8252-2fb0-4b93-bae1-7969183b53a2"],"befores":[],"afters":[],"start":1724343023485,"stop":1724343024020}

@@ -1,0 +1,1 @@
+{"uuid":"6a0ce464-c5e7-444e-8a72-9981daba7bfc","name":"Scenario: Check Patient able to login as admin with valid credential and invalid content type","children":["27183b8f-e699-4885-b773-961ed3e6bf0f"],"befores":[],"afters":[],"start":1724343031121,"stop":1724343031647}

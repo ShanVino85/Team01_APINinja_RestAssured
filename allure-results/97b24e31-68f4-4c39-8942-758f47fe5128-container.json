@@ -1,0 +1,1 @@
+{"uuid":"97b24e31-68f4-4c39-8942-758f47fe5128","name":"Scenario: Check user able to login as admin with valid credential and invalid method","children":["6c5adddb-6a22-4b79-a078-6690c662a9ab"],"befores":[],"afters":[],"start":1724343013309,"stop":1724343013566}

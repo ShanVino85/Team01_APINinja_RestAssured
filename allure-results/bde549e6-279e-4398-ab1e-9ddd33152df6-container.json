@@ -1,0 +1,1 @@
+{"uuid":"bde549e6-279e-4398-ab1e-9ddd33152df6","name":"Scenario: Check dietician able to update patient with valid data, patient id and token","children":["804bdd2a-96a3-4b72-bc4b-c6892fd7b89c"],"befores":[],"afters":[],"start":1724343005749,"stop":1724343006693}

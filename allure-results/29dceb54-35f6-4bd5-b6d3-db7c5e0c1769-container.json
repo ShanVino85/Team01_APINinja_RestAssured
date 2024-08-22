@@ -1,0 +1,1 @@
+{"uuid":"29dceb54-35f6-4bd5-b6d3-db7c5e0c1769","name":"Scenario: Check dietician able to retrieve patients morbidity details by patient ID with invalid endpoint","children":["56923774-ee91-4ad7-b123-b2f42b12271e"],"befores":[],"afters":[],"start":1724342856538,"stop":1724342856563}

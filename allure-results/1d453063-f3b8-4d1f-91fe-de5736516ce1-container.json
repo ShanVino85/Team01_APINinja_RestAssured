@@ -1,0 +1,1 @@
+{"uuid":"1d453063-f3b8-4d1f-91fe-de5736516ce1","name":"Scenario: Check dietician able to create patient with valid data and invalid endpoint","children":["1ad11e82-b68c-4028-bdfc-c28f2bf37b7d"],"befores":[],"afters":[],"start":1724342845751,"stop":1724342846755}

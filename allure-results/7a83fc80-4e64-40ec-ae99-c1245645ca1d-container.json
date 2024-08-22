@@ -1,0 +1,1 @@
+{"uuid":"7a83fc80-4e64-40ec-ae99-c1245645ca1d","name":"Scenario: Check admin able to delete dietician by id with invalid endpoint","children":["76d3794d-db6e-4c73-838f-fdbf621ae5b9"],"befores":[],"afters":[],"start":1724343044683,"stop":1724343044927}
